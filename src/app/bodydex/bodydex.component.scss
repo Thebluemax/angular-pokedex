@@ -1,0 +1,107 @@
+@import '../../sass/variables';
+
+h6{font-size: .9em;}
+#primary-screen {
+  background-color: ivory;
+  border-radius: 20px;
+  height: auto;
+  padding: 7px 7px;
+  width: 70%;
+  margin: 10px auto;
+}
+#pilot-holder {
+  width: 100px;
+}
+.screen-led{
+  height: 10px;
+  width: 10px;
+  background-color:red;
+  border: 3px solid black;
+  margin-left: 20px;
+  display: inline-block;
+}
+#screen {
+  background-color: green;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 4px rgb(72, 209, 102) inset;
+  font-family: $fontfamily;
+  height: 200px;
+  color: chartreuse;
+  clear: both;
+  overflow: hidden;
+  #scroll-screen {
+    ul {
+      overflow-y: hidden;
+      height: inherit;
+      list-style-type: none;
+      padding: 0px;
+    }
+    li {
+      padding: 0px 3px 10px 3px;
+    }
+  }
+}
+
+#screen-control {
+  width: 100px;
+}
+.screen-pilot{
+  height: 20px;
+  width: 20px;
+  background-color:red;
+  border: 3px solid black;
+  margin-left: 20px;
+  display: inline-block;
+}
+.black-strip {
+  background-color: #000;
+  height: 5px;
+  border-radius: 2.5px;
+  width: 100px;
+  margin-top: 5px;
+}
+#btn1{
+  height: 50px;
+  width: 50px;
+  background-color: lightblue;
+}
+#btn2, #btn3 {
+  height: 10px;
+  width: 50px;
+
+}
+#btn1,#btn2,#btn3 {
+  box-shadow: 2px 2px 3px grey;
+  display:inline-block;
+}
+#btn2{
+  background-color: lime;
+}
+#btn3{
+  background-color:orange;
+}
+#id-screen {
+  background-color: yellow;
+  display: block;
+  font-family: $fontfamily;
+  font-size: 1.4em;
+  height: 70px;
+  width: 80%;
+}
+.control-btn {
+  height: 30px;
+  background-color: black;
+  display: block;
+  margin: 0px;
+}
+.control-holder{
+  text-align: center;
+  height: 90px;
+}
+#btnup, #btndown {
+  width: 30px;
+}
+#btnleft, #btnright{
+  width: 45px;
+  display: inline-block;
+}

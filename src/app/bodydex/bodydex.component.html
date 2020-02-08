@@ -1,0 +1,52 @@
+<div id="interface" class="container">
+  <div class="row">
+    <div class="col-12">
+      <div id="primary-screen">
+        <div id="pilot-holder" class=" p-2 m-auto">
+          <div class="rounded-circle screen-led pilot-ligh"></div>
+          <div class="rounded-circle pilot-ligh screen-led"></div>
+        </div>
+        <!-- Principal screen-->
+        <div id="screen" class="p-2">
+          <div>
+            <h6>Items in Pokemón world</h6>
+          </div>
+          <div id="scroll-screen">
+            <ul appHighlight>
+              <li *ngFor="let item of list;let idx = index" class="higtlight" id="item-{{idx}}">
+                {{item.name}}
+            </li>
+            </ul>
+          </div>
+        </div>
+        <!--End Principal screen-->
+        <div id="screen-footer" class="p-2">
+          <div class="rounded-circle  screen-pilot float-left"></div>
+          <div id="screen-control" class="float-right">
+            <div class="black-strip"></div>
+            <div class="black-strip"></div>
+            <div class="black-strip"></div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-7 offset-1">
+      <div class="p-3 heigth-auto">
+        <a href="" id="btn1" class="rounded-circle ml-3"></a>
+        <a href="" id="btn2" class="mb-3 rounded-pill ml-3 "></a>
+        <a href="" id="btn3" class="rounded-pill ml-2 mb-3"></a>
+      </div>
+      <div>
+        <p id="id-screen" class="rounded-lg ml-3 p-3">
+          {{this.pagination+'-'+list.length+'/'+itemCount}}
+        </p>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="control-holder"><a class="control-btn m-auto" id="btnup"></a><a class="control-btn" id="btnleft"></a><a class="control-btn" id="btnright"></a><a class="control-btn m-auto align-top" id="btndown"></a></div>
+    </div>
+  </div>
+</div>
