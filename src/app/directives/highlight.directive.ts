@@ -6,7 +6,7 @@ import { Directive, HostListener,Renderer2, ElementRef } from '@angular/core';
 export class HighlightDirective {
 
   constructor(private renderer: Renderer2, private el:ElementRef) { }
-  @HostListener('mouseover', ['$event.target.id']) over(id: string) {
+  @HostListener('mouseover', ['$event.target.id']) overElement(id: string) {
     this.renderer.setStyle(this.el.nativeElement.querySelector('#'+id), 'background', 'skyblue');
     console.log(this.el.nativeElement);
   }

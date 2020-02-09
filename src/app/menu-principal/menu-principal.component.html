@@ -1,0 +1,13 @@
+<!-- Principal screen-->
+
+<div>
+    <h6>Choose one option</h6>
+  </div>
+  <div id="scroll-screen">
+    <ul appHighlight>
+      <li *ngFor="let item of optionsList;let idx = index" class="higtlight" id="item-{{idx}}" (click)="goto(idx)">
+        {{item}}
+      </li>
+    </ul>
+  </div>
+  <!--End Principal screen-->
