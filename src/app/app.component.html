@@ -1,14 +1,14 @@
-<header class="container-fluid">
-  <div class="scanner-ring">
+<div id="pokedex-header" class="container-fluid">
+  <div class="scanner-ring mt-2 ml-2">
     <div class="scanner-glass"></div>
   </div>
   <div class="pilot-ligh">
-    <div class="pilot-led"></div>
+    <div class="pilot-led led-orange"></div>
     <div class="pilot-led"></div>
     <div class="pilot-led"></div>
   </div>
-</header>
-<section class="container-fluid back-dex">
+</div>
+<div class="container-fluid back-dex">
   <div id="interface" class="container">
     <div class="row">
       <div class="col-12">
@@ -41,7 +41,7 @@
         </div>
         <div>
           <p id="id-screen" class="rounded-lg ml-3 p-3">
-            {{this.pagination+'-'+list.length+'/'+itemCount}}
+            {{ '--' }}
           </p>
         </div>
       </div>
@@ -52,5 +52,5 @@
       </div>
     </div>
   </div>
-</section>
-<footer></footer>
+</div>
+<div id="pokedex-footer"></div>

@@ -1,11 +1,14 @@
 @import '../sass/variables';
 
-header, footer {
-    height: 100px;
-    background-color: $base-color;
+#pokedex-header {
+  height: 100px;
 }
-section {
- /* height: 200px;*/
+#pokedex-header, #pokedex-footer {
+  height: 120px;
+  background-color: $base-color;
+}
+#pokedex-footer{
+  height: 80px;
 }
 .scanner-ring {
   height: 80px;
@@ -18,23 +21,27 @@ section {
     height: 60px;
     border-radius: 31px;
     background-color: skyblue;
-  border: 6px solid  white;
-  margin: 4px;
-  width: 60px;
+    border: 6px solid  white;
+    margin: 4px;
+    width: 60px;
   }
 }
 .pilot-ligh {
   display: inline-block;
   margin-left: 20px;
   vertical-align: top;
+}
+.pilot-led {
+  border: 3px solid black;
+  border-radius: 10px;
+  margin-top: 40px;
+  float: left;
   height: 20px;
-    width: 20px;
-    .pilot-led {
-      border: 3px solid black;
-      border-radius: 10px;
-      float: left;
-    }
-  }
+  width: 20px;
+}
+.led-orange {
+  background-color: orange;
+}
 .back-dex {
   background-color: $base-color;
   position: relative;

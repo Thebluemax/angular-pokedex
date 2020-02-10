@@ -7,11 +7,11 @@ export class HighlightDirective {
 
   constructor(private renderer: Renderer2, private el:ElementRef) { }
   @HostListener('mouseover', ['$event.target.id']) overElement(id: string) {
-    this.renderer.setStyle(this.el.nativeElement.querySelector('#'+id), 'background', 'skyblue');
+    this.renderer.addClass(this.el.nativeElement.querySelector('#'+id), 'highlighted');
     console.log(this.el.nativeElement);
   }
   @HostListener('mouseout', ['$event.target.id']) outElement(id: any) {
-    this.renderer.setStyle(this.el.nativeElement.querySelector('#'+id), 'background', 'none');
+    this.renderer.removeClass(this.el.nativeElement.querySelector('#'+id), 'highlighted');
       console.log(this.el.nativeElement.querySelector('#'+id));
   }
 }
