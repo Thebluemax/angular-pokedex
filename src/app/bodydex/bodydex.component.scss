@@ -2,8 +2,8 @@
 
   #scroll-screen {
     ul {
-      overflow-y: hidden;
-      height: inherit;
+      overflow-y: scroll;
+      height: 130px;
       list-style-type: none;
       padding: 0px;
     }

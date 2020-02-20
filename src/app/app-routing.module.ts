@@ -5,7 +5,9 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 
 
 const routes: Routes = [
-  { path: 'items', component: BodydexComponent },
+  { path: 'item', component: BodydexComponent },
+  { path: 'location', component: BodydexComponent },
+  { path: 'pokemon', component: BodydexComponent },
   { path: '', component: MenuPrincipalComponent },
 ];
 

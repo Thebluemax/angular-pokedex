@@ -12,12 +12,18 @@ export class PokebaseService {
   private urlApi:string;
 
   constructor( private http: HttpClient) {
-    this.endpointUrl = 'item/';
-    this.urlApi = environment.apiUrl+this.endpointUrl;
+
     console.log(this.urlApi);
   }
 
-  getItems(): Observable<any> {
+  getItems(url:string ,offset:number, limit:number): Observable<any> {
+    this.endpointUrl = `${url}/?offset=${offset}&limit=${limit}`;
+    this.urlApi = environment.apiUrl+this.endpointUrl;
+    return this.http.get(this.urlApi);
+  }
+  getPlaces(): Observable<any> {
+    this.endpointUrl = 'location/';
+    this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
 }
