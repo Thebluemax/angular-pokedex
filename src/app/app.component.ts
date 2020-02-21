@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit, OnChanges } from '@angular/core';
 import { BodydexComponent } from './bodydex/bodydex.component';
+import { SecondaryScreenService } from './shared/services/secondary-screen.service';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,15 @@ import { BodydexComponent } from './bodydex/bodydex.component';
 })
 export class AppComponent {
   
-  @ViewChild(BodydexComponent,{ static:true }) bodydexComponent: BodydexComponent;
   title = 'poke';
+  private screenSecondary: string = '-- --'
+
+  constructor (private screenservice:SecondaryScreenService){
+      this.screenservice.textToChange.subscribe(msj => this.screenSecondary = msj);
+  }
 
   onChanges(): void {
   
-    console.log(this.bodydexComponent.paginateText);
     
   }
 }
