@@ -37,21 +37,25 @@ export class BodydexComponent implements OnInit {
     this.sScree.setText('-- --');
     
   }
-
   getItems(offset: number, limit: number) {
     this.pkService.getItems(this.href, offset, limit).subscribe(data => {
-      this.itemCount = data.count;
-      this.previous = offset;
-      this.next = offset + this.limit;
-      this.pagination = this.paginateText();
+      this.itemCount = data.count;  
       this.list = data.results;
-      this.sScree.setText(this.pagination);
+      this.initList(offset);
     });
   }
-  paginateText(){
-    return `${this.previous}-${this.next-1}/${this.itemCount}`;
+  initList(offset:number){
+    this.previous = offset - this.limit;
+      this.next = (this.limit > this.itemCount)?this.itemCount: offset + this.limit;
+      this.pagination = this.paginateText();
+      this.sScree.setText(this.pagination);
   }
-  selectedItem($event) {
-    console.log($event);
+  paginateText(){
+    return `${this.previous+this.limit}-${this.next-1}/${this.itemCount}`;
+  }
+  itemDetall(url) {
+    let id = url.match(/\/([\d+])\//);
+    console.log("",id[1]);
+    this.router.navigate([this.href,id[1]]);
   }
 }

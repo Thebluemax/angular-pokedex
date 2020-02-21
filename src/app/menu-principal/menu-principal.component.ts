@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 export class MenuPrincipalComponent implements OnInit {
   optionsList: string[];
   constructor(private router: Router) {
-    this.optionsList = ['Item', 'Location', 'Pokemon'];
+    this.optionsList = ['Item', 'Region', 'Location', 'Pokemon'];
   }
 
   ngOnInit() {

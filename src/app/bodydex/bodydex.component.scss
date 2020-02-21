@@ -1,11 +1,16 @@
 @import '../../sass/variables';
-
+  h6 {
+    font-size: 1rem;
+    color: green;
+    background-color: chartreuse;
+    padding: 5px;;
+  }
   #scroll-screen {
     ul {
       overflow-y: scroll;
-      height: 130px;
+      height: 160px;
       list-style-type: none;
-      padding: 0px;
+      padding: 5px;
     }
     li {
       padding: 0px 3px 10px 3px;

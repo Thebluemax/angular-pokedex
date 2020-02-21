@@ -4,11 +4,11 @@
 </div>
 <div id="scroll-screen">
   <ul appHighlight>
-    <li><a (click)="getItems(previous-20,next-20)" *ngIf="previous !== 0"> <<- Back </a></li>
-    <li *ngFor="let item of list;let idx = index" class="higtlight" id="item-{{idx}}">
+    <li><a (click)="getItems(previous,limit)" *ngIf="previous !== 0 && itemCount > limit"> <<- Back </a></li>
+    <li *ngFor="let item of list;let idx = index" class="higtlight" id="item-{{idx}}" (click)="itemDetall(item.url)">
       {{item.name}}
     </li>
-    <li><a (click)="getItems(previous+20,next+20)" *ngIf="next <= itemCount"> Next ->></a></li>
+    <li><a (click)="getItems(next,limit)" *ngIf="next <= itemCount && itemCount > limit"> Next ->></a></li>
   </ul>
 </div>
 <!--End Principal screen-->
