@@ -1,5 +1,10 @@
 @import '../sass/variables';
-
+#interface {
+  border-left: 2px solid brown;
+  border-bottom: 2px solid brown;
+  border-right: 2px solid brown;
+  border-radius: 0px 0px 10px 40px;
+}
 #pokedex-header {
   height: 100px;
 }
@@ -132,6 +137,7 @@ h6{font-size: .9em;}
   background-color: black;
   display: block;
   margin: 0px;
+  vertical-align: top;
 }
 .control-holder{
   text-align: center;

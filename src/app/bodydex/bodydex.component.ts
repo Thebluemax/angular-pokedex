@@ -17,7 +17,7 @@ export class BodydexComponent implements OnInit {
   private next: number;
   private limit: number;
   private list: any;
-  private reference: number = 20;
+  private title: string;
   public href: string = "";
   public pagination:string;
 
@@ -29,7 +29,7 @@ export class BodydexComponent implements OnInit {
   ) { }
   ngOnInit() {
     this.limit = 20;
-    this.href = this.router.url;
+    this.title = this.href = this.router.url;
     this.getItems(0, this.limit);
 
   }

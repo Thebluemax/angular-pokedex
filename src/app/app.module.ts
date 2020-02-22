@@ -10,6 +10,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { ItemComponent } from './item/item.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { MesurePipe } from './pipes/mesure.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PokemonComponent } from './pokemon/pokemon.component';
     HighlightDirective,
     MenuPrincipalComponent,
     ItemComponent,
-    PokemonComponent
+    PokemonComponent,
+    MesurePipe
   ],
   imports: [
     BrowserModule,

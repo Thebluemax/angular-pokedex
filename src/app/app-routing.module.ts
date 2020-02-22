@@ -9,6 +9,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 const routes: Routes = [
   { path: 'item', component: BodydexComponent },
   { path: 'item/:id', component: ItemComponent },
+  { path: 'berry', component: BodydexComponent },
   { path: 'location', component: BodydexComponent },
   { path: 'pokemon', component: BodydexComponent },
   { path: 'pokemon/:id', component: PokemonComponent },
