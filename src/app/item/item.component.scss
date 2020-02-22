@@ -1,0 +1,28 @@
+#header-item {
+    height: 180px;
+    overflow-y: scroll;
+}
+h4 {
+    width: 80%;
+    padding: 7px 0px;
+}
+h5 {
+    background-color: chartreuse;
+    color:green;
+    font-size: 1em;
+    padding: 3px;
+}
+.title {
+    display: inline-block;
+
+}
+.title-media {
+    width:19%;
+    height: inherit;
+    img {
+        width: 100%;
+    }
+}
+.effect-text {
+ font-size: .8em;
+}

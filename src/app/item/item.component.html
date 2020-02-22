@@ -1,1 +1,26 @@
-<p>item works!</p>
+<div id="header-item">
+    <div>
+        <h4  class="title">{{name}}</h4>
+        <div class="title title-media"><img src="{{sprite}}" alt="100%"></div>
+    </div>
+    <h5>Attributes</h5>
+    <p>
+        <span class="badge badge-success ml-3" *ngFor="let entry of item.attributes">
+            {{entry.name}}
+        </span>
+    </p>
+    <h5>Category</h5>
+    <p class="effect-text">
+        {{item.category.name}}
+    </p>
+    <h5>Cost</h5>
+    <p class="effect-text">
+        {{item.cost}} Pokedollars
+    </p>
+    <h5>Effectes</h5>
+    <div *ngFor="let effect of item.effect_entries">
+        <p class="effect-text">{{effect.effect}}</p>
+        <p class="effect-text">{{effect.short_effect}}</p>
+    </div>
+
+</div>

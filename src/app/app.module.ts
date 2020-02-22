@@ -9,6 +9,7 @@ import { PokebaseService } from './shared/services/pokebase.service';
 import { HighlightDirective } from './directives/highlight.directive';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { ItemComponent } from './item/item.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ItemComponent } from './item/item.component';
     BodydexComponent,
     HighlightDirective,
     MenuPrincipalComponent,
-    ItemComponent
+    ItemComponent,
+    PokemonComponent
   ],
   imports: [
     BrowserModule,

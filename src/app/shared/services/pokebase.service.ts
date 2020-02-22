@@ -22,7 +22,7 @@ export class PokebaseService {
     return this.http.get(this.urlApi);
   }
   getDetallItems(id): Observable<any> {
-    this.endpointUrl = 'item/'+id;s
+    this.endpointUrl = '/item/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }

@@ -54,7 +54,7 @@ export class BodydexComponent implements OnInit {
     return `${this.previous+this.limit}-${this.next-1}/${this.itemCount}`;
   }
   itemDetall(url) {
-    let id = url.match(/\/([\d+])\//);
+    let id = url.match(/\/(\d+)\//);
     console.log("",id[1]);
     this.router.navigate([this.href,id[1]]);
   }
