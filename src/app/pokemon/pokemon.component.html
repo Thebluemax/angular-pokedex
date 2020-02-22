@@ -1,1 +1,29 @@
-<p>pokemon works!</p>
+<div id="pokemon-detall">
+    <div class="pokemon-header">
+        <div class="title title-media"><img src="{{sprite}}" alt=""></div>
+        <div class="title id-pokemon"><h4>{{pokemon.name}}</h4>
+            <p>
+                <span>Height: {{pokemon.height}} mts.</span>
+                <span>Weght: {{pokemon.weight}} kg.</span>
+                <span>HP: {{pokemon.base_experience}}</span>
+                <span></span>
+            </p>
+        </div>
+        <h5>Type</h5>
+        <span *ngFor="let type of pokemon.types">
+            {{type.type.name}}
+        </span>
+        <h5>Abilities</h5>
+        <span *ngFor="let ability of pokemon.abilities">
+            {{ability.ability.name}}
+        </span>
+        <h5>Moves</h5>
+        <span *ngFor="let move of pokemon.moves" class="badge">
+            {{move.move.name}}
+        </span>
+    </div
+    >
+    <div>
+        <p><span (click)="goBack()"><<-- Back</span></p>
+    </div>
+</div>
