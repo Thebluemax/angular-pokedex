@@ -1,0 +1,19 @@
+<div id="region-detall">
+    <div class="region-header">
+        <div class="title id-region">
+            <h4>{{region.name}}</h4>
+        </div>
+        <h5>Locations</h5>
+        <ul>
+            <li *ngFor="let reg of region.locations" class="m-2">
+                {{reg.name}}
+            </li>
+        </ul>
+
+    </div>
+</div>
+<div class="hightLigted">
+    <p class="m-2"><span (click)="goBack()">
+            <<-- Back</span>
+    </p>
+</div>

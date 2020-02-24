@@ -11,6 +11,9 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 import { ItemComponent } from './item/item.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { MesurePipe } from './pipes/mesure.pipe';
+import { RegionComponent } from './region/region.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FormatNamePipe } from './pipes/format-name.pipe';
 
 @NgModule({
   declarations: [
@@ -20,12 +23,15 @@ import { MesurePipe } from './pipes/mesure.pipe';
     MenuPrincipalComponent,
     ItemComponent,
     PokemonComponent,
-    MesurePipe
+    MesurePipe,
+    RegionComponent,
+    FormatNamePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     PokebaseService,

@@ -26,6 +26,11 @@ export class PokebaseService {
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
+  getDetallRegion(id): Observable<any> {
+    this.endpointUrl = '/region/'+id;
+    this.urlApi = environment.apiUrl+this.endpointUrl;
+    return this.http.get(this.urlApi);
+  }
   getDetallpokemon(id): Observable<any> {
     this.endpointUrl = '/pokemon/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;

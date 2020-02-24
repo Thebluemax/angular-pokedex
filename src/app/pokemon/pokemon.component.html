@@ -1,7 +1,8 @@
 <div id="pokemon-detall">
     <div class="pokemon-header">
         <div class="title title-media"><img src="{{sprite}}" alt=""></div>
-        <div class="title id-pokemon"><h4>{{pokemon.name}}</h4>
+        <div class="title id-pokemon">
+            <h4>{{pokemon.name}}</h4>
             <p>
                 <span>Height: {{pokemon.height | mesure:'m'}}</span>
                 <span>Weght: {{pokemon.weight | mesure:'k'}}</span>
@@ -10,20 +11,25 @@
             </p>
         </div>
         <h5>Type</h5>
-        <span *ngFor="let type of pokemon.types" class="m-2">
-            {{type.type.name}}
-        </span>
+        <p>
+
+            <span *ngFor="let type of pokemon.types" class="m-2">
+                {{type.type.name | formatName}}
+            </span>
+        </p>
         <h5>Abilities</h5>
         <span *ngFor="let ability of pokemon.abilities" class="badge m-1">
-            {{ability.ability.name}}
+            {{ability.ability.name | formatName}}
         </span>
         <h5>Moves</h5>
-        <span *ngFor="let move of pokemon.moves" class="badge">
-            {{move.move.name}}
+        <span *ngFor="let move of pokemon.moves" class="badge badge-retro">
+            {{move.move.name | formatName}}
         </span>
-    </div
-    >
-    <div class="hightLigted">
-        <p class="m-2"><span (click)="goBack()"><<-- Back</span></p>
     </div>
+
+</div>
+<div class="hightLigted">
+    <div class="m-2"><span (click)="goBack()"><<-- Back</span>
+    <span [routerLink]="['/pokemon']">Menu</span>
+</div>
 </div>

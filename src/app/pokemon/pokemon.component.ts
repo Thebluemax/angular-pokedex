@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges } from '@angular/core';
 import { PokebaseService } from '../shared/services/pokebase.service';
 import { SecondaryScreenService } from '../shared/services/secondary-screen.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -13,23 +13,40 @@ export class PokemonComponent implements OnInit {
   private pokemon:any;
   private sprite:string;
 
-  constructor(private route:ActivatedRoute, private pokeService:PokebaseService, private sScreen:SecondaryScreenService
+  constructor(private route:ActivatedRoute, private router:Router,private pokeService:PokebaseService, private sScreen:SecondaryScreenService
     , private  _location:Location) { 
-  
+      router.events.forEach((event) => {
+        if(event) {
+        }
+        // NavigationEnd
+        // NavigationCancel
+        // NavigationError
+        let id = this.route.snapshot.paramMap.get("id");
+        let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
+          
+          this.pokemon = data
+    
+          this.init();
+          temp.unsubscribe();
+        });
+      });
   }
   init(){
     this.sprite = this.pokemon.sprites.front_default;
-    this.sScreen.setText(`Pokemon#${this.pokemon.id}`);
+    this.sScreen.setText(`#-${this.pokemon.id}`);
+  //  this.pokeService.getDetallpokemon(null);
   }
   goBack(){
     this._location.back();
   }
+
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id");
-    this.pokeService.getDetallpokemon(id).subscribe(data => {
-
-      this.pokemon = data
+    let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
+      
+      this.pokemon = data;
       this.init();
+      temp.unsubscribe();
     });
   }
 
