@@ -12,12 +12,12 @@ import { Router } from '@angular/router';
 export class BodydexComponent implements OnInit {
 
 
-  private itemCount: number;
-  private previous: number;
-  private next: number;
-  private limit: number;
-  private list: any;
-  private title: string;
+  public itemCount: number;
+  public previous: number;
+  public next: number;
+  public limit: number;
+  public list: any;
+  public title: string;
   public href: string = "";
   public pagination:string;
 

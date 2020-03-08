@@ -3,6 +3,7 @@ import { PokebaseService } from '../shared/services/pokebase.service';
 import { SecondaryScreenService } from '../shared/services/secondary-screen.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { Pokemon } from '../interfaces/pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -10,11 +11,13 @@ import { Location } from '@angular/common';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  private pokemon:any;
-  private sprite:string;
+  
+  public pokemon:Pokemon;
+  public sprite:string;
 
   constructor(private route:ActivatedRoute, private router:Router,private pokeService:PokebaseService, private sScreen:SecondaryScreenService
     , private  _location:Location) { 
+     
       router.events.forEach((event) => {
         if(event) {
         }
@@ -22,17 +25,21 @@ export class PokemonComponent implements OnInit {
         // NavigationCancel
         // NavigationError
         let id = this.route.snapshot.paramMap.get("id");
+        this.pokemon  = new Pokemon();
+        console.log(this.pokemon+"--");
         let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
           
-          this.pokemon = data
+          this.pokemon={...data};
+          
     
           this.init();
           temp.unsubscribe();
         });
       });
+
   }
   init(){
-    this.sprite = this.pokemon.sprites.front_default;
+    
     this.sScreen.setText(`#-${this.pokemon.id}`);
   //  this.pokeService.getDetallpokemon(null);
   }
@@ -43,10 +50,10 @@ export class PokemonComponent implements OnInit {
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id");
     let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
-      
-      this.pokemon = data;
+      this.pokemon = {...data};
       this.init();
       temp.unsubscribe();
+      console.log(this.pokemon);
     });
   }
 

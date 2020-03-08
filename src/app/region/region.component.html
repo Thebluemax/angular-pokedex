@@ -1,19 +1,23 @@
-<div id="region-detall">
+<div id="region-detall" *ngIf="!loading;else loadingBar">
     <div class="region-header">
         <div class="title id-region">
-            <h4>{{region.name}}</h4>
+            <h4>{{region?.name | formatName: 'T'}}</h4>
         </div>
         <h5>Locations</h5>
         <ul>
             <li *ngFor="let reg of region.locations" class="m-2">
-                {{reg.name}}
+                {{reg.name | formatName:'I'}}
             </li>
         </ul>
 
     </div>
-</div>
+
 <div class="hightLigted">
     <p class="m-2"><span (click)="goBack()">
             <<-- Back</span>
     </p>
 </div>
+</div>
+<ng-template #loadingBar>
+    <img src="assets/img/loading.gif" alt="">
+</ng-template>

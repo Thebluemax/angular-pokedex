@@ -1,11 +1,11 @@
 <div id="pokemon-detall">
     <div class="pokemon-header">
-        <div class="title title-media"><img src="{{sprite}}" alt=""></div>
+        <div class="title title-media"><img [attr.src]="pokemon.sprites?.front_default" alt=""></div>
         <div class="title id-pokemon">
             <h4>{{pokemon.name}}</h4>
             <p>
                 <span>Height: {{pokemon.height | mesure:'m'}}</span>
-                <span>Weght: {{pokemon.weight | mesure:'k'}}</span>
+                <span>Weight: {{pokemon.weight | mesure:'k'}}</span>
                 <span>HP: {{pokemon.base_experience}}</span>
                 <span></span>
             </p>
@@ -14,16 +14,16 @@
         <p>
 
             <span *ngFor="let type of pokemon.types" class="m-2">
-                {{type.type.name | formatName}}
+                {{type.type.name | formatName:'k'}}
             </span>
         </p>
         <h5>Abilities</h5>
         <span *ngFor="let ability of pokemon.abilities" class="badge m-1">
-            {{ability.ability.name | formatName}}
+            {{ability.ability.name | formatName:'k'}}
         </span>
         <h5>Moves</h5>
         <span *ngFor="let move of pokemon.moves" class="badge badge-retro">
-            {{move.move.name | formatName}}
+            {{move.move.name | formatName:'k'}}
         </span>
     </div>
 

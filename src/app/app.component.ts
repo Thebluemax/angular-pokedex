@@ -28,7 +28,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   
   title = 'poke';
-  private screenSecondary: string = '-- --';
+  screenSecondary: string = '-- --';
   @Input() scannerState;
   constructor (private screenservice:SecondaryScreenService, private route:Router){
       this.screenservice.textToChange.subscribe(msj => this.screenSecondary = msj);
