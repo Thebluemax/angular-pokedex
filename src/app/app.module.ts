@@ -14,6 +14,7 @@ import { MesurePipe } from './pipes/mesure.pipe';
 import { RegionComponent } from './region/region.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormatNamePipe } from './pipes/format-name.pipe';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormatNamePipe } from './pipes/format-name.pipe';
     PokemonComponent,
     MesurePipe,
     RegionComponent,
-    FormatNamePipe
+    FormatNamePipe,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

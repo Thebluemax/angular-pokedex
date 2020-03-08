@@ -4,6 +4,7 @@ import { PokebaseService } from '../shared/services/pokebase.service';
 import { SecondaryScreenService } from '../shared/services/secondary-screen.service';
 import { Location } from '@angular/common';
 import { Region } from "../interfaces/Region";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-region',
@@ -14,8 +15,11 @@ export class RegionComponent implements OnInit {
   loading:boolean;
    region:Region;
 
-  constructor(private route:ActivatedRoute, private pokeService:PokebaseService, private sScreen:SecondaryScreenService
-    , private  _location:Location) { 
+  constructor(private route:ActivatedRoute,
+            private pokeService:PokebaseService,
+            private sScreen:SecondaryScreenService,
+            private  _location:Location,
+            private router:Router) { 
   this.region = null;
   }
   init(){
@@ -36,6 +40,10 @@ export class RegionComponent implements OnInit {
       console.log(this.loading,this.region);
     });
   }
-
+  itemDetall(url) {
+    let id = url.match(/\/(\d+)\//);
+    console.log("",id[1]);
+    this.router.navigate(['location',id[1]]);
+  }
 
 }

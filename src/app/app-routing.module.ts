@@ -5,6 +5,7 @@ import { MenuPrincipalComponent } from './menu-principal/menu-principal.componen
 import { ItemComponent } from './item/item.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { RegionComponent } from './region/region.component';
+import { LocationComponent } from './location/location.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'item/:id', component: ItemComponent },
   { path: 'berry', component: BodydexComponent },
   { path: 'location', component: BodydexComponent },
+  { path: 'location/:id', component: LocationComponent },
   { path: 'pokemon', component: BodydexComponent },
   { path: 'pokemon/:id', component: PokemonComponent },
   { path: 'region', component: BodydexComponent },
