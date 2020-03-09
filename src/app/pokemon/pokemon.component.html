@@ -3,9 +3,11 @@
 </div>
 <div id="pokemon-detall" *ngIf="!loading;else loadingBar">
     <div class="pokemon-header">
-        <div class="title title-media"><img [attr.src]="(pokemon.sprites?.front_default)?pokemon.sprites?.front_default:'/assets/img/loader_img.gif'" alt=""></div>
+        <div class="title title-media"><img
+                [attr.src]="(pokemon.sprites?.front_default)?pokemon.sprites?.front_default:'/assets/img/loader_img.gif'"
+                alt=""></div>
         <div class="title id-pokemon">
-            <h4>{{pokemon.name}}</h4>
+            <h4>{{pokemon.name | formatName: 'T'}}</h4>
             <p>
                 <span>Height: {{pokemon.height | mesure:'m'}}</span>
                 <span>Weight: {{pokemon.weight | mesure:'k'}}</span>
@@ -15,7 +17,6 @@
         </div>
         <h5>Type</h5>
         <p>
-
             <span *ngFor="let type of pokemon.types" class="m-2">
                 {{type.type.name | formatName:'k'}}
             </span>
@@ -35,7 +36,8 @@
     <img src="assets/img/loading.gif" alt="">
 </ng-template>
 <div class="hightLigted">
-    <div class="m-2"><span (click)="goBack()"><<-- Back</span>
-    <span [routerLink]="['/pokemon']">Menu</span>
-</div>
+    <div class="m-2">
+        <span (click)="goBack()"><<-- Back</span>
+        <span [routerLink]="['/pokemon']">Menu</span>
+    </div>
 </div>
