@@ -8,7 +8,7 @@ export class FormatNamePipe implements PipeTransform {
   transform(value: any, operation:string): any {
     switch(operation){
       case'T':
-        return value.toUpperCase();
+        return value.replace('-', ' ').toUpperCase();
         break;
       case 'I':
         return this.parseWord(value);

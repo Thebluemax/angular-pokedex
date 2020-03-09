@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class RegionComponent implements OnInit {
   loading:boolean;
    region:Region;
+   title:string;
 
   constructor(private route:ActivatedRoute,
             private pokeService:PokebaseService,
@@ -25,6 +26,7 @@ export class RegionComponent implements OnInit {
   init(){
     //this.sprite = this.region.sprites.front_default;
     this.sScreen.setText(`Region#${this.region.id}`);
+    this.title = '/region/'+this.region.id;
   }
   goBack(){
     this._location.back();

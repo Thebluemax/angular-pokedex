@@ -11,13 +11,14 @@ import { Pokemon } from '../interfaces/pokemon';
   styleUrls: ['./pokemon.component.scss']
 })
 export class PokemonComponent implements OnInit {
-  
+  public title:string;
   public pokemon:Pokemon;
   public sprite:string;
+  public loading:boolean;
 
   constructor(private route:ActivatedRoute, private router:Router,private pokeService:PokebaseService, private sScreen:SecondaryScreenService
     , private  _location:Location) { 
-     
+     this.loading = true;
       router.events.forEach((event) => {
         if(event) {
         }
@@ -26,15 +27,15 @@ export class PokemonComponent implements OnInit {
         // NavigationError
         let id = this.route.snapshot.paramMap.get("id");
         this.pokemon  = new Pokemon();
-        console.log(this.pokemon+"--");
-        let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
+       // console.log(this.pokemon+"--");
+      /*  let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
           
           this.pokemon={...data};
           
     
           this.init();
           temp.unsubscribe();
-        });
+        });*/
       });
 
   }
@@ -48,12 +49,14 @@ export class PokemonComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title = '/Pokemon/'
     let id = this.route.snapshot.paramMap.get("id");
     let temp = this.pokeService.getDetallpokemon(id).subscribe(data => {
       this.pokemon = {...data};
       this.init();
       temp.unsubscribe();
-      console.log(this.pokemon);
+      this.loading = false;
+      //console.log(this.pokemon);
     });
   }
 

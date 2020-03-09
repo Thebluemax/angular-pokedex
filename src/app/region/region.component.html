@@ -1,3 +1,6 @@
+<div>
+    <h6>{{title}}</h6>
+</div>
 <div id="region-detall" *ngIf="!loading;else loadingBar">
     <div class="region-header">
         <div class="title id-region">
@@ -21,3 +24,9 @@
 <ng-template #loadingBar>
     <img src="assets/img/loading.gif" alt="">
 </ng-template>
+<div class="hightLigted">
+    <div class="m-2">
+        <span (click)="goBack()"><<-- Back</span>
+        <span [routerLink]="['/region']">Menu</span>
+    </div>
+</div>

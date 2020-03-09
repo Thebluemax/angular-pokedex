@@ -1,15 +1,13 @@
-<p>location works!</p>
 <div>
     <h6>{{title}}</h6>
   </div>
 <div id="header-item">
     <div>
         <h4  class="title">{{location.name | formatName: 'T'}}</h4>
-        <div class="title title-media"><img src="{{sprite}}" alt="100%"></div>
     </div>
     <h5>Areas</h5>
     <p>
-        <span class="badge badge-success ml-3" *ngFor="let area of location.areas">
+        <span class="badge badge-retro ml-3" *ngFor="let area of location.areas">
             {{area.name}}
         </span>
     </p>
