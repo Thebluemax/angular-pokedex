@@ -8,6 +8,7 @@
     span {
         font-size: .7em;
         display: block;
+        position: relative;
     }
 }
 .title-media {
@@ -30,6 +31,12 @@ h5, .hightLigted {
     color: green;
     background-color: chartreuse;
     text-align: center;
+    div{
+        width: 100%;
+        span{
+            margin: 0px auto;
+        }
+    }
 }
 .badge-retro{
     background-color: chartreuse;

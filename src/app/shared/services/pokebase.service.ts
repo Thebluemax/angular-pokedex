@@ -10,12 +10,19 @@ export class PokebaseService {
 
   private endpointUrl:string;
   private urlApi:string;
-
+/**
+ * http Servicio que conecta conla api de pokemon api
+ * @param {HttpClient} Cliente http
+ */
   constructor( private http: HttpClient) {
 
-    console.log(this.urlApi);
   }
-
+/**
+ * 
+ * @param url url del recurso
+ * @param offset puntero de posición en la lista
+ * @param limit cantidad de entradas
+ */
   getItems(url:string ,offset:number, limit:number): Observable<any> {
     this.endpointUrl = `${url}/?offset=${offset}&limit=${limit}`;
     this.urlApi = environment.apiUrl+this.endpointUrl;

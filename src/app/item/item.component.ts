@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { PokebaseService } from '../shared/services/pokebase.service';
+import { PokebaseService } from '@services/pokebase.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SecondaryScreenService } from '../shared/services/secondary-screen.service';
+import { SecondaryScreenService } from '@services/secondary-screen.service';
 import { Location } from '@angular/common';
-
+import { Item } from "@models/item";
+/**
+ * Component para los objetos del mundo pokemon
+ */
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',

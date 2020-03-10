@@ -1,4 +1,40 @@
 #region-detall {
-    height: 200px;
+    height: 190px;
     overflow-y: scroll;
+}
+.hightLigted {
+    position: absolute;
+    bottom: 0px;
+}
+.loading-bar {
+    height: 100%;
+    width: 100%;
+    img {
+        display: block;
+        padding-top: 20%;
+        margin: auto auto;
+    }
+}
+.title {
+    display: inline-block;
+    vertical-align: top;
+    span {
+        font-size: .7em;
+        display: block;
+    }
+}
+.title-media {
+    background-color: chartreuse;
+    border-radius: 5px;
+    width: 25%;
+    margin: 2%;
+    box-shadow: 0px 0px 31px 7px green inset;
+    img {
+        width: 100%;
+    }
+}
+h5, .hightLigted {
+    color: green;
+    background-color: chartreuse;
+    text-align: center;
 }
