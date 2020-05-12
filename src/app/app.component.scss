@@ -5,53 +5,11 @@
   border-right: 2px solid brown;
   border-radius: 0px 0px 10px 40px;
 }
-#pokedex-header {
-  height: 100px;
-}
-#pokedex-header, #pokedex-footer {
+#pokedex-footer {
   height: 120px;
   background-color: $base-color;
 }
-#pokedex-footer{
-  height: 50px;
-}
-.scanner-ring {
-  height: 90px;
-  border-radius: 45px;
-  background-color: rgb(253, 253, 253);
-  border-bottom: 4px solid  darkcyan;
-  border-right: 4px solid  darkcyan;
-  display: inline-block;
-  width: 90px;
-  .scanner-glass {
-    height: 68px;
-    border-radius: 34px;
-    background-color: skyblue;
-    border: 6px solid  #404ae3;
-    margin: 10px;
-    width: 68px;
-  }
-}
-.pilot-ligh {
-  display: inline-block;
-  margin-left: 20px;
-  vertical-align: top;
-}
-.pilot-led {
-  border: 3px solid black;
-  border-radius: 15px;
-  margin: 15px 0px 0px 10px;
-  float: left;
-  height: 30px;
-  width: 30px;
-}
-.led-orange {
-  background-color: red;
-}.led-yellow {
-  background-color: yellow;
-}.led-green {
-  background-color: greenyellow;
-}
+
 .back-dex {
   background-color: $base-color;
   position: relative;
@@ -107,50 +65,4 @@ h6{font-size: .9em;}
   width: 100px;
   margin-top: 5px;
 }
-#btn1{
-  height: 50px;
-  width: 50px;
-  background-color: lightblue;
-}
-#btn2, #btn3 {
-  height: 10px;
-  width: 50px;
 
-}
-#btn1,#btn2,#btn3 {
-  box-shadow: 2px 2px 3px grey;
-  display:inline-block;
-}
-#btn2{
-  background-color: lime;
-}
-#btn3{
-  background-color:orange;
-}
-#id-screen {
-  background-color: yellow;
-  display: block;
-  font-family: $fontfamily;
-  font-size: 1.3em;
-  padding: 5px;
-  text-align: center;
-  width: 90%;
-}
-.control-btn {
-  height: 30px;
-  background-color: black;
-  display: block;
-  margin: 0px;
-  vertical-align: top;
-}
-.control-holder{
-  text-align: center;
-  height: 90px;
-}
-#btnup, #btndown {
-  width: 30px;
-}
-#btnleft, #btnright{
-  width: 45px;
-  display: inline-block;
-}

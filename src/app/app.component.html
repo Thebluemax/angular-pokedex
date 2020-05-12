@@ -1,13 +1,6 @@
-<div id="pokedex-header" class="container-fluid">
-  <div class="scanner-ring mt-2 ml-2">
-    <div class="scanner-glass" [@scannerState]="scannerState" (@scannerState.done)="animEnd($event)"></div>
-  </div>
-  <div class="pilot-ligh">
-    <div class="pilot-led led-orange"></div>
-    <div class="pilot-led led-yellow"></div>
-    <div class="pilot-led led-green"></div>
-  </div>
-</div>
+
+<app-header-scaner></app-header-scaner>
+
 <div class="container-fluid back-dex">
   <div id="interface" class="container">
     <div class="row">
@@ -33,25 +26,7 @@
       </div>
     </div>
     <app-control-footer></app-control-footer>
-    <!-- <div class="row">
-      <div class="col-7 offset-1">
-        <div class="pt-3 heigth-auto">
-          <a  id="btn1" class="rounded-circle ml-3" (click)="goScan()"></a>
-          <a href="" id="btn2" class="mb-3 rounded-pill ml-3 "></a>
-          <a routerLink="/" id="btn3" class="rounded-pill ml-2 mb-3"></a>
-        </div>
-        <div class="ml-3 pt-3">
-          <p id="id-screen" class="rounded-lg">
-            {{ screenSecondary }}
-          </p>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="control-holder pt-3"><a class="control-btn m-auto" id="btnup"></a><a class="control-btn"
-           id="btnleft" (click)="goBack()"></a><a class="control-btn" id="btnright" (click)="goForward()"></a><a class="control-btn m-auto align-top"
-            id="btndown"></a></div>
-      </div>
-  </div>-->
+    
 </div>
 </div>
 <div id="pokedex-footer"></div>

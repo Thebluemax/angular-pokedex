@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormatNamePipe } from './pipes/format-name.pipe';
 import { LocationComponent } from './location/location.component';
 import { ControlFooterComponent } from './components/control-footer/control-footer.component';
-import { ComponetsModule } from '../../../ionic/movies/src/app/components/componets.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +30,13 @@ import { ComponetsModule } from '../../../ionic/movies/src/app/components/compon
     RegionComponent,
     FormatNamePipe,
     LocationComponent,
-    ControlFooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ComponetsModule
+    ComponentsModule
   ],
   providers: [
     PokebaseService,
