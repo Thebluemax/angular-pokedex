@@ -20,10 +20,10 @@
     ],
     "paths": {
       "@shared/*": ["app/shared/*"],
-      "@services/*": ["app/shared/services/*"],
+      "@services/*": ["src/app/shared/services/*"],
       "@states/*": ["app/shared/states/*"],
-      "@views/*": ["app/views/*"],
-      "@models/*": ["app/shared/interfaces/*"],
+      "@pipes/*": ["src/app/pipes/*"],
+      "@models/*": ["src/app/shared/interfaces/*"],
       "@environments/*": ["environments/*"]
     }
   },

@@ -1,7 +1,6 @@
 <div id="pokedex-header" class="container-fluid">
   <div class="scanner-ring mt-2 ml-2">
-    <div class="scanner-glass" [@scannerState]="scannerState"
-                              (@scannerState.done)="animEnd($event)"></div>
+    <div class="scanner-glass" [@scannerState]="scannerState" (@scannerState.done)="animEnd($event)"></div>
   </div>
   <div class="pilot-ligh">
     <div class="pilot-led led-orange"></div>
@@ -33,7 +32,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <app-control-footer></app-control-footer>
+    <!-- <div class="row">
       <div class="col-7 offset-1">
         <div class="pt-3 heigth-auto">
           <a  id="btn1" class="rounded-circle ml-3" (click)="goScan()"></a>
@@ -48,10 +48,10 @@
       </div>
       <div class="col-4">
         <div class="control-holder pt-3"><a class="control-btn m-auto" id="btnup"></a><a class="control-btn"
-           id="btnleft"></a><a class="control-btn" id="btnright"></a><a class="control-btn m-auto align-top"
+           id="btnleft" (click)="goBack()"></a><a class="control-btn" id="btnright" (click)="goForward()"></a><a class="control-btn m-auto align-top"
             id="btndown"></a></div>
       </div>
-    </div>
-  </div>
+  </div>-->
+</div>
 </div>
 <div id="pokedex-footer"></div>
