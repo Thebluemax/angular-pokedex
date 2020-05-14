@@ -7,6 +7,9 @@ import { PrincipalScreenComponent } from './principal-screen/principal-screen.co
 import { RouterModule } from '@angular/router';
 import { FormatNamePipe } from '../pipes/format-name.pipe';
 import { PipeCustomModule } from '../pipes/pipe-custom.module';
+import { HighlightDirective } from '../directives/highlight.directive';
+import { CommonDirectivesModule } from '../directives/common-directives.module';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 
 
 
@@ -16,16 +19,19 @@ import { PipeCustomModule } from '../pipes/pipe-custom.module';
      HeaderScanerComponent,
      PrincipalScreenComponent,
      BodydexComponent,
+     LoadingScreenComponent,
     ],
   imports: [
     CommonModule,
     RouterModule,
-    PipeCustomModule
+    PipeCustomModule,
+    CommonDirectivesModule
   ],
   exports: [
     ControlFooterComponent,
     HeaderScanerComponent,
     PrincipalScreenComponent,
+    LoadingScreenComponent,
     BodydexComponent
   ]
 })

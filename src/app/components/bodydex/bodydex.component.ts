@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BodydexComponent implements OnInit {
 
-
+  public isLoading = false;
   public itemCount: number;
   public previous: number;
   public next: number;
@@ -19,43 +19,50 @@ export class BodydexComponent implements OnInit {
   public list: any;
   public title: string;
   public href: string = "";
-  public pagination:string;
+  public pagination: string;
 
-
+  @Input() pageName: string;
+  @Input() api: string
 
   constructor(private pkService: PokebaseService,
-               private router: Router,
-  private sScree:SecondaryScreenService
+    private router: Router,
+    private sScree: SecondaryScreenService
   ) { }
   ngOnInit() {
-    this.limit = 20;
+    this.limit = 30;
     this.title = this.href = this.router.url;
     this.getItems(0, this.limit);
 
   }
   ngOnDestroy(): void {
     this.sScree.setText('-- --');
-    
+
   }
   getItems(offset: number, limit: number) {
-    this.pkService.getItems(this.href, offset, limit).subscribe(data => {
-      this.itemCount = data.count;  
-      this.list = data.results;
-      this.initList(offset);
-    });
+    this.isLoading = true;
+     this.pkService.getItems(this.api, offset, limit).subscribe(data => {
+       this.itemCount = data.count;  
+       this.list = data.results;
+       this.isLoading = false;
+       this.initList(offset);
+     });
   }
-  initList(offset:number){
+  initList(offset: number) {
     this.previous = offset - this.limit;
-      this.next = (this.limit > this.itemCount)?this.itemCount: offset + this.limit;
-      this.pagination = this.paginateText();
-      this.sScree.setText(this.pagination);
+    this.next = (this.limit > this.itemCount) ? this.itemCount : offset + this.limit;
+    this.pagination = this.paginateText();
+    this.sScree.setText(this.pagination);
   }
-  paginateText(){
-    return `${this.previous+this.limit}-${this.next-1}/${this.itemCount}`;
+  paginateText() {
+    return `${this.previous + this.limit}-${this.next - 1}/${this.itemCount}`;
   }
-  itemDetall(url) {
-    let id = url.match(/\/(\d+)\//);
-    console.log("",id[1]);
-    this.router.navigate([this.href,id[1]]);
+  itemDetall(id: string) {
+  
+  //  console.log("", id[1]);
+    let url = '/' + this.pageName.toLocaleLowerCase() + '/' + id;
+
+    console.log(url, id);
+    
+    this.router.navigate([url]);
   }
 }

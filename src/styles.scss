@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 .badge-retro {
     background-color: 
 chartreuse;
@@ -10,3 +11,8 @@ color:
     height: 120px;
     background-color: $base-color;
   }
+  .highlighted {
+    color: green;
+    background-color: chartreuse;
+    text-align: center;
+}

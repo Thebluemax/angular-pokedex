@@ -1,0 +1,22 @@
+<div>
+    <h6>{{title}}</h6>
+</div>
+<app-loading-screen [loading]="loading" [hidden]="!loading"></app-loading-screen>
+
+<div id="region-detall" *ngIf="!loading">
+    <div class="region-header">
+        <div class="title id-region">
+            <h4 class="text-center p-1">{{region?.name | formatName: 'T'}}</h4>
+        </div>
+        <div>
+            <img [src]="getMap(region.name)" width="100%" alt="">
+        </div>
+        <h5 class="p-1">Locations</h5>
+        <ul appHighlight>
+            <li *ngFor="let reg of region.locations, let idx = index" id="item-{{idx}}"class="higtlight m-2" (click)="itemDetall(reg.url)">
+                {{reg.name | formatName:'I'}}
+            </li>
+        </ul>
+
+    </div>
+</div>

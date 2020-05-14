@@ -29,22 +29,22 @@ export class PokebaseService {
     return this.http.get(this.urlApi);
   }
   getDetallItems(id): Observable<any> {
-    this.endpointUrl = '/item/'+id;
+    this.endpointUrl = 'item/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
   getDetallRegion(id): Observable<any> {
-    this.endpointUrl = '/region/'+id;
+    this.endpointUrl = 'region/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
   getDetallpokemon(id): Observable<any> {
-    this.endpointUrl = '/pokemon/'+id;
+    this.endpointUrl = 'pokemon/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
   getDetallLocation(id): Observable<any> {
-    this.endpointUrl = '/location/'+id;
+    this.endpointUrl = 'location/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }

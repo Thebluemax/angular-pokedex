@@ -9,7 +9,7 @@ import { Router } from "@angular/router";
 export class MenuPrincipalComponent implements OnInit {
   optionsList: string[];
   constructor(private router: Router) {
-    this.optionsList = ['Item', 'Region', 'Pokemon','Berry'];
+    this.optionsList = ['Items', 'Regions', 'Pokemons','Berries'];
   }
 
   ngOnInit() {
@@ -17,7 +17,6 @@ export class MenuPrincipalComponent implements OnInit {
   goto($event) {
     let position = parseInt($event.target.attributes['position'].value);
     let tag = this.optionsList[position].toLowerCase();
-    //console.log($event.target.attributes['position'].value);
     this.router.navigate([tag]);
   }
 }

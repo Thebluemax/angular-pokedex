@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./items.component.scss']
 })
 export class ItemsComponent implements OnInit {
+  
+  pageName: string = 'Items';
+  apiUrl: string = 'item';
 
   constructor() { }
 

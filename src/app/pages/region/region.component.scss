@@ -1,5 +1,12 @@
+h6 {
+    font-size: 1rem;
+    color: green;
+    background-color: chartreuse;
+    padding: 5px;
+}
+
 #region-detall {
-    height: 190px;
+    height: 313px;
     overflow-y: scroll;
 }
 .hightLigted {
@@ -16,7 +23,6 @@
     }
 }
 .title {
-    display: inline-block;
     vertical-align: top;
     span {
         font-size: .7em;
@@ -33,7 +39,7 @@
         width: 100%;
     }
 }
-h5, .hightLigted {
+h5, .highlighted {
     color: green;
     background-color: chartreuse;
     text-align: center;

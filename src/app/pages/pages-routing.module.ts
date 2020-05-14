@@ -2,20 +2,25 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { ItemsComponent } from './items/items.component';
+import { RegionComponent } from './region/region.component';
+import { RegionsComponent } from './regions/regions.component';
+import { PokemonsComponent } from './pokemons/pokemons.component';
 
 const routes: Routes = [
     {
         path: '', component: MenuPrincipalComponent
     },
     {
-        path: 'item', component: ItemsComponent 
+        path: 'items', component: ItemsComponent 
     },
     {
-        //   path: 'contact', component: ContactComponent
+       path: 'regions', component: RegionsComponent
     },
     {
-        //     path: 'posts',
-        //   loadChildren: './pages/posts/posts.module#PostsModule'
+        path: 'regions/:id', component: RegionComponent
+     },
+    {
+        path: 'pokemons', component: PokemonsComponent
     },
     {
         path: '**', redirectTo: '/'
