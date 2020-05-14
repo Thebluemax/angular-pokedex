@@ -1,32 +1,12 @@
-
 <app-header-scaner></app-header-scaner>
 
 <div class="container-fluid back-dex">
   <div id="interface" class="container">
-    <div class="row">
-      <div class="col-12">
-        <div id="primary-screen">
-          <div id="pilot-holder" class="m-auto">
-            <div class="rounded-circle screen-led pilot-ligh"></div>
-            <div class="rounded-circle pilot-ligh screen-led"></div>
-          </div>
-          <div id="screen" class="p-2">
-            <router-outlet></router-outlet>
-          </div>
-          <div id="screen-footer">
-            <div class="rounded-circle  screen-pilot float-left"></div>
-            <div id="screen-control" class="float-right">
-              <div class="black-strip"></div>
-              <div class="black-strip"></div>
-              <div class="black-strip"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
+
+    <app-principal-screen></app-principal-screen>
+
     <app-control-footer></app-control-footer>
-    
+
 </div>
 </div>
 <div id="pokedex-footer"></div>

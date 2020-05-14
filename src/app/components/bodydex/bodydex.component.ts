@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output } from '@angular/core';
-import { PokebaseService } from "../shared/services/pokebase.service";
-import { SecondaryScreenService } from "../shared/services/secondary-screen.service";
+import { PokebaseService } from "../../shared/services/pokebase.service";
+import { SecondaryScreenService } from "../../shared/services/secondary-screen.service";
 import { Router } from '@angular/router';
 
 @Component({
