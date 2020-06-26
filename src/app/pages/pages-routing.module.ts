@@ -7,6 +7,7 @@ import { RegionsComponent } from './regions/regions.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
 import { ItemComponent } from './item/item.component';
 import { LocationComponent } from './location/location.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 const routes: Routes = [
     {
@@ -30,6 +31,9 @@ const routes: Routes = [
     {
         path: 'pokemons', component: PokemonsComponent
     },
+    {
+        path: 'pokemons/:id', component: PokemonComponent
+     },
     {
         path: '**', redirectTo: '/'
     }
