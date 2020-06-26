@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PokebaseService } from '../shared/services/pokebase.service';
-import { SecondaryScreenService } from '../shared/services/secondary-screen.service';
 import { Location } from '@angular/common';
-import { Location as LocationRegion } from '../interfaces/Region';
+import { ActivatedRoute } from '@angular/router';
+import { PokebaseService } from '../../shared/services/pokebase.service';
+import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
+import { Location as LocationRegion } from '../../interfaces/Region';
 
 @Component({
   selector: 'app-location',
@@ -15,13 +15,17 @@ export class LocationComponent implements OnInit {
   loading:boolean;
   location:LocationRegion;
   title:string;
-  constructor(private route:ActivatedRoute, private pokeService:PokebaseService, private sScreen:SecondaryScreenService
-    , private  _location:Location) { }
+  constructor(
+    private route:ActivatedRoute,
+     private pokeService:PokebaseService,
+      private sScreen:SecondaryScreenService,
+       private  _location:Location
+       ) { }
 
     init(){
       //this.sprite = this.region.sprites.front_default;
       this.sScreen.setText(`Loc.#${this.location.id}`);
-      this.title = 'Location';
+      this.title = `/locations/${this.location.name}`;
     }
     goBack(){
       this._location.back();

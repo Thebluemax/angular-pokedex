@@ -5,6 +5,7 @@ import { SecondaryScreenService } from '../../shared/services/secondary-screen.s
 import { Location } from '@angular/common';
 import { Region } from "../../interfaces/Region";
 import { Router } from '@angular/router';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-region',
@@ -12,41 +13,50 @@ import { Router } from '@angular/router';
   styleUrls: ['./region.component.scss']
 })
 export class RegionComponent implements OnInit {
-  loading:boolean;
-   region:Region;
-   title:string;
-   maps=[{name:'johto', map:'https://upload.wikimedia.org/wikipedia/commons/5/5d/Map_Pok%C3%A9mon_Red_%26_Blue_FR.png'}];
+  loading: boolean;
+  region: Region;
+  title: string;
 
-  constructor(private route:ActivatedRoute,
-            private pokeService:PokebaseService,
-            private sScreen:SecondaryScreenService,
-            private  _location:Location,
-            private router:Router) { 
-  this.region = null;
+  maps = [
+    { name: 'johto', map: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Map_Pok%C3%A9mon_Red_%26_Blue_FR.png' },
+    { name: 'kalos', map: 'https://cdn.bulbagarden.net/upload/b/b1/Kalos_Pok%C3%A9dex_map.png' },
+    { name: 'hoenn', map: 'https://prowiki.info/images/c/c5/Hoenn.png' },
+    { name: 'sinnoh', map: 'https://prowiki.info/images/a/ac/Sinnoh.png' },
+    { name: 'unova', map: 'https://archives.bulbagarden.net/media/upload/b/b4/Unova.png'},
+    { name: 'kanto', map: 'https://prowiki.info/images/7/78/Kanto.png' },
+    { name: 'alola', map: 'https://cdn.bulbagarden.net/upload/6/6c/Alola.png' }];
+    
+    mapImg: string;
+  constructor(private route: ActivatedRoute,
+    private pokeService: PokebaseService,
+    private sScreen: SecondaryScreenService,
+    private _location: Location,
+    private router: Router) {
+    this.region = null;
+   
   }
-  init(){
-    this.sScreen.setText(`${this.region.id}#${this.region.id}`);
-    this.title = '/regions/'+this.region.name;
+  init() {
+    this.sScreen.setText(`${this.region.id}#${this.region.name}`);
+    this.title = '/Regions/' + this.region.name;
+    this.mapImg = this.getMap(this.region.name);
   }
-  goBack(){
+  goBack() {
     this._location.back();
   }
   ngOnInit() {
     this.loading = true;
     let id = this.route.snapshot.paramMap.get("id");
-    console.log(id);
     this.pokeService.getDetallRegion(id).subscribe(data => {
 
-      this.region = {...data};
+      this.region = { ...data };
       this.init();
       this.loading = false;
-      console.log(this.loading,this.region);
     });
   }
-  itemDetall(url) {
-    let id = url.match(/\/(\d+)\//);
-    console.log("",id[1]);
-    this.router.navigate(['location',id[1]]);
+  detailLocation(location) {
+    //let id = url.match(/\/(\d+)\//);
+   // console.log("", id[1]);
+    this.router.navigate([`location/${ location }`]);
   }
   getMap(region: string) {
     let mapImg = this.maps.find(r => r.name === region);

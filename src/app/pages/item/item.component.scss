@@ -1,17 +1,9 @@
-#header-item {
-    height: 180px;
-    overflow-y: scroll;
-}
+@import '../../../sass/mixins.scss';
 h4 {
     width: 80%;
     padding: 7px 0px;
 }
-h5 {
-    background-color: chartreuse;
-    color:green;
-    font-size: 1em;
-    padding: 3px;
-}
+
 .title {
     display: inline-block;
 
@@ -26,3 +18,5 @@ h5 {
 .effect-text {
  font-size: .8em;
 }
+
+@include screen-holder;

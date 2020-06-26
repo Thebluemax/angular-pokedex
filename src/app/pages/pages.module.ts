@@ -11,6 +11,8 @@ import { CommonDirectivesModule } from '../directives/common-directives.module';
 import { RegionComponent } from './region/region.component';
 import { RegionsComponent } from './regions/regions.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
+import { ItemComponent } from './item/item.component';
+import { LocationComponent } from './location/location.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
     MenuPrincipalComponent,
     RegionComponent,
     ItemsComponent,
+    ItemComponent,
     RegionsComponent,
+    LocationComponent,
     PokemonsComponent,
   ],
   entryComponents: [],

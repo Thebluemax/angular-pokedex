@@ -5,6 +5,8 @@ import { ItemsComponent } from './items/items.component';
 import { RegionComponent } from './region/region.component';
 import { RegionsComponent } from './regions/regions.component';
 import { PokemonsComponent } from './pokemons/pokemons.component';
+import { ItemComponent } from './item/item.component';
+import { LocationComponent } from './location/location.component';
 
 const routes: Routes = [
     {
@@ -14,10 +16,16 @@ const routes: Routes = [
         path: 'items', component: ItemsComponent 
     },
     {
+        path: 'items/:id', component: ItemComponent 
+    },
+    {
        path: 'regions', component: RegionsComponent
     },
     {
         path: 'regions/:id', component: RegionComponent
+     },
+    {
+        path: 'location/:id', component: LocationComponent
      },
     {
         path: 'pokemons', component: PokemonsComponent

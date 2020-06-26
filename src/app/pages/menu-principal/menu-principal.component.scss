@@ -1,4 +1,5 @@
 @import '../../../sass/variables';
+@import '../../../sass/mixins';
 
 #scroll-screen {
     ul {
@@ -12,8 +13,5 @@
         padding: 7px 3px 7px 7px;
     }
 }
-.highlighted {
-  background-color: lime;
-  color: green;
-  padding-left: 20px;
-}
+
+@include highlight;

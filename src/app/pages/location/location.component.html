@@ -11,10 +11,13 @@
             {{area.name}}
         </span>
     </p>
-   
-    <h5>REgions</h5>
-    <div *ngFor="let region of location.region">
-        <p class="effect-text">{{region.name}}</p>
+    <h5>Regions</h5>
+    <div>
+        <p class="effect-text">{{location.region.name}}</p>
+    </div>
+    <h5>Generation</h5>
+    <div *ngFor="let indices of location.game_indices">
+        <p class="effect-text">{{indices.generation.name}} # {{indices.game_index}}</p>
     </div>
     <div class="hightLigted">
         <p class="m-2"><span (click)="goBack()"><<-- Back</span></p>

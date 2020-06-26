@@ -1,10 +1,11 @@
+<app-loading-screen [loading]="isLoading" [hidden]='!isLoading'></app-loading-screen>
 <div>
     <h6>{{title}}</h6>
   </div>
-<div id="header-item">
+<div id="header-item" *ngIf="item">
     <div>
         <h4  class="title">{{name | formatName: 'T'}}</h4>
-        <div class="title title-media"><img src="{{sprite}}" alt="100%"></div>
+        <div class="title title-media"><img src="{{sprite}}" width="100%"></div>
     </div>
     <h5>Attributes</h5>
     <p>

@@ -1,10 +1,6 @@
-h6 {
-    font-size: 1rem;
-    color: green;
-    background-color: chartreuse;
-    padding: 5px;
-}
+@import '../../../sass/mixins.scss';
 
+@include screen-holder;
 #region-detall {
     height: 313px;
     overflow-y: scroll;
