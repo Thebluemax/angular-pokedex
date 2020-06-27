@@ -1,0 +1,30 @@
+<app-loading-screen [loading]="isLoading" [hidden]='!isLoading'></app-loading-screen>
+<div>
+    <h6>{{title}}</h6>
+</div>
+<div id="berry-detall">
+    <div class="pokemon-header">
+        <div class="title id-berry">
+            <h4>{{berry.name | formatName: 'T'}}</h4>
+            <p>
+                <span>Height: {{berry.size }}</span>
+                <span>Weight: {{berry.natural_gift_power }}</span>
+                <span>HP: {{ berry.smoothness }}</span>
+                <span>HP: {{ berry.soil_dryness }}</span>
+            </p>
+        </div>
+        <h5>Flavors</h5>
+        <p>
+            <span *ngFor="let flavor of berry.flavors" class="m-2">
+                {{flavor.flavor.name}}
+            </span>
+        </p>
+        <h5>gift type</h5>
+        <span class="badge m-1">
+            {{berry.natural_gift_type.name | formatName:'k'}}
+        </span>
+        <h5>Moves</h5>
+       
+    </div>
+
+</div>

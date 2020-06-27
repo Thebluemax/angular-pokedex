@@ -8,6 +8,8 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
 import { ItemComponent } from './item/item.component';
 import { LocationComponent } from './location/location.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { BerriesComponent } from './berries/berries.component';
+import { BerryComponent } from './berry/berry.component';
 
 const routes: Routes = [
     {
@@ -33,6 +35,12 @@ const routes: Routes = [
     },
     {
         path: 'pokemons/:id', component: PokemonComponent
+     },
+     {
+         path: 'berries', component: BerriesComponent
+     },
+     {
+         path: 'berries/:id', component: BerryComponent
      },
     {
         path: '**', redirectTo: '/'

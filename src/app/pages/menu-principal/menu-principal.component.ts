@@ -17,6 +17,7 @@ export class MenuPrincipalComponent implements OnInit {
   goto($event) {
     let position = parseInt($event.target.attributes['position'].value);
     let tag = this.optionsList[position].toLowerCase();
+    console.log(tag);
     this.router.navigate([tag]);
   }
 }

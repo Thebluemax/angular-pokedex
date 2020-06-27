@@ -14,6 +14,8 @@ import { PokemonsComponent } from './pokemons/pokemons.component';
 import { ItemComponent } from './item/item.component';
 import { LocationComponent } from './location/location.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
+import { BerriesComponent } from './berries/berries.component';
+import { BerryComponent } from './berry/berry.component';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import { PokemonComponent } from './pokemon/pokemon.component';
     LocationComponent,
     PokemonsComponent,
     PokemonComponent,
+    BerriesComponent,
+    BerryComponent,
   ],
   entryComponents: [],
   imports: [
