@@ -11,32 +11,40 @@ import { PipeCustomModule } from '../pipes/pipe-custom.module';
 import { HighlightDirective } from '../directives/highlight.directive';
 import { CommonDirectivesModule } from '../directives/common-directives.module';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
-import { InfoDialogComponentComponent } from './dialogs/info-dialog-component/info-dialog-component.component';
+import { InfoDialogComponent } from './dialogs/info-dialog-component/info-dialog.component';
+import { PagesRoutingModule } from '../pages/pages-routing.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
 @NgModule({
+  //entryComponents: [InfoDialogComponent],
   declarations: [
      ControlFooterComponent,
      HeaderScanerComponent,
      PrincipalScreenComponent,
      BodydexComponent,
      LoadingScreenComponent,
-     InfoDialogComponentComponent,
-     MatDialogComponent
+  //   InfoDialogComponent,
+     SidebarComponent,
     ],
   imports: [
     CommonModule,
     RouterModule,
     PipeCustomModule,
-    CommonDirectivesModule
+    CommonDirectivesModule,
+    MatDialogModule
+
+    //PagesRoutingModule,
   ],
   exports: [
     ControlFooterComponent,
     HeaderScanerComponent,
     PrincipalScreenComponent,
     LoadingScreenComponent,
-    BodydexComponent
+    BodydexComponent,
+   // InfoDialogComponent,
+    SidebarComponent,
   ]
 })
 export class ComponentsModule { }

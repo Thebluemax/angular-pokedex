@@ -16,6 +16,7 @@ import { LocationComponent } from './location/location.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { BerriesComponent } from './berries/berries.component';
 import { BerryComponent } from './berry/berry.component';
+import { InfoDialogComponent } from '../components/dialogs/info-dialog-component/info-dialog.component';
 
 
 @NgModule({
@@ -30,8 +31,10 @@ import { BerryComponent } from './berry/berry.component';
     PokemonComponent,
     BerriesComponent,
     BerryComponent,
+    InfoDialogComponent
+    
   ],
-  entryComponents: [],
+  entryComponents: [[InfoDialogComponent]],
   imports: [
     CommonModule,
     PagesRoutingModule,
@@ -43,7 +46,6 @@ import { BerryComponent } from './berry/berry.component';
   exports: [
   ],
   providers: [
-
   ]
 })
 export class PagesModule { }

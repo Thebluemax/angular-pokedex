@@ -15,3 +15,19 @@
   position: relative;
 }
 h6{font-size: .9em;}
+.canvas{
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+#main{
+  display: block;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+#sidebar {
+  width:30%;
+  background-color: #000;
+  
+}

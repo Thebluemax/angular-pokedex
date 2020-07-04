@@ -9,12 +9,14 @@ import { PokebaseService } from './shared/services/pokebase.service';
 import { MesurePipe } from './pipes/mesure.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
+import { InfoDialogComponent } from './components/dialogs/info-dialog-component/info-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
+
   imports: [
     BrowserModule,
     CommonModule,

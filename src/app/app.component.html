@@ -1,12 +1,24 @@
-<app-header-scaner></app-header-scaner>
+<div class="canvas">
 
-<div class="container-fluid back-dex">
-  <div id="interface" class="container">
+  <section id="main">
+    <app-header-scaner></app-header-scaner>
+    
+    <div class="container-fluid back-dex">
+      <div id="interface" class="container">
+    
+        <app-principal-screen></app-principal-screen>
+    
+        <app-control-footer></app-control-footer>
+    
+    </div>
+    </div>
+    <div id="pokedex-footer"></div>
 
-    <app-principal-screen></app-principal-screen>
+  </section>
 
-    <app-control-footer></app-control-footer>
+  <div id="sidebar">
+    
+    <app-sidebar></app-sidebar>
+  </div>
 
 </div>
-</div>
-<div id="pokedex-footer"></div>

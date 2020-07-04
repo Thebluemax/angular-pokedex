@@ -1,9 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
 import { PokebaseService } from '../../shared/services/pokebase.service';
 import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Berry } from '../../interfaces/Berry';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { InfoDialogComponent } from '../../components/dialogs/info-dialog-component/info-dialog.component';
+import { AddDirective } from '../../directives/add.directive';
 
 @Component({
   selector: 'app-berry',
@@ -18,6 +21,8 @@ export class BerryComponent implements OnInit {
   isLoading: boolean=false;
 
   private idObservable: Subscription;
+  @ViewChild(AddDirective, {static: true}) modalEntry: AddDirective;
+
   /**
    * Componente pokemon
    * @param route 
@@ -30,7 +35,9 @@ export class BerryComponent implements OnInit {
       private route: ActivatedRoute,
      private router: Router,
      private pokeService: PokebaseService,
-     private sScreen: SecondaryScreenService
+     private sScreen: SecondaryScreenService,
+     private dialog: MatDialog,
+     private factoryComponent: ComponentFactoryResolver
   ) {
     this.isLoading = true;
     router.events.forEach((event) => {
@@ -77,6 +84,26 @@ export class BerryComponent implements OnInit {
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
+
+  }
+
+  openModal( url:string ){
+
+    const componentFactory = this.factoryComponent.resolveComponentFactory(InfoDialogComponent);
+
+    //const dialogConfig = new MatDialogConfig();
+    //dialogConfig.disableClose = true;
+    ////dialogConfig.autoFocus = true;
+    const viewContainer = this.modalEntry.viewContainerref;
+    viewContainer.clear();
+    const componentRef = viewContainer.createComponent(componentFactory);
+ (<InfoDialogComponent>componentRef.instance).data = { url: url };
+   /// dialogConfig.data = {
+     ///   name: this.berry.name,
+     //   url: url
+   // };
+
+   // this.dialog.open(InfoDialogComponent, dialogConfig);
 
   }
 
