@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { InfoDialogComponent } from '../../components/dialogs/info-dialog-component/info-dialog.component';
+import { AddDirective } from '../../directives/add.directive';
 
 @Component({
   selector: 'app-berries',
@@ -10,9 +12,13 @@ export class BerriesComponent implements OnInit {
   pageName: string = 'Berries';
   apiUrl: string = 'berry';
 
-  constructor() { }
+  
+
+  constructor(private modalDialog: InfoDialogComponent ) { }
 
   ngOnInit() {
   }
+
+  
 
 }

@@ -53,4 +53,8 @@ export class PokebaseService {
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
+
+  getInfoItem( url ) {
+    return this.http.get(url);
+  }
 }

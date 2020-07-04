@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PokebaseService } from '@services/pokebase.service';
+import { PokebaseService } from '../../shared/services/pokebase.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SecondaryScreenService } from '@services/secondary-screen.service';
 import { Location } from '@angular/common';
-import { Item } from "@models/item";
+import { Item } from "../../shared/interfaces/item";
+import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
 /**
  * Component para los objetos del mundo pokemon
  */
@@ -16,9 +16,9 @@ import { Item } from "@models/item";
 export class ItemComponent implements OnInit {
 
   title:string;
-  item:any;
-  name:string;
-  sprite:string;
+  item: any;
+  name: string;
+  sprite: string;
   isLoading: boolean=false;
 
   constructor(private pokeBase:PokebaseService,
