@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  NgModuleFactoryLoader, SystemJsNgModuleLoader} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,7 +16,9 @@ import { LocationComponent } from './location/location.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { BerriesComponent } from './berries/berries.component';
 import { BerryComponent } from './berry/berry.component';
-import { InfoDialogComponent } from '../components/dialogs/info-dialog-component/info-dialog.component';
+import { InfoDialogComponent } from './dialogs/info-dialog-component/info-dialog.component';
+import { AddDirective } from '../directives/add.directive';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -31,10 +33,8 @@ import { InfoDialogComponent } from '../components/dialogs/info-dialog-component
     PokemonComponent,
     BerriesComponent,
     BerryComponent,
-    InfoDialogComponent
-    
+
   ],
-  entryComponents: [[InfoDialogComponent]],
   imports: [
     CommonModule,
     PagesRoutingModule,
@@ -43,9 +43,11 @@ import { InfoDialogComponent } from '../components/dialogs/info-dialog-component
     PipeCustomModule,
     CommonDirectivesModule
   ],
+  entryComponents: [ InfoDialogComponent],
   exports: [
   ],
   providers: [
+    AddDirective
   ]
 })
 export class PagesModule { }

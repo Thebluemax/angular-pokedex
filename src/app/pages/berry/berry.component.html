@@ -2,36 +2,36 @@
 <div>
     <h6>{{title}}</h6>
 </div>
-<div id="berry-detall">
+<div id="berry-detall" *ngIf="berry">
     <div class="pokemon-header">
         <div class="title id-berry">
-            <h4>{{berry.name | formatName: 'T'}}</h4>
+            <h4>{{berry.name }}</h4>
             <p>
                 <span>Size: {{berry.size }}</span>
-               
+
                 <span>smoothness: {{ berry.smoothness }}</span>
                 <span>Soil Dryness: {{ berry.soil_dryness }}</span>
             </p>
         </div>
         <h5>firmness</h5>
         <p>
-            <span class="m-2" (click)="openModal(berry.firmness.url)">
-                {{berry.firmness.name}}
+            <span class="m-2" (click)="openModal(berry.firmness?.url)">
+                {{berry.firmness?.name}}
             </span>
         </p>
         <h5>Flavors</h5>
         <p>
-            <span *ngFor="let flavor of berry.flavors" class="m-2">
+            <span *ngFor="let flavor of berry.flavors" class="m-2" (click)="openModal(flavor.flavor.url)">
                 {{flavor.flavor.name}}
             </span>
         </p>
         <h5>gift type</h5>
         <span class="badge m-1">
-            {{berry.natural_gift_type.name | formatName:'k'}}
+            {{berry.natural_gift_type?.name }}
             <span> Power: {{berry.natural_gift_power }}</span>
         </span>
         <h5>Moves</h5>
-       
+
     </div>
-<ng-template #appAdd></ng-template>
+<div #appadd></div>
 </div>

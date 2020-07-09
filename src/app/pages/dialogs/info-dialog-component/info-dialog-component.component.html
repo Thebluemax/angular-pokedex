@@ -1,0 +1,15 @@
+<div class="overlay-screen" *ngIf="name">
+    <div class="header">
+        <h6>{{ name }}</h6>
+      </div>
+        <div class="body">
+          <ul>
+              <li *ngFor="let item of dataItem" class="p-3" >
+                <a [routerLink]="['/berries', item.name]">{{item.name}}</a>
+                
+              </li>
+          </ul>
+
+    </div>
+    <div class="footer"><span class="close-btn" (click)="close()">x</span></div>
+</div>
