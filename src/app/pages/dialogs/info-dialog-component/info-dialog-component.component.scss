@@ -1,0 +1,25 @@
+.overlay-screen {
+  background-color: rgba(0,0,0,.5);
+  left:0px;
+  padding: 2%;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  .header{
+    font-size: 1.1em;
+    width:max-content;
+    h6{
+      font-size: .9em;
+    }
+  }
+  .body{
+    overflow-x: scroll;
+    ul{
+      display: flex;
+      height: inherit;
+      list-style: none;
+      width: max-content;
+    }
+  }
+
+}

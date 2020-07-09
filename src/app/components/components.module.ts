@@ -11,7 +11,7 @@ import { PipeCustomModule } from '../pipes/pipe-custom.module';
 import { HighlightDirective } from '../directives/highlight.directive';
 import { CommonDirectivesModule } from '../directives/common-directives.module';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
-import { InfoDialogComponent } from './dialogs/info-dialog-component/info-dialog.component';
+
 import { PagesRoutingModule } from '../pages/pages-routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
@@ -25,7 +25,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
      PrincipalScreenComponent,
      BodydexComponent,
      LoadingScreenComponent,
-  //   InfoDialogComponent,
+    /// InfoDialogComponent,
      SidebarComponent,
     ],
   imports: [
@@ -43,7 +43,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     PrincipalScreenComponent,
     LoadingScreenComponent,
     BodydexComponent,
-   // InfoDialogComponent,
+  //  InfoDialogComponent,
     SidebarComponent,
   ]
 })

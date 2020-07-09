@@ -1,17 +1,22 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, NgModuleFactoryLoader, SystemJsNgModuleLoader, Injector, Inject } from '@angular/core';
 import { PokebaseService } from '../../shared/services/pokebase.service';
 import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Berry } from '../../interfaces/Berry';
-import { MatDialog, MatDialogConfig } from '@angular/material';
-import { InfoDialogComponent } from '../../components/dialogs/info-dialog-component/info-dialog.component';
-import { AddDirective } from '../../directives/add.directive';
+import { InfoDialogComponent } from '../dialogs/info-dialog-component/info-dialog.component';
+import { DinamicComponentService } from '../../shared/services/dinamic-component.service';
 
 @Component({
   selector: 'app-berry',
   templateUrl: './berry.component.html',
-  styleUrls: ['./berry.component.scss']
+  styleUrls: ['./berry.component.scss'],
+  providers: [
+    {
+      provide: NgModuleFactoryLoader,
+      useClass: SystemJsNgModuleLoader
+    }
+  ]
 })
 export class BerryComponent implements OnInit {
 
@@ -20,32 +25,41 @@ export class BerryComponent implements OnInit {
   public sprite: string;
   isLoading: boolean=false;
 
+  service;
+  view;
+
   private idObservable: Subscription;
-  @ViewChild(AddDirective, {static: true}) modalEntry: AddDirective;
+  @ViewChild('appadd', {read: ViewContainerRef}) modalEntry;
 
   /**
    * Componente pokemon
-   * @param route 
-   * @param router 
-   * @param pokeService 
-   * @param sScreen 
-   * @param _location 
+   * @param route
+   * @param router
+   * @param pokeService
+   * @param sScreen
+   * @param _location
    */
   constructor(
       private route: ActivatedRoute,
      private router: Router,
      private pokeService: PokebaseService,
      private sScreen: SecondaryScreenService,
-     private dialog: MatDialog,
-     private factoryComponent: ComponentFactoryResolver
+    // private factoryComponent: ComponentFactoryResolver,
+    // private _injector: Injector,
+   //  private loader: NgModuleFactoryLoader,
+     //private service : DinamicComponentService,
+   //  @Inject(DinamicComponentService) service,
+         //     @Inject(ViewContainerRef) viewContainerRef
+         private componetFActory: ComponentFactoryResolver
   ) {
+
+  //  this.service = service;
+   // this.view = viewContainerRef;
+
     this.isLoading = true;
     router.events.forEach((event) => {
       if (event) {
       }
-      // NavigationEnd
-      // NavigationCancel
-      // NavigationError
       let id = this.route.snapshot.paramMap.get("id");
 
       this.init(id);
@@ -53,7 +67,7 @@ export class BerryComponent implements OnInit {
 
   }
   /**
-   * Método inicial 
+   * Método inicial
    */
   init(id: string) {
     this.isLoading = true;
@@ -76,7 +90,8 @@ export class BerryComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get("id");
     this.init(id);
 
-
+    //this.service.setRootViewContainerRef(this.view);
+   // this.service.addDynamicComponent();
   }
   /**
    * onDestroy
@@ -87,17 +102,18 @@ export class BerryComponent implements OnInit {
 
   }
 
+
   openModal( url:string ){
+    const componentFactory = this.componetFActory.resolveComponentFactory(InfoDialogComponent);
+      const componentRef = this.modalEntry.createComponent(componentFactory);
 
-    const componentFactory = this.factoryComponent.resolveComponentFactory(InfoDialogComponent);
-
-    //const dialogConfig = new MatDialogConfig();
-    //dialogConfig.disableClose = true;
-    ////dialogConfig.autoFocus = true;
-    const viewContainer = this.modalEntry.viewContainerref;
-    viewContainer.clear();
-    const componentRef = viewContainer.createComponent(componentFactory);
- (<InfoDialogComponent>componentRef.instance).data = { url: url };
+ (<InfoDialogComponent>componentRef.instance).getInfo(url);
+ (<InfoDialogComponent>componentRef.instance).emitValue.subscribe(event => {
+   if(!event){
+     this.modalEntry.clear();
+   }
+ })
+    //});
    /// dialogConfig.data = {
      ///   name: this.berry.name,
      //   url: url
