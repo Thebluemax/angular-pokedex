@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver } from '@angular/core';
-import { AddDirective } from '../../directives/add.directive';
+//import { AddDirective } from '../../directives/add.directive';
 
 @Component({
   selector: 'app-berries',

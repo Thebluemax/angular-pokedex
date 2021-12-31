@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ControlFooterComponent } from './control-footer.component';
+import { SecondaryScreenService } from '@services/secondary-screen.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ControlFooterComponent', () => {
   let component: ControlFooterComponent;
@@ -8,7 +10,9 @@ describe('ControlFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ControlFooterComponent ]
+      imports:[RouterTestingModule],
+      declarations: [ ControlFooterComponent ],
+      providers: [SecondaryScreenService]
     })
     .compileComponents();
   }));

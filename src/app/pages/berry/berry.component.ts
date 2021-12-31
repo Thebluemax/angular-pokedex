@@ -41,16 +41,10 @@ export class BerryComponent implements OnInit {
    */
   constructor(
       private route: ActivatedRoute,
-     private router: Router,
-     private pokeService: PokebaseService,
-     private sScreen: SecondaryScreenService,
-    // private factoryComponent: ComponentFactoryResolver,
-    // private _injector: Injector,
-   //  private loader: NgModuleFactoryLoader,
-     //private service : DinamicComponentService,
-   //  @Inject(DinamicComponentService) service,
-         //     @Inject(ViewContainerRef) viewContainerRef
-         private componetFActory: ComponentFactoryResolver
+      private router: Router,
+      private pokeService: PokebaseService,
+      private sScreen: SecondaryScreenService,
+      private componetFActory: ComponentFactoryResolver
   ) {
 
   //  this.service = service;
@@ -73,9 +67,9 @@ export class BerryComponent implements OnInit {
     this.isLoading = true;
     this.idObservable = this.pokeService.getDetallBerry(id).subscribe((data) => {
       this.berry = { ...data };
-      this.sScreen.setText(`#-${this.berry.id}`);
+      this.sScreen.setText(`${this.berry.id}#-${this.berry.name}`);
       this.isLoading = false;
-      this.idObservable.unsubscribe();
+     // this.idObservable.unsubscribe();
     });
 
   }
@@ -90,8 +84,6 @@ export class BerryComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get("id");
     this.init(id);
 
-    //this.service.setRootViewContainerRef(this.view);
-   // this.service.addDynamicComponent();
   }
   /**
    * onDestroy
@@ -103,15 +95,17 @@ export class BerryComponent implements OnInit {
   }
 
 
-  openModal( url:string ){
+  openModal( typeName:string, url:string ){
     const componentFactory = this.componetFActory.resolveComponentFactory(InfoDialogComponent);
       const componentRef = this.modalEntry.createComponent(componentFactory);
-
+console.log(url, typeName);
  (<InfoDialogComponent>componentRef.instance).getInfo(url);
+ (<InfoDialogComponent>componentRef.instance).setType(typeName);
  (<InfoDialogComponent>componentRef.instance).emitValue.subscribe(event => {
    if(!event){
+     this.berry = new Berry();
      this.modalEntry.clear();
-   }
+    }
  })
     //});
    /// dialogConfig.data = {

@@ -8,9 +8,9 @@
   #btn2, #btn3 {
     height: 10px;
     width: 50px;
-  
+
   }
-  
+
 #btn1,#btn2,#btn3 {
     box-shadow: 2px 2px 3px grey;
     display:inline-block;
@@ -25,10 +25,11 @@
     background-color: yellow;
     display: block;
     font-family: $fontfamily;
-    font-size: 1.3em;
+    font-size: .8em;
+    margin-bottom: 2rem;
+    min-height: 80px;
     padding: 5px;
     text-align: center;
-    width: 90%;
   }
 
 .control-btn {

@@ -1,6 +1,11 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderScanerComponent } from './header-scaner.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HeaderScanerComponent', () => {
   let component: HeaderScanerComponent;
@@ -8,7 +13,8 @@ describe('HeaderScanerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderScanerComponent ]
+      declarations: [ HeaderScanerComponent ],
+      imports:[RouterTestingModule,NoopAnimationsModule]
     })
     .compileComponents();
   }));

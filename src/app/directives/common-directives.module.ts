@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HighlightDirective } from './highlight.directive';
-import { AddDirective } from './add.directive';
+import { ImgClickDirective } from './img-click.directive';
 
 
 
 @NgModule({
   declarations: [
     HighlightDirective,
-    AddDirective
+    ImgClickDirective,
   ],
   imports: [
     CommonModule
   ],
   exports: [
     HighlightDirective,
-    AddDirective
+    ImgClickDirective,
+
   ]
 })
 export class CommonDirectivesModule { }

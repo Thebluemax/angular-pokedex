@@ -1,5 +1,6 @@
 #pokemon-detall {
     height: 305px;
+    position: relative;
     overflow-y: scroll;
 }
 .title {
@@ -14,11 +15,18 @@
 .title-media {
     background-color: chartreuse;
     border-radius: 5px;
-    width: 25%;
+    box-shadow: 0px 0px 13px 3px green inset;
     margin: 2%;
-    box-shadow: 0px 0px 31px 7px green inset;
+    width: 25%;
     img {
         width: 100%;
+    }
+    &.img-open {
+      box-shadow: 0px 0px 60px 60px rgb(0, 37, 0) inset;
+      left: 2px;
+      position: absolute;
+      top:2px;
+      z-index: 1000;
     }
 }
 .id-pokemon {
@@ -38,8 +46,4 @@ h5, .hightLigted {
         }
     }
 }
-.badge-retro{
-    background-color: chartreuse;
-    color: green;
-    margin-left: 5px;
-}
+

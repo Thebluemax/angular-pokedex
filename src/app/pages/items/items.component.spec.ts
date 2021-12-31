@@ -16,6 +16,7 @@ describe('ItemsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ItemsComponent);
     component = fixture.componentInstance;
+    component.pageName = 'max';
     fixture.detectChanges();
   });
 

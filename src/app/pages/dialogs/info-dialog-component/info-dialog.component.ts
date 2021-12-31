@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject, Input, NgModule, Output, EventEmitter } from '@angular/core';
 import { PokebaseService } from '../../../shared/services/pokebase.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
+import { typeofExpr } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -15,19 +16,21 @@ export class InfoDialogComponent implements OnInit{
  // url: string;
   dataItem:any[] = [];
   name:string;
+  typeName: string;
 
   @Output() public emitValue:EventEmitter<boolean> = new EventEmitter();
 
   constructor(
-    private pokeService: PokebaseService) {
+    private pokeService: PokebaseService,
+    public router:Router
+    ) { }
 
-
-     // this.url = data.url;
-
-  }
 ngOnInit(){
   //this.getinfo();
 }
+  setType(typeName: string){
+    this.typeName = typeName;
+  }
 
   getInfo(url) {
     this.pokeService.getInfoItem(url).subscribe((data:any) => {
@@ -35,6 +38,11 @@ ngOnInit(){
       this.dataItem = data.berries;
       this.name = data.name;
     });
+  }
+  goToPage(name){
+    const route = `/berries/${name}`;
+    this.router.navigate([route]);
+    this.close();
   }
 
   close() {

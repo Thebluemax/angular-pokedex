@@ -1,15 +1,31 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { PrincipalScreenComponent } from '@components/principal-screen/principal-screen.component';
+import { HeaderScanerComponent } from '@components/header-scaner/header-scaner.component';
+import { ControlFooterComponent } from '@components/control-footer/control-footer.component';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { Routes } from '@angular/router';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        NoopAnimationsModule
       ],
+      schemas: [ NO_ERRORS_SCHEMA ],
       declarations: [
-        AppComponent
+        AppComponent,
+        HeaderScanerComponent,
+        PrincipalScreenComponent,
+        ControlFooterComponent
+
       ],
     }).compileComponents();
   }));
@@ -30,6 +46,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('poke app is running!');
+    expect(compiled.querySelector('#main')).toBeTruthy;
   });
 });

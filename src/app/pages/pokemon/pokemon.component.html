@@ -3,7 +3,7 @@
 </div>
 <div id="pokemon-detall" *ngIf="!loading;else loadingBar">
     <div class="pokemon-header">
-        <div class="title title-media"><img
+        <div class="title title-media" appImgClick><img
                 [attr.src]="(pokemon.sprites?.front_default)?pokemon.sprites?.front_default:'/assets/img/loader_img.gif'"
                 alt=""></div>
         <div class="title id-pokemon">
@@ -17,17 +17,17 @@
         </div>
         <h5>Type</h5>
         <p>
-            <span *ngFor="let type of pokemon.types" class="m-2">
-                {{type.type.name | formatName:'k'}}
+            <span *ngFor="let type of pokemon.types" class="m-2 badge badge-retro">
+                {{type.type.name | formatName:'T'}}
             </span>
         </p>
         <h5>Abilities</h5>
-        <span *ngFor="let ability of pokemon.abilities" class="badge m-1">
-            {{ability.ability.name | formatName:'k'}}
+        <span *ngFor="let ability of pokemon.abilities" class="badge m-1 badge-retro">
+            {{ability.ability.name | formatName:'T'}}
         </span>
         <h5>Moves</h5>
         <span *ngFor="let move of pokemon.moves" class="badge badge-retro">
-            {{move.move.name | formatName:'k'}}
+            {{move.move.name | formatName:'T'}}
         </span>
     </div>
 

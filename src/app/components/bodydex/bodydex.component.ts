@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input, Output } from '@angular/co
 import { PokebaseService } from "../../shared/services/pokebase.service";
 import { SecondaryScreenService } from "../../shared/services/secondary-screen.service";
 import { Router } from '@angular/router';
+import { ItemsService } from '@models/items-service';
 
 @Component({
   selector: 'app-bodydex',
@@ -41,7 +42,7 @@ export class BodydexComponent implements OnInit {
   getItems(offset: number, limit: number) {
     this.isLoading = true;
      this.pkService.getItems(this.api, offset, limit).subscribe(data => {
-       this.itemCount = data.count;  
+       this.itemCount = data.count;
        this.list = data.results;
        this.isLoading = false;
        this.initList(offset);
@@ -57,12 +58,12 @@ export class BodydexComponent implements OnInit {
     return `${this.previous + this.limit}-${this.next - 1}/${this.itemCount}`;
   }
   itemDetall(id: string) {
-  
+
   //  console.log("", id[1]);
     let url = '/' + this.pageName.toLocaleLowerCase() + '/' + id;
 
     console.log(url, id);
-    
+
     this.router.navigate([url]);
   }
 }

@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { environment } from "./../../../environments/environment";
 import { HttpClient } from '@angular/common/http'
 import { observable, Observable } from 'rxjs';
+import { ItemsService } from '../interfaces/items-service'
 
 @Injectable({
   providedIn: 'root'
 })
-export class PokebaseService {
+export class PokebaseService implements ItemsService{
 
   private endpointUrl:string;
   private urlApi:string;
@@ -18,7 +19,7 @@ export class PokebaseService {
 
   }
 /**
- * 
+ *
  * @param url url del recurso
  * @param offset puntero de posición en la lista
  * @param limit cantidad de entradas

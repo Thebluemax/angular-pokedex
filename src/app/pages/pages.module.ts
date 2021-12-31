@@ -17,7 +17,6 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { BerriesComponent } from './berries/berries.component';
 import { BerryComponent } from './berry/berry.component';
 import { InfoDialogComponent } from './dialogs/info-dialog-component/info-dialog.component';
-import { AddDirective } from '../directives/add.directive';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -47,7 +46,6 @@ import { BrowserModule } from '@angular/platform-browser';
   exports: [
   ],
   providers: [
-    AddDirective
   ]
 })
 export class PagesModule { }

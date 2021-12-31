@@ -5,17 +5,17 @@
 <div id="header-item" *ngIf="item">
     <div>
         <h4  class="title">{{name | formatName: 'T'}}</h4>
-        <div class="title title-media"><img src="{{sprite}}" width="100%"></div>
+        <div class="title title-media" appImgClick><img src="{{sprite}}" width="100%"></div>
     </div>
-    <h5>Attributes</h5>
+    <h5 *ngIf="item.attributes.length > 0">Attributes</h5>
     <p>
-        <span class="badge badge-success ml-3" *ngFor="let entry of item.attributes">
-            {{entry.name}}
+        <span class="badge badge-retro ml-3" *ngFor="let entry of item.attributes">
+            {{entry.name | formatName: 'I'}}
         </span>
     </p>
     <h5>Category</h5>
-    <p class="effect-text">
-        {{item.category.name}}
+    <p class="effect-text ">
+        {{item.category.name | formatName: 'I'}}
     </p>
     <h5>Cost</h5>
     <p class="effect-text">
@@ -23,7 +23,8 @@
     </p>
     <h5>Effectes</h5>
     <div *ngFor="let effect of item.effect_entries">
-        <p class="effect-text">{{effect.effect}}</p>
+        <p class="effect-text">{{ effect.effect }}</p>
+        <h6>Short Effect</h6>
         <p class="effect-text">{{effect.short_effect}}</p>
     </div>
     <div class="hightLigted">

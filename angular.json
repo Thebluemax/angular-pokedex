@@ -33,7 +33,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "node_modules/bootstrap/scss"
+                "node_modules/bootstrap/scss",
+                "src/sass"
               ]
             },
             "scripts": [
@@ -103,7 +104,12 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/sass"
+              ]
+            }
           }
         },
         "lint": {
