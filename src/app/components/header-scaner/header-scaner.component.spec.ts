@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HeaderScanerComponent } from './header-scaner.component';
@@ -11,7 +11,7 @@ describe('HeaderScanerComponent', () => {
   let component: HeaderScanerComponent;
   let fixture: ComponentFixture<HeaderScanerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderScanerComponent ],
       imports:[RouterTestingModule,NoopAnimationsModule]

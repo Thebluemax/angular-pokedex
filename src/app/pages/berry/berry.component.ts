@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, NgModuleFactoryLoader, SystemJsNgModuleLoader, Injector, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, Injector, Inject } from '@angular/core';
 import { PokebaseService } from '../../shared/services/pokebase.service';
 import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
 import { Subscription } from 'rxjs';
@@ -12,10 +12,7 @@ import { DinamicComponentService } from '../../shared/services/dinamic-component
   templateUrl: './berry.component.html',
   styleUrls: ['./berry.component.scss'],
   providers: [
-    {
-      provide: NgModuleFactoryLoader,
-      useClass: SystemJsNgModuleLoader
-    }
+
   ]
 })
 export class BerryComponent implements OnInit {
