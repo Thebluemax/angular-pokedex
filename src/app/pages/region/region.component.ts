@@ -5,7 +5,6 @@ import { SecondaryScreenService } from '../../shared/services/secondary-screen.s
 import { Location } from '@angular/common';
 import { Region } from "../../interfaces/Region";
 import { Router } from '@angular/router';
-import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-region',
@@ -25,7 +24,7 @@ export class RegionComponent implements OnInit {
     { name: 'unova', map: 'https://archives.bulbagarden.net/media/upload/b/b4/Unova.png'},
     { name: 'kanto', map: 'https://prowiki.info/images/7/78/Kanto.png' },
     { name: 'alola', map: 'https://cdn.bulbagarden.net/upload/6/6c/Alola.png' }];
-    
+
     mapImg: string;
   constructor(private route: ActivatedRoute,
     private pokeService: PokebaseService,
@@ -33,7 +32,7 @@ export class RegionComponent implements OnInit {
     private _location: Location,
     private router: Router) {
     this.region = null;
-   
+
   }
   init() {
     this.sScreen.setText(`${this.region.id}#${this.region.name}`);

@@ -1,4 +1,4 @@
-import { NgModule,  NgModuleFactoryLoader, SystemJsNgModuleLoader} from '@angular/core';
+import { NgModule} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -16,36 +16,30 @@ import { LocationComponent } from './location/location.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { BerriesComponent } from './berries/berries.component';
 import { BerryComponent } from './berry/berry.component';
-import { InfoDialogComponent } from './dialogs/info-dialog-component/info-dialog.component';
-import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
-  declarations: [
-    MenuPrincipalComponent,
-    RegionComponent,
-    ItemsComponent,
-    ItemComponent,
-    RegionsComponent,
-    LocationComponent,
-    PokemonsComponent,
-    PokemonComponent,
-    BerriesComponent,
-    BerryComponent,
-
-  ],
-  imports: [
-    CommonModule,
-    PagesRoutingModule,
-    HttpClientModule,
-    ComponentsModule,
-    PipeCustomModule,
-    CommonDirectivesModule
-  ],
-  entryComponents: [ InfoDialogComponent],
-  exports: [
-  ],
-  providers: [
-  ]
+    declarations: [
+        MenuPrincipalComponent,
+        RegionComponent,
+        ItemsComponent,
+        ItemComponent,
+        RegionsComponent,
+        LocationComponent,
+        PokemonsComponent,
+        PokemonComponent,
+        BerriesComponent,
+        BerryComponent,
+    ],
+    imports: [
+        CommonModule,
+        PagesRoutingModule,
+        HttpClientModule,
+        ComponentsModule,
+        PipeCustomModule,
+        CommonDirectivesModule
+    ],
+    exports: [],
+    providers: []
 })
 export class PagesModule { }
