@@ -7,6 +7,7 @@ import { RegionsComponent } from './regions.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { of } from 'rxjs';
 
 class RouterMock {
 
@@ -35,7 +36,9 @@ describe('RegionsComponent', () => {
       schemas:      [NO_ERRORS_SCHEMA],
       declarations: [ RegionsComponent ],
       providers: [
-        {provide: Router, useClass: RouterMock}]
+        {provide: Router, useValue: {
+          params: of({id: 1})
+        }}]
     })
     .compileComponents();
   }));

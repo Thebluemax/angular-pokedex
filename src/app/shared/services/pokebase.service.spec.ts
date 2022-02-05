@@ -1,14 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { PokebaseService } from './pokebase.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 describe('PokebaseService', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    imports: [ RouterTestingModule,
-                HttpClientModule
-              ]
+    imports: [ HttpClientTestingModule,
+
+              ],
+
   }));
 
   it('should be created', () => {
