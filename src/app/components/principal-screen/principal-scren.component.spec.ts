@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PrincipalScreenComponent } from './principal-screen.component';
 
@@ -6,7 +6,7 @@ describe('PrincipalScrenComponent', () => {
   let component: PrincipalScreenComponent;
   let fixture: ComponentFixture<PrincipalScreenComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PrincipalScreenComponent ]
     })

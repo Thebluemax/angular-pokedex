@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ControlFooterComponent } from './control-footer.component';
 import { SecondaryScreenService } from '@services/secondary-screen.service';
@@ -8,7 +8,7 @@ describe('ControlFooterComponent', () => {
   let component: ControlFooterComponent;
   let fixture: ComponentFixture<ControlFooterComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports:[RouterTestingModule],
       declarations: [ ControlFooterComponent ],
