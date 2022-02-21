@@ -24,6 +24,7 @@ export class LocationComponent implements OnInit {
 
     init(){
       //this.sprite = this.region.sprites.front_default;
+      console.log(this.loading,this.location);
       this.sScreen.setText(`Loc.#${this.location.id}`);
       this.title = `/locations/${this.location.name}`;
     }
@@ -34,11 +35,10 @@ export class LocationComponent implements OnInit {
       this.loading = true;
       let id = this.route.snapshot.paramMap.get("id");
       this.pokeService.getDetallLocation(id).subscribe(data => {
-  
+
         this.location = {...data};
         this.init();
         this.loading = false;
-        console.log(this.loading,this.location);
       });
     }
 

@@ -1,9 +1,9 @@
 <div>
     <h6>{{title}}</h6>
   </div>
-<div id="header-item">
+<div id="header-item" *ngIf="location">
     <div>
-        <h4  class="title">{{location.name | formatName: 'T'}}</h4>
+        <h4  class="title">{{location?.name | formatName: 'T'}}</h4>
     </div>
     <h5>Areas</h5>
     <p>
