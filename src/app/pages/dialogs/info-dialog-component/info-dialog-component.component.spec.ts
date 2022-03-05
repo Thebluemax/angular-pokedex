@@ -6,7 +6,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { InfoDialogComponent } from './info-dialog.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { PokebaseService } from '@services/pokebase.service';
+import { PokebaseService } from 'src/app/core/services/pokebase.service';
 
 describe('InfoDialogComponentComponent', () => {
   let component: InfoDialogComponent;

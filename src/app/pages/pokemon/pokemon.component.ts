@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
-import { PokebaseService } from '../../shared/services/pokebase.service';
-import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
+import { PokebaseService } from '../../core/services/pokebase.service';
+import { SecondaryScreenService } from '../../core/services/secondary-screen.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Pokemon } from '../../interfaces/pokemon';
@@ -12,7 +12,7 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./pokemon.component.scss']
 })
 /**
- * Componente Pokemon, gestion la pantalla del 
+ * Componente Pokemon, gestion la pantalla del
  * pokemon
  */
 export class PokemonComponent implements OnInit {
@@ -24,11 +24,11 @@ export class PokemonComponent implements OnInit {
   private idObservable: Subscription;
   /**
    * Componente pokemon
-   * @param route 
-   * @param router 
-   * @param pokeService 
-   * @param sScreen 
-   * @param _location 
+   * @param route
+   * @param router
+   * @param pokeService
+   * @param sScreen
+   * @param _location
    */
   constructor(
       private route: ActivatedRoute,
@@ -50,7 +50,7 @@ export class PokemonComponent implements OnInit {
 
   }
   /**
-   * Método inicial 
+   * Método inicial
    */
   init(id: string) {
     this.loading = true;

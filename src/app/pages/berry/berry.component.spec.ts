@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BerryComponent } from './berry.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PokebaseService } from '@services/pokebase.service';
+import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 

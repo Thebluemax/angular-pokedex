@@ -5,11 +5,11 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PokebaseService } from './shared/services/pokebase.service';
+import { PokebaseService } from './core/services/pokebase.service';
 import { MesurePipe } from './pipes/mesure.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
-import { DinamicComponentService } from './shared/services/dinamic-component.service';
+import { DinamicComponentService } from './core/services/dinamic-component.service';
 
 
 @NgModule({

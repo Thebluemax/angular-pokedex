@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LocationComponent } from './location.component';
-import { PokebaseService } from '@services/pokebase.service';
+import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormatNamePipe } from '@pipes/format-name.pipe';
-import { SecondaryScreenService } from '@services/secondary-screen.service';
+import { SecondaryScreenService } from 'src/app/core/services/secondary-screen.service';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';

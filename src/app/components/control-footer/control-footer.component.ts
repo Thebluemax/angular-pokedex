@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
+import { SecondaryScreenService } from '../../core/services/secondary-screen.service';
 
 @Component({
   selector: 'app-control-footer',

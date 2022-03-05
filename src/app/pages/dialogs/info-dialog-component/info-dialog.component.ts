@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject, Input, NgModule, Output, EventEmitter } from '@angular/core';
-import { PokebaseService } from '../../../shared/services/pokebase.service';
+import { PokebaseService } from '../../../core/services/pokebase.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { typeofExpr } from '@angular/compiler/src/output/output_ast';

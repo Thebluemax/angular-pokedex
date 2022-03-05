@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, Injector, Inject } from '@angular/core';
-import { PokebaseService } from '../../shared/services/pokebase.service';
-import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
+import { PokebaseService } from '../../core/services/pokebase.service';
+import { SecondaryScreenService } from '../../core/services/secondary-screen.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Berry } from '../../interfaces/Berry';
 import { InfoDialogComponent } from '../dialogs/info-dialog-component/info-dialog.component';
-import { DinamicComponentService } from '../../shared/services/dinamic-component.service';
+import { DinamicComponentService } from '../../core/services/dinamic-component.service';
 
 @Component({
   selector: 'app-berry',

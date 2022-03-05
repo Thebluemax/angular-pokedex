@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ControlFooterComponent } from './control-footer.component';
-import { SecondaryScreenService } from '@services/secondary-screen.service';
+import { SecondaryScreenService } from 'src/app/core/services/secondary-screen.service';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ControlFooterComponent', () => {

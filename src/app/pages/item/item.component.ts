@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PokebaseService } from '../../shared/services/pokebase.service';
+import { PokebaseService } from '../../core/services/pokebase.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { Item } from "../../shared/interfaces/item";
-import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
+import { Item } from "../../core/models/item";
+import { SecondaryScreenService } from '../../core/services/secondary-screen.service';
 /**
  * Component para los objetos del mundo pokemon
  */

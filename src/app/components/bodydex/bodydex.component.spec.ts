@@ -6,7 +6,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BodydexComponent } from './bodydex.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { PokebaseService } from '@services/pokebase.service';
+import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import { LoadingScreenComponent } from '@components/loading-screen/loading-screen.component';
 
 describe('BodydexComponent', () => {

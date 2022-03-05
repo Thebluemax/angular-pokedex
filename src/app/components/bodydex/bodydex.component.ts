@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output } from '@angular/core';
-import { PokebaseService } from "../../shared/services/pokebase.service";
-import { SecondaryScreenService } from "../../shared/services/secondary-screen.service";
+import { PokebaseService } from "../../core/services/pokebase.service";
+import { SecondaryScreenService } from "../../core/services/secondary-screen.service";
 import { Router } from '@angular/router';
-import { ItemsService } from '@models/items-service';
+import { ItemsService } from 'src/app/core/models/items-service';
 
 @Component({
   selector: 'app-bodydex',

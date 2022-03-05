@@ -5,7 +5,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PokemonComponent } from './pokemon.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PokebaseService } from '@services/pokebase.service';
+import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 

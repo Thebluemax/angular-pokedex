@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PokebaseService } from '../../shared/services/pokebase.service';
-import { SecondaryScreenService } from '../../shared/services/secondary-screen.service';
+import { PokebaseService } from '../../core/services/pokebase.service';
+import { SecondaryScreenService } from '../../core/services/secondary-screen.service';
 import { Location } from '@angular/common';
 import { Region } from "../../interfaces/Region";
 import { Router } from '@angular/router';
