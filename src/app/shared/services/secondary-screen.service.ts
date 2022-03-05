@@ -15,14 +15,10 @@ export class SecondaryScreenService {
 
   public setText(msj:string) {
     this.msj = msj;
-    this.processText();
-  }
-
-  private getText():string {
-    return this.msj;
-  }
-
-  processText(){
     this.changeTextScreen.next(this.msj);
+  }
+
+  public getText():string {
+    return this.msj;
   }
 }

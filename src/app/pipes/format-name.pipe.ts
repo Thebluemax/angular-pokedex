@@ -17,6 +17,7 @@ export class FormatNamePipe implements PipeTransform {
     }
     
   }
+  
   parseWord(value:string){
     let words:string[] = value.split('-');
     let name:string = '';

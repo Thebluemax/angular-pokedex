@@ -9,6 +9,7 @@ export interface Todo {
 
 @Injectable()
 export abstract class ItemsService {
+
 abstract  getItems(url:string ,offset:number, limit:number): Observable<any> ;
 abstract  getDetallItems(id): Observable<any> ;
 abstract  getDetallRegion(id): Observable<any> ;

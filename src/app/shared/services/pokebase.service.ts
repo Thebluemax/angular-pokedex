@@ -12,7 +12,7 @@ export class PokebaseService implements ItemsService{
   private endpointUrl:string;
   private urlApi:string;
 /**
- * http Servicio que conecta conla api de pokemon api
+ * Servicio para la conexión a la api de pokeApi
  * @param {HttpClient} Cliente http
  */
   constructor( private http: HttpClient) {
@@ -29,11 +29,13 @@ export class PokebaseService implements ItemsService{
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
+
   getDetallItems(id): Observable<any> {
-    this.endpointUrl = 'item/'+id;
+    this.endpointUrl = `item/${id}`;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
+
   getDetallRegion(id): Observable<any> {
     this.endpointUrl = 'region/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
