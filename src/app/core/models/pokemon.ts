@@ -9,6 +9,7 @@ export class Pokemon {
     moves?:any[];
     sprites:Sprites;
 }
+
 export interface Sprites {
     back_default: string;
     back_female?: string;

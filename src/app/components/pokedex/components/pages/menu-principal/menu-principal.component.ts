@@ -6,17 +6,16 @@ import { Router } from "@angular/router";
   templateUrl: './menu-principal.component.html',
   styleUrls: ['./menu-principal.component.scss']
 })
-export class MenuPrincipalComponent implements OnInit {
+export class MenuPrincipalComponent {
   optionsList: string[];
   constructor(private router: Router) {
-    this.optionsList = ['Items', 'Regions', 'Pokemons','Berries'];
+    this.optionsList = ['Items', 'Regions', 'Pokemons', 'Berries'];
   }
 
-  ngOnInit() {
-  }
+
   goto($event) {
     let position = parseInt($event.target.attributes['position'].value);
-    let tag = this.optionsList[position].toLowerCase();
+    let tag = `pokedex/${this.optionsList[position].toLowerCase()}`;
     console.log(tag);
     this.router.navigate([tag]);
   }

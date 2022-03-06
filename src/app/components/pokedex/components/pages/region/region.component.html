@@ -1,11 +1,11 @@
 <div>
     <h6>{{title}}</h6>
 </div>
-<app-loading-screen [loading]="loading" [hidden]="!loading"></app-loading-screen>
+<loading-screen [loading]="loading" [hidden]="!loading"></loading-screen>
 
 <div id="region-detall" *ngIf="!loading">
     <div class="region-header">
-      
+
         <div>
             <img [src]="mapImg" width="100%" alt="">
         </div>

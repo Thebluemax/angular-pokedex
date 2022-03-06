@@ -1,14 +1,12 @@
-import { Component, OnInit, ViewEncapsulation, Input, Output } from '@angular/core';
-import { PokebaseService } from "../../../../core/services/pokebase.service";
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ItemsService } from 'src/app/core/interfaces/items-service';
+import { PokebaseService } from "../../../../core/services/pokebase.service";
 import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
 
 @Component({
   selector: 'app-bodydex',
   templateUrl: './bodydex.component.html',
   styleUrls: ['./bodydex.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class BodydexComponent implements OnInit {
 
