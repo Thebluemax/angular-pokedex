@@ -1,0 +1,18 @@
+<!-- Principal screen-->
+<div>
+  <h6>/{{pageName}}/</h6>
+</div>
+
+<app-loading-screen [loading]="isLoading" [hidden]='!isLoading'></app-loading-screen>
+<div id="scroll-screen">
+  <ul appHighlight>
+    <li>
+      <a (click)="getItems(previous,limit)" *ngIf="previous >= 0 && itemCount > limit"> <<- Back </a>
+    </li>
+    <li *ngFor="let item of list;let idx = index" class="higtlight" id="item-{{idx}}" (click)="itemDetall(item.name)">
+      {{item.name | formatName : 'I'}}
+    </li>
+    <li><a (click)="getItems(next,limit)" *ngIf="next <= itemCount && itemCount > limit"> Next ->></a></li>
+  </ul>
+</div>
+<!--End Principal screen-->

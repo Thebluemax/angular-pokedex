@@ -4,7 +4,7 @@ import {PokebaseService} from "./pokebase.service";
 import {RouterTestingModule} from "@angular/router/testing";
 import {HttpClientModule} from "@angular/common/http";
 import {environment} from "src/environments/environment";
-import {Pokemon} from "src/app/interfaces/pokemon";
+import {Pokemon} from "src/app/core/models/pokemon";
 
 const pokemons = [
   {

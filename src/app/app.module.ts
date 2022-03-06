@@ -6,26 +6,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PokebaseService } from './core/services/pokebase.service';
-import { MesurePipe } from './pipes/mesure.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ComponentsModule } from './components/components.module';
 import { DinamicComponentService } from './core/services/dinamic-component.service';
-
+import { PokedexModule } from "./components/pokedex/pokedex.module";
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
-    BrowserModule,
     CommonModule,
-    AppRoutingModule,
+    BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    SharedModule,
     BrowserAnimationsModule,
-    ComponentsModule,
   ],
   providers: [
-    PokebaseService,
     DinamicComponentService
   ],
   bootstrap: [AppComponent]

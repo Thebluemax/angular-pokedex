@@ -4,7 +4,8 @@ import {
     Inject,
     ReflectiveInjector,
   } from '@angular/core';
-  import { InfoDialogComponent } from '../../pages/dialogs/info-dialog-component/info-dialog.component';
+
+  import { InfoDialogComponent } from '../../shared/components/dialogs/info-dialog-component/info-dialog.component'
 
   @Injectable()
   export class DinamicComponentService {

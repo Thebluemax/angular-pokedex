@@ -1,0 +1,17 @@
+@import '../../../../../../sass/variables';
+@import '../../../../../../sass/mixins';
+
+#scroll-screen {
+    ul {
+        overflow-y: hidden;
+        height: inherit;
+        list-style-type: none;
+        padding: 0px;
+    }
+    li {
+        font-family: .7em;
+        padding: 7px 3px 7px 7px;
+    }
+}
+
+@include highlight;
