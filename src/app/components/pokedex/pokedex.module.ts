@@ -19,7 +19,6 @@ import { PokemonsComponent } from "./components/pages/pokemons/pokemons.componen
 import { RegionComponent } from "./components/pages/region/region.component";
 import { RegionsComponent } from "./components/pages/regions/regions.component";
 import { MenuPrincipalComponent } from "./components/pages/menu-principal/menu-principal.component";
-import { LoadingScreenComponent } from "src/app/shared/components/loading-screen/loading-screen.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PokebaseService } from "src/app/core/services/pokebase.service";
 

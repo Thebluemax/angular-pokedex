@@ -20,7 +20,6 @@ export class ImgClickDirective {
       this.player.destroy();
     }
     const metadata = !this.big ? this.inResizeOut() : this.inResizeIn();
-    console.debug(img,this.element);
     if (this.big) {
       this.render.removeClass(this.element.nativeElement, 'img-open')
     } else {

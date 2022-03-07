@@ -1,9 +1,8 @@
 import { HighlightDirective } from './highlight.directive';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA, Component, DebugElement } from '@angular/core';
-import { BerryComponent } from '@pages/berry/berry.component';
 import { By } from '@angular/platform-browser';
-import { debug } from 'console';
+
 @Component({
   template: '<ul appHighlight><li class="higtlight" id="item-0">test</li><ul>'
 })
@@ -41,7 +40,6 @@ describe('HighlightDirective', () => {
 
   inputEL.triggerEventHandler('mouseover',null);
   fixture.detectChanges();
-  console.debug(inputEL.query(By.css('li')).nativeElement.className)
   expect(inputEL.query(By.css('li')).nativeElement.className).toBe('higtlight');
 
   });

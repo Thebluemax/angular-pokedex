@@ -3,9 +3,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { PrincipalScreenComponent } from '@components/pokedex/principal-screen/principal-screen.component';
-import { HeaderScanerComponent } from '@components/pokedex/header-scaner/header-scaner.component';
-import { ControlFooterComponent } from '@components/control-footer/control-footer.component';
 
 describe('AppComponent', () => {
 
@@ -18,10 +15,6 @@ describe('AppComponent', () => {
       schemas: [ NO_ERRORS_SCHEMA ],
       declarations: [
         AppComponent,
-        HeaderScanerComponent,
-        PrincipalScreenComponent,
-        ControlFooterComponent
-
       ],
     }).compileComponents();
   }));

@@ -7,24 +7,20 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LoadingScreenComponent implements OnInit {
 
-  @Input() loading:boolean;
-
-
   loadMsj:string = '';
+  timeOut: any;
 
-  constructor() { }
+  @Input() loading:boolean;
 
   ngOnInit() {
 
-    let timeOut = setInterval(()=>{
-
+    this.timeOut = setInterval(()=>{
         this.loadMsj += '* ';
         if (!this.loading) {
-          clearInterval(timeOut);
+          clearInterval(this.timeOut);
           this.loadMsj = '';
         }
     }, 100);
 
   }
-
 }

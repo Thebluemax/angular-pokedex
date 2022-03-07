@@ -27,16 +27,18 @@ export class BodydexComponent implements OnInit {
     private router: Router,
     private sScree: SecondaryScreenService
   ) { }
+
   ngOnInit() {
     this.limit = 30;
     this.title = this.href = this.router.url;
     this.getItems(0, this.limit);
 
   }
+
   ngOnDestroy(): void {
     this.sScree.setText('-- --');
-
   }
+
   getItems(offset: number, limit: number) {
     this.isLoading = true;
      this.pkService.getItems(this.api, offset, limit).subscribe(data => {
@@ -46,6 +48,7 @@ export class BodydexComponent implements OnInit {
        this.initList(offset);
      });
   }
+
   initList(offset: number) {
     this.previous = offset - this.limit;
     this.next = (this.limit > this.itemCount) ? this.itemCount : offset + this.limit;
@@ -55,12 +58,10 @@ export class BodydexComponent implements OnInit {
   paginateText() {
     return `${this.previous + this.limit}-${this.next - 1}/${this.itemCount}`;
   }
+
   itemDetall(id: string) {
 
-  //  console.log("", id[1]);
-    let url = '/' + this.pageName.toLocaleLowerCase() + '/' + id;
-
-    console.log(url, id);
+    let url = '/pokedex/' + this.pageName.toLocaleLowerCase() + '/' + id;
 
     this.router.navigate([url]);
   }
