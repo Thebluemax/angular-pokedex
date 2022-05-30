@@ -5,6 +5,10 @@ import { SecondaryScreenService } from '../../../services/secondary-screen.servi
 import { Location } from '@angular/common';
 import { Region } from "../../../../../core/models/region";
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import * as actionsUi from "../../../../../shared/ui.actions";
+import * as actionsScreen from "../../control-footer/redux/screen.actions";
 
 @Component({
   selector: 'app-region',
@@ -26,37 +30,44 @@ export class RegionComponent implements OnInit {
     { name: 'alola', map: 'https://cdn.bulbagarden.net/upload/6/6c/Alola.png' }];
 
     mapImg: string;
-  constructor(private route: ActivatedRoute,
+  constructor(
+    private route: ActivatedRoute,
     private pokeService: PokebaseService,
     private sScreen: SecondaryScreenService,
     private _location: Location,
-    private router: Router) {
+    private router: Router,
+    private store:Store<AppState>
+    ) {
     this.region = null;
-
   }
+
   init() {
-    this.sScreen.setText(`${this.region.id}#${this.region.name}`);
+    this.store.dispatch(actionsScreen.write({message: `${this.region.id}#${this.region.name}`}));
     this.title = '/Regions/' + this.region.name;
     this.mapImg = this.getMap(this.region.name);
   }
+
   goBack() {
     this._location.back();
   }
-  ngOnInit() {
-    this.loading = true;
-    let id = this.route.snapshot.paramMap.get("id");
-    this.pokeService.getDetallRegion(id).subscribe(data => {
 
+  ngOnInit() {
+    let id = this.route.snapshot.paramMap.get("id");
+    this.store.dispatch(actionsUi.isLoading());
+    this.pokeService.getDetallRegion(id).subscribe(data => {
       this.region = { ...data };
       this.init();
-      this.loading = false;
+      this.store.dispatch(actionsUi.stopLoading());
+
     });
   }
+
   detailLocation(location) {
     //let id = url.match(/\/(\d+)\//);
    // console.log("", id[1]);
     this.router.navigate([`location/${ location }`]);
   }
+
   getMap(region: string) {
     let mapImg = this.maps.find(r => r.name === region);
     console.log(mapImg);

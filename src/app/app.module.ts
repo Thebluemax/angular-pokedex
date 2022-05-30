@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DinamicComponentService } from './core/services/dinamic-component.service';
 import { RouterModule } from '@angular/router';
 
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './app.reducer';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +21,7 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
+    StoreModule.forRoot(appReducers)
   ],
   providers: [
     DinamicComponentService

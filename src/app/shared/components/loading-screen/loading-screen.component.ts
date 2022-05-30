@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
 
 @Component({
   selector: 'loading-screen',
@@ -10,9 +12,16 @@ export class LoadingScreenComponent implements OnInit {
   loadMsj:string = '';
   timeOut: any;
 
-  @Input() loading:boolean;
+  loading:boolean;
+constructor(
+  private store: Store<AppState>
+){
 
+}
   ngOnInit() {
+    const subs$ = this.store.select('ui')
+    .subscribe( ({isLoading})=> {console.log(isLoading);
+      this.loading = isLoading});
 
     this.timeOut = setInterval(()=>{
         this.loadMsj += '* ';

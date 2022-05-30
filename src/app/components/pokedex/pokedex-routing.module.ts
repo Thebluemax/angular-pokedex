@@ -15,7 +15,9 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 const routes: Routes = [
     {
         path: '', component: PokedexComponent, children:[
-
+          {
+            path: '', redirectTo:'/pokedex/menu', pathMatch:'full'
+        },
           {
             path: 'menu', component: MenuPrincipalComponent
         },

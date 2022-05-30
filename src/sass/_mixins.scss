@@ -19,11 +19,8 @@
 
 }
 
-@mixin highlight{
-
-    .highlighted {
+@mixin highlight {
         background-color: lime;
         color: green;
         padding-left: 20px;
-      }
 }

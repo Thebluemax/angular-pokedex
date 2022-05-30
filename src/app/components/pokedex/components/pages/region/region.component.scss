@@ -5,10 +5,7 @@
     height: 313px;
     overflow-y: scroll;
 }
-.hightLigted {
-    position: absolute;
-    bottom: 0px;
-}
+
 .loading-bar {
     height: 100%;
     width: 100%;
@@ -35,7 +32,7 @@
         width: 100%;
     }
 }
-h5, .highlighted {
+h5 {
     color: green;
     background-color: chartreuse;
     text-align: center;
