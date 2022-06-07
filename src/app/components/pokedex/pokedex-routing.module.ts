@@ -22,32 +22,30 @@ const routes: Routes = [
             path: 'menu', component: MenuPrincipalComponent
         },
           {
-            path: 'items', component: ItemsComponent
+            path: ':category', component: ItemsComponent
         },
         {
-            path: 'items/:id', component: ItemComponent
+            path: ':category/:id', component: ItemComponent
         },
-        {
-           path: 'regions', component: RegionsComponent
-        },
-        {
-            path: 'regions/:id', component: RegionComponent
-         },
-        {
-            path: 'location/:id', component: LocationComponent
-         },
-        {
-            path: 'pokemons', component: PokemonsComponent
-        },
-        {
-            path: 'pokemons/:id', component: PokemonComponent
-         },
-         {
-             path: 'berries', component: BerriesComponent
-         },
-         {
-             path: 'berries/:id', component: BerryComponent
-         }
+      //  {
+       //    path: 'regions', component: RegionsComponent
+       // },
+       // {
+         //   path: 'regions/:id', component: RegionComponent
+        // },
+       // {
+        //    path: 'location/:id', component: LocationComponent
+        // },
+      //  {
+       //     path: 'pokemons', component: PokemonsComponent
+      //  },
+       // {
+        //    path: 'pokemons/:id', component: PokemonComponent
+       //  },
+       //  {
+        //     path: 'berries', component: BerriesComponent
+       //      path: 'berries/:id', component: BerryComponent
+       //  }
         ]
     },
 

@@ -6,13 +6,14 @@
 <loading-screen></loading-screen>
 <div id="scroll-screen">
   <ul appHighlight>
-    <li>
-      <a (click)="previusPge()" *ngIf="previous > 0 "> <<- Back </a>
-    </li>
+
     <li *ngFor="let item of viewList;let idx = index" class="higtlight" id="item-{{idx}}" (click)="itemDetall(item.name)">
       {{item.name | formatName : 'I'}}
     </li>
-    <li><a (click)="nextPage()" *ngIf="next <= itemCount"> Next ->></a></li>
+
   </ul>
 </div>
+<pkd-nav-bar (searchTerm)="filter($event)"
+(next)="nextPage()"
+(back)="previusPage()"></pkd-nav-bar>
 <!--End Principal screen-->

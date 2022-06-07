@@ -18,9 +18,24 @@
     }
 
 }
+@mixin base-high {
 
+  background-color: chartreuse;
+  color: green;
+}
 @mixin highlight {
-        background-color: lime;
-        color: green;
-        padding-left: 20px;
+    @include base-high;
+    padding-left: 20px;
+}
+
+@mixin base {
+    border: solid 1px green;
+    background-color: green;
+    color: chartreuse;
+}
+
+@mixin h6-general{
+    font-size: 1rem;
+    @include base-high;
+    padding: 5px;
 }

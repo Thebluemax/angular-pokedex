@@ -30,8 +30,8 @@ export class PokebaseService implements ItemsService{
     return this.http.get(this.urlApi);
   }
 
-  getDetallItems(id): Observable<any> {
-    this.endpointUrl = `item/${id}`;
+  getDetallItems(category,id): Observable<any> {
+    this.endpointUrl = `${category}/${id}`;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }

@@ -7,15 +7,19 @@ import { Router } from "@angular/router";
   styleUrls: ['./menu-principal.component.scss']
 })
 export class MenuPrincipalComponent {
-  optionsList: string[];
+  optionsList: any[];
   constructor(private router: Router) {
-    this.optionsList = ['Items', 'Regions', 'Pokemons', 'Berries'];
+    this.optionsList = [{name:'Items', api:'item'},
+    { name: 'Regions', api:"region"},
+     {name:'Pokemons', api:'pokemon'},
+     {name:'Berries', api: 'berry'},
+    {name:'Abilities', api: 'ability'}];
   }
 
 
   goto($event) {
     let position = parseInt($event.target.attributes['position'].value);
-    let tag = `pokedex/${this.optionsList[position].toLowerCase()}`;
+    let tag = `pokedex/${this.optionsList[position].api}`;
     console.log(tag);
     this.router.navigate([tag]);
   }

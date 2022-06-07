@@ -1,7 +1,7 @@
 <!-- Principal screen-->
 
 <div>
-  <h6>Choose one option</h6>
+  <h6>Pokedex v0.1</h6>
 </div>
 <div id="scroll-screen">
   <ul appHighlight>
@@ -12,7 +12,7 @@
       [attr.position]="idx"
       (click)="goto($event)"
     >
-      {{ item }}
+      {{ item.name }}
     </li>
   </ul>
 </div>

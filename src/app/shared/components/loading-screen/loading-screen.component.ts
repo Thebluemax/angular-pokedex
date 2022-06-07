@@ -20,7 +20,7 @@ constructor(
 }
   ngOnInit() {
     const subs$ = this.store.select('ui')
-    .subscribe( ({isLoading})=> {console.log(isLoading);
+    .subscribe( ({isLoading})=> {
       this.loading = isLoading});
 
     this.timeOut = setInterval(()=>{

@@ -15,6 +15,9 @@
 }
 
 .highlight{
-
   @include highlight;
+}
+
+h6 {
+    @include h6-general;
 }

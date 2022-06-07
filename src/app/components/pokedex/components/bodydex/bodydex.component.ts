@@ -55,9 +55,9 @@ export class BodydexComponent implements OnInit {
       this.itemCount = data.count;
       this.list = data.results;
       this.listSort();
-    // this.isLoading = false;
+      // this.isLoading = false;
       this.buildList(offset);
-    this.store.dispatch(actionsUi.stopLoading());
+      this.store.dispatch(actionsUi.stopLoading());
     });
   }
   listSort() {
@@ -82,11 +82,13 @@ export class BodydexComponent implements OnInit {
 
     // this.sScree.setText(this.pagination);
   }
+
   nextPage() {
     this.page = this.page * this.rows < this.itemCount ? this.page + 1 : this.itemCount - 1;
     this.buildList(this.page);
   }
-  previusPge(){
+
+  previusPage() {
     this.page = this.page > 0 ? this.page - 1 : 0;
     this.buildList(this.page);
   }
@@ -94,11 +96,24 @@ export class BodydexComponent implements OnInit {
   paginateText() {
     return `Items List: <br> ${this.previous + 1}-${this.next}/${this.itemCount}`;
   }
+  paginateTextAndSearch() {
+    return `Items List: <br> ${this.previous + 1}-${this.next}/${this.viewList.lenght}(${this.itemCount})`;
+  }
 
   itemDetall(id: string) {
 
-    let url = '/pokedex/' + this.pageName.toLocaleLowerCase() + '/' + id;
+    let url = '/pokedex/' + this.api + '/' + id;
 
     this.router.navigate([url]);
+  }
+
+  filter(event) {
+    console.log(event);
+    this.viewList = this.list.filter( term => {
+      //console.log(term.name.includes(event));
+      return term.name.toLowerCase().includes(event);
+    });
+    this.pagination = this.paginateTextAndSearch();
+    this.store.dispatch(actions.write({ message: this.pagination }))
   }
 }

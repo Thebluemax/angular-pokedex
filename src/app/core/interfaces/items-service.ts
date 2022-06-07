@@ -11,7 +11,7 @@ export interface Todo {
 export abstract class ItemsService {
 
 abstract  getItems(url:string ,offset:number, limit:number): Observable<any> ;
-abstract  getDetallItems(id): Observable<any> ;
+abstract  getDetallItems(category:string,id: string): Observable<any> ;
 abstract  getDetallRegion(id): Observable<any> ;
 abstract  getDetallpokemon(id): Observable<any> ;
 abstract  getDetallLocation(id): Observable<any> ;
