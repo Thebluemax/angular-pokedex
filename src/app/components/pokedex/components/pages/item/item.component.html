@@ -1,13 +1,15 @@
 <loading-screen></loading-screen>
 <div  *ngIf="item">
-  <h6>{{title}}</h6>
+  <h6>{{title | formatName: 'P' | formatName : 'T'}}/{{titleId | formatName : 'T'}}</h6>
   <div [ngSwitch]="category">
     <div *ngSwitchCase="'item'">
 
       <div id="header-item">
         <div>
           <h4  class="title">{{name | formatName: 'T'}}</h4>
-          <div class="title title-media" appImgClick><img src="{{sprite}}" width="100%"></div>
+          <div class="title title-media" appImgClick>
+            <img [src]="item.sprites.default" width="100%" [hidden]="!item.sprites.default">
+          </div>
         </div>
         <h5 *ngIf="item.attributes.length > 0">Attributes</h5>
       <p>
@@ -23,11 +25,22 @@
       <p class="effect-text">
         {{item.cost}} Pokedollars
       </p>
-      <h5>Effectes</h5>
+
+      <h5>Effectes <span (click)="showMore()"
+        *ngIf="item.effect_entries.length > 0"> {{seeMore ? '-' : '+'}}</span></h5>
       <div *ngFor="let effect of item.effect_entries">
-        <p class="effect-text">{{ effect.effect }}</p>
-        <h6>Short Effect</h6>
-        <p class="effect-text">{{effect.short_effect}}</p>
+            <p class="effect-text" *ngIf="seeMore">
+            {{ effect.effect }}
+          </p>
+
+        <p class="effect-text" *ngIf="!seeMore">
+          {{effect.short_effect}}
+        </p>
+      </div>
+      <div>
+        <p *ngIf="item.effect_entries.length <= 0">
+          {{getTranslation('en')}}
+        </p>
       </div>
     </div>
   </div>
@@ -35,6 +48,10 @@
       {{category}}
       <pkd-pokemon [pokemon]="item"></pkd-pokemon>
     </div>
+    <div *ngSwitchCase="'region'">
+      <pkd-region-location [location]="item"></pkd-region-location>
+    </div>
     <span *ngSwitchDefault>(No eligió operación)</span>
   </div>
 </div>
+<pkd-nav-bar></pkd-nav-bar>

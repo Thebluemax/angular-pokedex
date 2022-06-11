@@ -5,7 +5,7 @@ export interface Region {
 }
 
 export interface Location {
-    areas: any[];
+    locations: any[];
     id: number;
     game_indices: any[];
     name: string;

@@ -8,7 +8,7 @@ import * as actions from "../../components/control-footer/redux/screen.actions";
 import * as actionsUi from "../../../../shared/ui.actions";
 
 @Component({
-  selector: 'app-bodydex',
+  selector: 'pkd-bodylist',
   templateUrl: './bodydex.component.html',
   styleUrls: ['./bodydex.component.scss'],
 })

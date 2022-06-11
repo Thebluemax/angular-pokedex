@@ -12,6 +12,8 @@ export class FormatNamePipe implements PipeTransform {
         break;
       case 'I':
         return this.capitalizeWord(value);
+      case 'P':
+        return this.toPlural(value);
       default:
         return value;
     }
@@ -26,4 +28,13 @@ export class FormatNamePipe implements PipeTransform {
     return words.join(' ');
   }
 
+  toPlural(value: string) :string {
+    let pWord: string = '';
+    const yLeter = /(y)$/;
+    pWord = value.replace(yLeter,'ies');
+
+    const nLeter = /([nm])$/;
+    pWord = pWord.replace(nLeter, '$1s');
+    return pWord;
+  }
 }

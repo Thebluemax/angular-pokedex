@@ -10,21 +10,17 @@ import { HeaderScanerComponent } from "./components/header-scaner/header-scaner.
 import { BodydexComponent } from "./components/bodydex/bodydex.component";
 import { PokedexRoutingModule } from "./pokedex-routing.module";
 import { BerryComponent } from "./components/pages/berry/berry.component";
-import { BerriesComponent } from "./components/pages/berries/berries.component";
 import { ItemComponent } from "./components/pages/item/item.component";
 import { ItemsComponent } from "./components/pages/items/items.component";
 import { LocationComponent } from "./components/pages/location/location.component";
 import { PokemonComponent } from "./components/pages/pokemon/pokemon.component";
-import { PokemonsComponent } from "./components/pages/pokemons/pokemons.component";
 import { RegionComponent } from "./components/pages/region/region.component";
-import { RegionsComponent } from "./components/pages/regions/regions.component";
 import { MenuPrincipalComponent } from "./components/pages/menu-principal/menu-principal.component";
 import { HttpClientModule } from "@angular/common/http";
 import { PokebaseService } from "src/app/core/services/pokebase.service";
 
 @NgModule({
   declarations: [
-    BerriesComponent,
     BerryComponent,
     BodydexComponent,
     ControlFooterComponent,
@@ -35,10 +31,8 @@ import { PokebaseService } from "src/app/core/services/pokebase.service";
     MenuPrincipalComponent,
     PokedexComponent,
     PokemonComponent,
-    PokemonsComponent,
     PrincipalScreenComponent,
     RegionComponent,
-    RegionsComponent,
   ],
   imports: [
     CommonModule,

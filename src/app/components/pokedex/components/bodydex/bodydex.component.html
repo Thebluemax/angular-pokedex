@@ -1,6 +1,6 @@
 <!-- Principal screen-->
 <div>
-  <h6>/{{pageName}}/</h6>
+  <h6>/{{pageName | formatName: 'P' | formatName: 'T'}}</h6>
 </div>
 
 <loading-screen></loading-screen>
@@ -13,7 +13,8 @@
 
   </ul>
 </div>
-<pkd-nav-bar (searchTerm)="filter($event)"
+<pkd-nav-bar
+(searchTerm)="filter($event)"
 (next)="nextPage()"
 (back)="previusPage()"></pkd-nav-bar>
 <!--End Principal screen-->

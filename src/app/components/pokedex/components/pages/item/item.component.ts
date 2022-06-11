@@ -18,11 +18,13 @@ import * as actionsUi from "../../../../../shared/ui.actions";
 export class ItemComponent implements OnInit {
 
   title:string;
+  titleId:string;
   item: any;
   name: string;
   category: string;
   sprite: string;
   isLoading: boolean=false;
+  seeMore: boolean;
 
   constructor(private pokeBase:PokebaseService,
                private route:ActivatedRoute,
@@ -39,7 +41,8 @@ export class ItemComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get("id");
     this.store.dispatch(actionsUi.isLoading());
     this.pokeBase.getDetallItems(this.category,id).subscribe(data => {
-      this.title = `/${this.category}/${id}`;
+      this.title = this.category;
+      this.titleId = id;
       this.item = data;
       this.init();
       this.store.dispatch(actionsUi.stopLoading());
@@ -47,10 +50,19 @@ export class ItemComponent implements OnInit {
   }
   init(){
     this.name = this.item !== null ? this.item.name : '......' ;
-    //this.sprite = this.item.sprites.default;
+    this.sprite = this.item.sprites.default;
     this.store.dispatch(actions.write({ message: `${this.item.id}#${this.item.name}` }))
   }
   goBack(){
     this._location.back();
+  }
+
+  showMore(){
+    this.seeMore = !this.seeMore;
+  }
+  getTranslation(code: string){
+    const text = this.item.flavor_text_entries.find(text => text.language.name === code);
+
+    return text ? text.text : '--';
   }
 }

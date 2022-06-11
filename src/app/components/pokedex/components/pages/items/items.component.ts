@@ -20,7 +20,7 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
     let nameId = this.route.snapshot.paramMap.get("category");
-    this.pageName = `${nameId.toUpperCase()}S`;
+    this.pageName = nameId;
     this.apiUrl = nameId;
   }
 

@@ -34,4 +34,17 @@ describe('FormatNamePipe', () => {
     const textUppercase = 'Pokemon';
     expect(pipe.transform(text, 'I')).toBe(textUppercase);
   })
+
+  it('Must change to plural the word with y', () => {
+    const text = 'berry';
+    const textPlural = 'berries';
+    expect(pipe.transform(text, 'P')).toBe(textPlural);
+  })
+
+  it('Must change to plural the word with n', () => {
+    const text = 'pokemon';
+    const textPlural = 'pokemons';
+    expect(pipe.transform(text, 'P')).toBe(textPlural);
+  })
+
 });
