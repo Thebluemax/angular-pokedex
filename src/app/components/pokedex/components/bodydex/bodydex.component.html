@@ -7,7 +7,11 @@
 <div id="scroll-screen">
   <ul appHighlight>
 
-    <li *ngFor="let item of viewList;let idx = index" class="higtlight" id="item-{{idx}}" (click)="itemDetall(item.name)">
+    <li
+    *ngFor="let item of viewList;let idx = index"
+    class="higtlight"
+    id="item-{{idx}}"
+    (click)="itemDetall(item.name)">
       {{item.name | formatName : 'I'}}
     </li>
 
@@ -18,4 +22,5 @@
 (searchTerm)="filter($event)"
 (next)="nextPage()"
 (back)="previusPage()"></pkd-nav-bar>
+
 <!--End Principal screen-->
