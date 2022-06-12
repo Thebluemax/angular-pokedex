@@ -11,9 +11,12 @@
   }
 }
 .nav {
+  border-top: 7px solid green;
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  width: max-content;
+  margin: auto;
+  justify-content: start;
    a{
      @include base-high;
      padding:.7rem;

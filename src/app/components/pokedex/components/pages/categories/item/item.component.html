@@ -1,10 +1,4 @@
-<loading-screen></loading-screen>
-<div  *ngIf="item">
-  <h6>{{title | formatName: 'P' | formatName : 'T'}}/{{titleId | formatName : 'T'}}</h6>
-  <div [ngSwitch]="category">
-    <div *ngSwitchCase="'item'">
-
-      <div id="header-item">
+  <div id="header-item">
         <div>
           <h4  class="title">{{name | formatName: 'T'}}</h4>
           <div class="title title-media" appImgClick>
@@ -43,15 +37,3 @@
         </p>
       </div>
     </div>
-  </div>
-  <div *ngSwitchCase="'pokemon'">
-      {{category}}
-      <pkd-pokemon [pokemon]="item"></pkd-pokemon>
-    </div>
-    <div *ngSwitchCase="'region'">
-      <pkd-region-location [location]="item"></pkd-region-location>
-    </div>
-    <span *ngSwitchDefault>(No eligió operación)</span>
-  </div>
-</div>
-<pkd-nav-bar></pkd-nav-bar>

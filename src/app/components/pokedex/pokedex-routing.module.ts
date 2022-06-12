@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MenuPrincipalComponent } from './components/pages/menu-principal/menu-principal.component';
-import { ItemsComponent } from './components/pages/items/items.component';
-import { RegionComponent } from './components/pages/region/region.component';
-import { ItemComponent } from './components/pages/item/item.component';
-import { LocationComponent } from './components/pages/location/location.component';
-import { PokemonComponent } from './components/pages/pokemon/pokemon.component';
-import { BerryComponent } from './components/pages/berry/berry.component';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
+import { CategoryListComponent } from './components/pages/category-list/category-list.component';
+import { CategoryComponent } from './components/pages/category/category.component';
 
 const routes: Routes = [
   {
@@ -19,10 +15,10 @@ const routes: Routes = [
         path: 'menu', component: MenuPrincipalComponent
       },
       {
-        path: ':category', component: ItemsComponent
+        path: ':category', component: CategoryListComponent
       },
       {
-        path: ':category/:id', component: ItemComponent
+        path: ':category/:id', component: CategoryComponent
       },
     ]
   },

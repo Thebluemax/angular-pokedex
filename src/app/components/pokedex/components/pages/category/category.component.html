@@ -1,0 +1,23 @@
+<loading-screen></loading-screen>
+<div  *ngIf="item">
+  <h6>{{title | formatName: 'P' | formatName : 'T'}}/{{titleId | formatName : 'T'}}</h6>
+  <div [ngSwitch]="category">
+    <div *ngSwitchCase="'item'">
+      <pkd-item-page ></pkd-item-page>
+  </div>
+  <div *ngSwitchCase="'pokemon'">
+      <pkd-pokemon [pokemon]="item"></pkd-pokemon>
+    </div>
+    <div *ngSwitchCase="'region'">
+      <pkd-region-location [location]="item"></pkd-region-location>
+    </div>
+    <div *ngSwitchCase="'berry'">
+      <pkd-berry-detaill [berry]="item"></pkd-berry-detaill>
+    </div>
+    <span *ngSwitchDefault>(No eligió operación)</span>
+  </div>
+</div>
+<pkd-nav-bar
+[pagination]="false"
+(back)="goBack()"></pkd-nav-bar>
+

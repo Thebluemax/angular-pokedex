@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable, Subject, pipe, interval  } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
@@ -11,6 +11,7 @@ export class NavBarComponent implements OnInit {
   openInput: boolean;
   term$: string;
   subject: Subject<string> = new Subject();
+  @Input() pagination: boolean;
   @Output() searchTerm : EventEmitter<string> = new EventEmitter();
   @Output() next : EventEmitter<boolean> = new EventEmitter();
   @Output() back : EventEmitter<boolean> = new EventEmitter();

@@ -31,17 +31,14 @@ export class RegionComponent implements OnInit {
 
     mapImg: string;
   constructor(
-    private route: ActivatedRoute,
-    private pokeService: PokebaseService,
-    private sScreen: SecondaryScreenService,
-    private _location: Location,
     private router: Router,
     private store:Store<AppState>
     ) {
     this.region = null;
-  }
 
-  init() {
+  }
+  ngOnInit() {}
+ /* init() {
     this.store.dispatch(actionsScreen.write({message: `${this.region.id}#${this.region.name}`}));
     this.title = '/Regions/' + this.region.name;
     this.mapImg = this.getMap(this.region.name);
@@ -62,15 +59,16 @@ export class RegionComponent implements OnInit {
     });
   }
 
+
+}*/
+getMap(region: string) {
+  let mapImg = this.maps.find(r => r.name === region);
+  console.log(mapImg);
+  return mapImg.map;
+}
   detailLocation(location) {
     //let id = url.match(/\/(\d+)\//);
    // console.log("", id[1]);
     this.router.navigate([`location/${ location }`]);
-  }
-
-  getMap(region: string) {
-    let mapImg = this.maps.find(r => r.name === region);
-    console.log(mapImg);
-    return mapImg.map;
   }
 }

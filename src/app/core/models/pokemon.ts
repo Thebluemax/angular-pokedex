@@ -19,4 +19,11 @@ export interface Sprites {
     front_female?: string;
     front_shiny: string;
     front_shiny_female?:string;
+    other: Other;
+}
+
+interface Other {
+  dream_world: any;
+  home:any;
+  oficialArtwork: any;
 }

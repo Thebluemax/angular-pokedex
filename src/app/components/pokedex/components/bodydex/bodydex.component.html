@@ -14,6 +14,7 @@
   </ul>
 </div>
 <pkd-nav-bar
+[pagination]="true"
 (searchTerm)="filter($event)"
 (next)="nextPage()"
 (back)="previusPage()"></pkd-nav-bar>

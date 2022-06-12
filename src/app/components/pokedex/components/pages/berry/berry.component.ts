@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, Injector, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, Injector, Inject, Input } from '@angular/core';
 import { PokebaseService } from '../../../../../core/services/pokebase.service';
 import { SecondaryScreenService } from '../../../services/secondary-screen.service';
 import { Subscription } from 'rxjs';
@@ -8,25 +8,24 @@ import { InfoDialogComponent } from '../dialogs/info-dialog-component/info-dialo
 import { DinamicComponentService } from '../../../../../core/services/dinamic-component.service';
 
 @Component({
-  selector: 'app-berry',
+  selector: 'pkd-berry-detaill',
   templateUrl: './berry.component.html',
   styleUrls: ['./berry.component.scss'],
   providers: [
 
   ]
 })
-export class BerryComponent implements OnInit {
+export class BerryComponent {
 
   public title: string;
-  public berry: Berry;
   public sprite: string;
-  isLoading: boolean=false;
 
   service;
   view;
 
   private idObservable: Subscription;
-  @ViewChild('appadd', {read: ViewContainerRef}) modalEntry;
+  @Input() berry: Berry;
+   @ViewChild('appadd', {read: ViewContainerRef}) modalEntry;
 
   /**
    * Componente pokemon
@@ -36,63 +35,10 @@ export class BerryComponent implements OnInit {
    * @param sScreen
    * @param _location
    */
-  constructor(
-      private route: ActivatedRoute,
-      private router: Router,
-      private pokeService: PokebaseService,
-      private sScreen: SecondaryScreenService,
-      private componetFActory: ComponentFactoryResolver
-  ) {
-
-  //  this.service = service;
-   // this.view = viewContainerRef;
-
-    this.isLoading = true;
-    router.events.forEach((event) => {
-      if (event) {
-      }
-      let id = this.route.snapshot.paramMap.get("id");
-
-      this.init(id);
-    });
-
-  }
-  /**
-   * Método inicial
-   */
-  init(id: string) {
-    this.isLoading = true;
-    this.idObservable = this.pokeService.getDetallBerry(id).subscribe((data) => {
-      this.berry = { ...data };
-      this.sScreen.setText(`${this.berry.id}#-${this.berry.name}`);
-      this.isLoading = false;
-     // this.idObservable.unsubscribe();
-    });
-
-  }
-
-  /**
-   * On init
-   */
-  ngOnInit() {
-    this.title = '/Berry/';
-    this.berry = new Berry();
-
-    let id = this.route.snapshot.paramMap.get("id");
-    this.init(id);
-
-  }
-  /**
-   * onDestroy
-   */
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-
-  }
 
 
-  openModal( typeName:string, url:string ){
+
+  /*openModal( typeName:string, url:string ){
     const componentFactory = this.componetFActory.resolveComponentFactory(InfoDialogComponent);
       const componentRef = this.modalEntry.createComponent(componentFactory);
 console.log(url, typeName);
@@ -113,5 +59,8 @@ console.log(url, typeName);
    // this.dialog.open(InfoDialogComponent, dialogConfig);
 
   }
+*/
+openModal( value, url){
 
+}
 }

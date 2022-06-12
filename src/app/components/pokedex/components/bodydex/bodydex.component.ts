@@ -25,7 +25,7 @@ export class BodydexComponent implements OnInit {
   public href: string = "";
   public pagination: string;
   public page: number = 0;
-  public rows: number = 20;
+  public rows: number = 500;
 
   @Input() pageName: string;
   @Input() api: string
@@ -84,7 +84,7 @@ export class BodydexComponent implements OnInit {
   }
 
   nextPage() {
-    this.page = this.page * this.rows < this.itemCount ? this.page + 1 : this.itemCount - 1;
+    this.page = this.page * this.rows < this.itemCount ? this.page + 1 : this.page;
     this.buildList(this.page);
   }
 

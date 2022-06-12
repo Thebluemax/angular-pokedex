@@ -1,27 +1,25 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { PokebaseService } from '../../../../../core/services/pokebase.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { SecondaryScreenService } from '../../../services/secondary-screen.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
 import { Store } from '@ngrx/store';
+import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import * as actions from "../../control-footer/redux/screen.actions";
 import * as actionsUi from "../../../../../shared/ui.actions";
-/**
- * Component para los objetos del mundo pokemon
- */
+
 @Component({
-  selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-category',
+  templateUrl: './category.component.html',
+  styleUrls: ['./category.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class CategoryComponent implements OnInit {
 
   title:string;
   titleId:string;
   item: any;
   name: string;
   category: string;
+  id: string;
   sprite: string;
   isLoading: boolean=false;
   seeMore: boolean;
@@ -38,31 +36,35 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(actions.write({ message: '-- -- --' }))
     this.category = this.route.snapshot.paramMap.get("category");
-    let id = this.route.snapshot.paramMap.get("id");
+    this.id = this.route.snapshot.paramMap.get("id");
     this.store.dispatch(actionsUi.isLoading());
-    this.pokeBase.getDetallItems(this.category,id).subscribe(data => {
+    this.getDetail()
+  }
+
+  getDetail(){
+    this.pokeBase.getDetallItems(this.category,this.id).subscribe(data => {
       this.title = this.category;
-      this.titleId = id;
+      this.titleId = this.id;
       this.item = data;
       this.init();
       this.store.dispatch(actionsUi.stopLoading());
     });
   }
+
   init(){
     this.name = this.item !== null ? this.item.name : '......' ;
     this.sprite = this.item.sprites.default;
     this.store.dispatch(actions.write({ message: `${this.item.id}#${this.item.name}` }))
   }
+
   goBack(){
-    this._location.back();
+    this.router.navigate(['/pokedex/' + this.category]);
   }
 
-  showMore(){
-    this.seeMore = !this.seeMore;
-  }
   getTranslation(code: string){
     const text = this.item.flavor_text_entries.find(text => text.language.name === code);
 
     return text ? text.text : '--';
   }
+
 }

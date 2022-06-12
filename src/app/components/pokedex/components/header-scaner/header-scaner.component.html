@@ -1,6 +1,9 @@
 <div id="pokedex-header" class="container-fluid">
     <div class="scanner-ring mt-2 ml-2">
-      <div class="scanner-glass" [@scannerState]="scannerState" (@scannerState.done)="animEnd($event)"></div>
+      <div
+      class="scanner-glass"
+      [@scannerState]="scannerState"
+      (@scannerState.done)="animEnd($event)"></div>
     </div>
     <div class="pilot-ligh">
       <div class="pilot-led led-orange"></div>
