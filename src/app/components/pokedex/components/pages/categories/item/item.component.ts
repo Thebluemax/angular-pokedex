@@ -21,7 +21,8 @@ export class ItemComponent  {
   seeMore: boolean;
 
   constructor() {
-    this.item = null;
+    //this.item = null;
+    console.log(this.item);
    }
 
 

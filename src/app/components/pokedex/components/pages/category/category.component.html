@@ -3,7 +3,7 @@
   <h6>{{title | formatName: 'P' | formatName : 'T'}}/{{titleId | formatName : 'T'}}</h6>
   <div [ngSwitch]="category">
     <div *ngSwitchCase="'item'">
-      <pkd-item-page ></pkd-item-page>
+      <pkd-item-page [item]="item"></pkd-item-page>
   </div>
   <div *ngSwitchCase="'pokemon'">
       <pkd-pokemon [pokemon]="item"></pkd-pokemon>
