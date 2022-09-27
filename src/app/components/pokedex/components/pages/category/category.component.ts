@@ -47,13 +47,14 @@ export class CategoryComponent implements OnInit {
       this.titleId = this.id;
       this.item = data;
       this.init();
+      console.log('stop');
       this.store.dispatch(actionsUi.stopLoading());
     });
   }
 
   init(){
     this.name = this.item !== null ? this.item.name : '......' ;
-    this.sprite = this.item.sprites.default;
+    this.sprite = this.item.sprites ? this.item.sprites.default : '#';
     this.store.dispatch(actions.write({ message: `${this.item.id}#${this.item.name}` }))
   }
 
