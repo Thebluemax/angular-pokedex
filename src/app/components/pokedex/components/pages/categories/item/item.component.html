@@ -1,8 +1,9 @@
-  <div id="header-item">
+  <div id="header-item" *ngIf="item">
         <div>
           <h4  class="title">{{name | formatName: 'T'}}</h4>
           <div class="title title-media" appImgClick>
-            <img [src]="item.sprites.default" width="100%" [hidden]="!item.sprites.default">
+            <img [src]="item.sprites.default" width="100%"
+                 [hidden]="!item.sprites.default">
           </div>
         </div>
         <h5 *ngIf="item.attributes.length > 0">Attributes</h5>
