@@ -21,6 +21,4 @@ export class CategoryListComponent implements OnInit {
     this.pageName = nameId;
     this.apiUrl = nameId;
   }
-
-
 }
