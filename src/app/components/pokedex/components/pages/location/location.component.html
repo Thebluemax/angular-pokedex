@@ -2,6 +2,7 @@
     <div>
         <h4  class="title">{{location?.name | formatName: 'T'}}</h4>
     </div>
+    <div><img [src]="getMap(location?.name)" alt=""></div>
     <h5>Locations</h5>
     <p>
         <span class="badge badge-retro ml-3" *ngFor="let place of location.locations">
