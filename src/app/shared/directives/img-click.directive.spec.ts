@@ -10,6 +10,7 @@ import { By } from '@angular/platform-browser';
   template: '<div><img src="scr/assets/img/test.png" appImgClick></div>'
 })
 class TestClickComponent {
+  open:boolean;
 }
 
 describe('ImgClickDirective', () => {
@@ -36,16 +37,18 @@ describe('ImgClickDirective', () => {
     component = fixture.componentInstance;
     inputEL = fixture.debugElement.query(By.css('div'));
     fixture.detectChanges(); // initial binding
+
   });
 
   it('click launch size', () => {
     //const directive = new ImgClickDirective();
-    console.log(inputEL.nativeElement);
+    expect(component.open).toBe(false);
+    console.log(inputEL);
     inputEL.triggerEventHandler('click', null);
 
     fixture.detectChanges();
-    console.log(inputEL.nativeElement);
+    console.log(inputEL);
 
-    //expect(inputEL.query(By.css('li')).nativeElement.className).toBe('higtlight');
+    expect(inputEL.query(By.css('img')).nativeNode.className).toBe('img-open');
   });
 });
