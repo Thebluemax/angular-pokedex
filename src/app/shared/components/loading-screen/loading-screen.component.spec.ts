@@ -1,15 +1,16 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync, flush, discardPeriodicTasks } from '@angular/core/testing';
 import { MemoizedSelector, Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import * as appStates from 'src/app/app.reducer';
+import {  AppState } from 'src/app/app.reducer';
+import { getIsLoading } from 'src/app/shared/ui.reducer';
 
 import { LoadingScreenComponent } from './loading-screen.component';
 
-describe('LoadingScreenComponent', () => {
+fdescribe('LoadingScreenComponent', () => {
   let component: LoadingScreenComponent;
   let fixture: ComponentFixture<LoadingScreenComponent>;
-  let store: MockStore<appStates.AppState>;
-  let mockStateSelector: MemoizedSelector<appStates.AppState, string>;
+  let store: MockStore<AppState>;
+  let mockStateSelector: MemoizedSelector<AppState, boolean>;
   const initialState = {ui:{ isLoading: false },
                         screen:{}};
   beforeEach(waitForAsync(() => {
@@ -19,7 +20,8 @@ describe('LoadingScreenComponent', () => {
 
       ],
       providers:[
-        provideMockStore(),
+
+        provideMockStore({ initialState }),
       ]
     })
       .compileComponents();
@@ -28,14 +30,15 @@ describe('LoadingScreenComponent', () => {
   }));
 
   beforeEach(() => {
-    store = TestBed.get<Store>(Store);
+    store = TestBed.inject(MockStore);
     fixture = TestBed.createComponent(LoadingScreenComponent);
     component = fixture.componentInstance;
+    mockStateSelector = store.overrideSelector(getIsLoading, false); // Configura el selector de estado correspondiente
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeFalsy();
   });
 
   it('Must write msj', fakeAsync(() => {

@@ -14,9 +14,9 @@
   border-top: 7px solid green;
   display: flex;
   flex-flow: row;
-  width: max-content;
+  width:95%;
   margin: auto;
-  justify-content: start;
+  justify-content: space-between;
    a{
      @include base-high;
      padding:.7rem;
