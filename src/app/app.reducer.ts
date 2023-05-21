@@ -8,7 +8,6 @@ import * as screenReducer from "./components/pokedex/components/control-footer/r
 export interface AppState {
    ui: ui.State,
    screen: screenReducer.State,
-   //ingresosEgresos: ingresoEgreso.State
 
 }
 
@@ -17,6 +16,4 @@ export interface AppState {
 export const appReducers: ActionReducerMap<AppState> = {
    ui: ui.uiReducer,
    screen: screenReducer.screenReducer,
-
-   //ingresosEgresos: ingresoEgreso.ingresoEgresoReducer
 }

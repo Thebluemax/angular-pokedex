@@ -1,6 +1,6 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer, createSelector, on, } from '@ngrx/store';
 import * as actions from './ui.actions';
-
+import { AppState } from './../app.reducer';
 export interface State {
     isLoading: boolean;
 }
@@ -19,3 +19,8 @@ const _uiReducer = createReducer(initialState,
 export function uiReducer(state, action) {
     return _uiReducer(state, action);
 }
+
+export const getIsLoading = createSelector(
+  (state: AppState) => state.ui, // Selecciona el estado ui
+  (ui) => ui.isLoading // Devuelve el valor de isLoading
+);
