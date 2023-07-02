@@ -5,40 +5,58 @@ import {  AppState } from 'src/app/app.reducer';
 import { getIsLoading } from 'src/app/shared/ui.reducer';
 
 import { LoadingScreenComponent } from './loading-screen.component';
+import { of } from 'rxjs';
+class StoreMock {
+  // How we did it before
+  select =  jasmine.createSpy().and.returnValue(of({ui:{ isLoading: false },
+    screen:{}}));
+  dispatch = jasmine.createSpy();
+}
 
 fdescribe('LoadingScreenComponent', () => {
   let component: LoadingScreenComponent;
   let fixture: ComponentFixture<LoadingScreenComponent>;
-  let store: MockStore<AppState>;
-  let mockStateSelector: MemoizedSelector<AppState, boolean>;
+let store: Store<AppState>;
+ // let mockStateSelector: MemoizedSelector<AppState, boolean>;
   const initialState = {ui:{ isLoading: false },
                         screen:{}};
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [LoadingScreenComponent],
-      imports:[
-
-      ],
       providers:[
-
-        provideMockStore({ initialState }),
+        provideMockStore(),
+      //  {
+      //    provide: Store,
+      //    useClass: StoreMock,
+     //   }
       ]
     })
       .compileComponents();
-     // mockStateSelector = store.overrideSelector(appStates, 'John');
-//      fixture.detectChanges();
+     // mockStateSelector = store.overrideSelector(Co, 'John');
+      //fixture.detectChanges();
   }));
 
   beforeEach(() => {
-    store = TestBed.inject(MockStore);
     fixture = TestBed.createComponent(LoadingScreenComponent);
     component = fixture.componentInstance;
-    mockStateSelector = store.overrideSelector(getIsLoading, false); // Configura el selector de estado correspondiente
+    store = TestBed.inject(Store);
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    // Limpiar después de cada prueba
+    clearInterval(component.timeOut);
+  });
+//  beforeEach(() => {
+//    store = TestBed.get(Store);
+//    fixture = TestBed.createComponent(LoadingScreenComponent);
+ ////   component = fixture.debugElement.componentInstance;
+  //  mockStateSelector = store.overrideSelector(getIsLoading, false); // Configura el selector de estado correspondiente
+   // fixture.detectChanges();
+  //});
+
   it('should create', () => {
-    expect(component).toBeFalsy();
+    expect(component).toBeTruthy();
   });
 
   it('Must write msj', fakeAsync(() => {
