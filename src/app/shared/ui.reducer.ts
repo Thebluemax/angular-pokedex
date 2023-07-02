@@ -9,8 +9,8 @@ export const initialState: State = {
    isLoading: false,
 }
 
-const _uiReducer = createReducer(initialState,
-
+const _uiReducer = createReducer(
+    initialState,
     on(actions.isLoading,   state => ({ ...state, isLoading: true})),
     on(actions.stopLoading, state => ({ ...state, isLoading: false})),
 
@@ -24,3 +24,4 @@ export const getIsLoading = createSelector(
   (state: AppState) => state.ui, // Selecciona el estado ui
   (ui) => ui.isLoading // Devuelve el valor de isLoading
 );
+

@@ -21,15 +21,26 @@ constructor(
   ngOnInit() {
     const subs$ = this.store.select('ui')
     .subscribe( ({isLoading})=> {
-      this.loading = isLoading});
+      this.loading = isLoading
+      this.activeLoading();
+    });
 
+  }
+
+  activeLoading(){
     this.timeOut = setInterval(()=>{
-        this.loadMsj += '* ';
-        if (!this.loading) {
-          clearInterval(this.timeOut);
-          this.loadMsj = '';
-        }
-    }, 100);
+      this.loadMsj += '* ';
+      if (!this.loading) {
+        clearInterval(this.timeOut);
+        this.timeOut = null;
+        this.loadMsj = '';
+      }
+  }, 100);
 
+  }
+
+  onDestroy(): void {
+    if(this.timeOut)
+      clearInterval(this.timeOut);
   }
 }
