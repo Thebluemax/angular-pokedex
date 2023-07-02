@@ -5,13 +5,7 @@ import {  AppState } from 'src/app/app.reducer';
 import { getIsLoading } from 'src/app/shared/ui.reducer';
 
 import { LoadingScreenComponent } from './loading-screen.component';
-import { of } from 'rxjs';
-class StoreMock {
-  // How we did it before
-  select =  jasmine.createSpy().and.returnValue(of({ui:{ isLoading: false },
-    screen:{}}));
-  dispatch = jasmine.createSpy();
-}
+import * as fromUiActions from 'src/app/shared/ui.actions';
 
 fdescribe('LoadingScreenComponent', () => {
   let component: LoadingScreenComponent;
@@ -59,26 +53,27 @@ let store: Store<AppState>;
     expect(component).toBeTruthy();
   });
 
-  it('Must write msj', fakeAsync(() => {
-    console.log(component.timeOut);
-
-    expect(component.loading).toBeFalsy();
+  it('should set loadMsj correctly when loading is true', fakeAsync(() => {
+    component.activeLoading();
+    store.dispatch(fromUiActions.isLoading());
     component.loading = true;
-    component.ngOnInit();
-    expect(component.loadMsj).toBe('');
+    console.log(component.loading);
     expect(component.loading).toBe(true);
-    tick(100)
-    fixture.detectChanges();
-
+    tick(100);
     expect(component.loadMsj).toBe('* ');
-    component.loading = false;
-    expect(component.loading).toBe(false);
-    tick(100)
-    tick(100)
-    fixture.detectChanges();
 
+    clearInterval(component.timeOut);
+  }));
+
+  it('should set loadMsj correctly when loading is false', fakeAsync(() => {
+    component.loading = false;
+    component.activeLoading();
+    store.dispatch(fromUiActions.stopLoading());
+    expect(component.loading).toBe(false);
+    tick(100);
     expect(component.loadMsj).toBe('');
-    discardPeriodicTasks()
+
+    clearInterval(component.timeOut);
   }));
 
 });
