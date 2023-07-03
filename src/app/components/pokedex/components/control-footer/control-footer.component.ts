@@ -13,12 +13,14 @@ import { AppState } from 'src/app/app.reducer';
 })
 export class ControlFooterComponent
   implements OnInit {
+  location: Location;
   screenMessage$: Subscription;
   screenSecondary: string = '-- --';
   constructor(private _location: Location,
     //private screenservice: SecondaryScreenService
     private store: Store<AppState>
   ) {
+    this.location = _location;
   }
 
   ngOnInit() {
@@ -26,7 +28,6 @@ export class ControlFooterComponent
     .subscribe( message => {
       this.screenSecondary = message.message;
     })
-    //this.screenservice.textToChange.subscribe(msj => this.screenSecondary = msj);
     this.store.dispatch(actions.write( {message:'Menú Pokedex'} ))
   }
 
@@ -34,9 +35,9 @@ export class ControlFooterComponent
 
 
   goBack() {
-    this._location.back();
+    this.location.back();
   }
   goForward() {
-    this._location.forward();
+    this.location.forward();
   }
 }
