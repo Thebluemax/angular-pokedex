@@ -2,8 +2,6 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { RegionComponent } from './region.component';
 import { ActivatedRoute, convertToParamMap, Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 

@@ -1,6 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MenuPrincipalComponent } from './menu-principal.component';
@@ -11,6 +8,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 describe('MenuPrincipalComponent', () => {
   let component: MenuPrincipalComponent;
   let fixture: ComponentFixture<MenuPrincipalComponent>;
+  let router: Router;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -27,10 +25,29 @@ describe('MenuPrincipalComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MenuPrincipalComponent);
     component = fixture.componentInstance;
+    router = TestBed.get(Router);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should navigate to /pokedex/item', () => {
+    const spy = spyOn(router, 'navigate');
+    component.goto({target:{attributes:{position:{value:0}}}});
+    expect(spy).toHaveBeenCalledWith(['pokedex/item']);
+  });
+
+  it('should navigate to /pokedex/berry', () => {
+    const spy = spyOn(router, 'navigate');
+    component.goto({target:{attributes:{position:{value:3}}}});
+    expect(spy).toHaveBeenCalledWith(['pokedex/berry']);
+  });
+
+  it('should not navigate if index out of bounds', () => {
+    const spy = spyOn(router, 'navigate');
+    component.goto({target:{attributes:{position:{value:7}}}});
+    expect(spy).toHaveBeenCalledTimes(0);
   });
 });

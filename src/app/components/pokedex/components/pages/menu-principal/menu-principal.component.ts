@@ -16,11 +16,10 @@ export class MenuPrincipalComponent {
     {name:'Abilities', api: 'ability'}];
   }
 
-
   goto($event) {
     let position = parseInt($event.target.attributes['position'].value);
+    if(position >= this.optionsList.length) return;
     let tag = `pokedex/${this.optionsList[position].api}`;
-    console.log(tag);
     this.router.navigate([tag]);
   }
 }
