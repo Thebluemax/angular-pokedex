@@ -19,15 +19,10 @@ let store: Store<AppState>;
       declarations: [LoadingScreenComponent],
       providers:[
         provideMockStore(),
-      //  {
-      //    provide: Store,
-      //    useClass: StoreMock,
-     //   }
       ]
     })
       .compileComponents();
-     // mockStateSelector = store.overrideSelector(Co, 'John');
-      //fixture.detectChanges();
+
   }));
 
   beforeEach(() => {
