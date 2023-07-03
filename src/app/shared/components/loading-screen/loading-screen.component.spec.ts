@@ -7,7 +7,7 @@ import { getIsLoading } from 'src/app/shared/ui.reducer';
 import { LoadingScreenComponent } from './loading-screen.component';
 import * as fromUiActions from 'src/app/shared/ui.actions';
 
-fdescribe('LoadingScreenComponent', () => {
+describe('LoadingScreenComponent', () => {
   let component: LoadingScreenComponent;
   let fixture: ComponentFixture<LoadingScreenComponent>;
 let store: Store<AppState>;
