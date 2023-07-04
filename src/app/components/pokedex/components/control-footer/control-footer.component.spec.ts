@@ -12,9 +12,10 @@ describe('ControlFooterComponent', () => {
   let component: ControlFooterComponent;
   let fixture: ComponentFixture<ControlFooterComponent>;
   let store;
-  // let mockStateSelector: MemoizedSelector<AppState, boolean>;
-   const initialState = {screen:{ message: 'test' },
-                         ui:{ isLoading: false }};
+  const initialState = {
+                          screen:{ message: 'test' },
+                          ui:{ isLoading: false }
+                        };
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports:[RouterTestingModule],

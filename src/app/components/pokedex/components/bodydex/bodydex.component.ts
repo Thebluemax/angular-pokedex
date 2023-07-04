@@ -79,8 +79,6 @@ export class BodydexComponent implements OnInit {
     this.viewList = this.list.slice(this.previous, this.next);
     this.pagination = this.paginateText();
     this.store.dispatch(actions.write({ message: this.pagination }))
-
-    // this.sScree.setText(this.pagination);
   }
 
   nextPage() {
@@ -88,7 +86,7 @@ export class BodydexComponent implements OnInit {
     this.buildList(this.page);
   }
 
-  previusPage() {
+  previousPage() {
     this.page = this.page > 0 ? this.page - 1 : 0;
     this.buildList(this.page);
   }
