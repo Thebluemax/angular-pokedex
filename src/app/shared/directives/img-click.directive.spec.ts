@@ -7,7 +7,7 @@ import { Routes } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
 @Component({
-  template: '<div><img src="scr/assets/img/test.png" appImgClick></div>'
+  template: '<div><img appImgClick class="" src="scr/assets/img/test.png" ></div>'
 })
 class TestClickComponent {
   open:boolean;
@@ -30,25 +30,29 @@ describe('ImgClickDirective', () => {
       ],
       providers:[
         AnimationBuilder,
-        Renderer2
+        Renderer2,
+        ImgClickDirective,
       ]
     });
     fixture = TestBed.createComponent(TestClickComponent);
     component = fixture.componentInstance;
-    inputEL = fixture.debugElement.query(By.css('div'));
+    inputEL = fixture.debugElement.query(By.css('img'));;
+    //directive= TestBed.get(ImgClickDirective);
     fixture.detectChanges(); // initial binding
 
   });
 
-  it('click launch size', () => {
-    //const directive = new ImgClickDirective();
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('click launch size', async() => {
+    component.open = false;
     expect(component.open).toBe(false);
-    console.log(inputEL);
-    inputEL.triggerEventHandler('click', null);
-
+    inputEL.nativeElement.dispatchEvent(new Event('click'));
+    component.open = true;
     fixture.detectChanges();
-    console.log(inputEL);
-
-    expect(inputEL.query(By.css('img')).nativeNode.className).toBe('img-open');
+    await fixture.whenStable();
+  await expect(inputEL.nativeElement.className).toBe('img-open');
   });
 });
