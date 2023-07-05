@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PrincipalScreenComponent } from './principal-screen.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('PrincipalScrenComponent', () => {
   let component: PrincipalScreenComponent;
@@ -8,6 +9,8 @@ describe('PrincipalScrenComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
+
       declarations: [ PrincipalScreenComponent ]
     })
     .compileComponents();

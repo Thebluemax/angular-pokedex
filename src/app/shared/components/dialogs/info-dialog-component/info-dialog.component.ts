@@ -33,7 +33,6 @@ ngOnInit(){
 
   getInfo(url) {
     this.pokeService.getInfoItem(url).subscribe((data:any) => {
-      console.log(data);
       this.dataItem = data.berries;
       this.name = data.name;
     });

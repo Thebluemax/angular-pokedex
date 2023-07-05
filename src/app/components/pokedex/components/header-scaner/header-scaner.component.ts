@@ -37,9 +37,8 @@ export class HeaderScanerComponent implements OnInit {
     let pokemon = Math.ceil(Math.random()*950);
     this.route.navigate(['/pokemon', pokemon]);
   }
-  
+
   animEnd($event){
-    console.log('end',this.scannerState);
     this.scannerState = false;
   }
 }

@@ -63,12 +63,10 @@ export class RegionComponent implements OnInit {
 }*/
 getMap(region: string) {
   let mapImg = this.maps.find(r => r.name === region);
-  console.log(mapImg);
   return mapImg.map;
 }
   detailLocation(location) {
     //let id = url.match(/\/(\d+)\//);
-   // console.log("", id[1]);
     this.router.navigate([`location/${ location }`]);
   }
 }

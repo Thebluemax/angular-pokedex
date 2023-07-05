@@ -52,7 +52,6 @@ let store: Store<AppState>;
     component.activeLoading();
     store.dispatch(fromUiActions.isLoading());
     component.loading = true;
-    console.log(component.loading);
     expect(component.loading).toBe(true);
     tick(100);
     expect(component.loadMsj).toBe('* ');

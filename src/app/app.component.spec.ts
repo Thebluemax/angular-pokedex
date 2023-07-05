@@ -1,6 +1,6 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         NoopAnimationsModule
       ],
-      schemas: [ NO_ERRORS_SCHEMA ],
+      schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
       declarations: [
         AppComponent,
       ],

@@ -106,9 +106,7 @@ export class BodydexComponent implements OnInit {
   }
 
   filter(event) {
-    console.log(event);
     this.viewList = this.list.filter( term => {
-      //console.log(term.name.includes(event));
       return term.name.toLowerCase().includes(event);
     });
     this.pagination = this.paginateTextAndSearch();

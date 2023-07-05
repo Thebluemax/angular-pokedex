@@ -47,7 +47,6 @@ export class CategoryComponent implements OnInit {
       this.titleId = this.id;
       this.item = data;
       this.init();
-      console.log('stop');
       this.store.dispatch(actionsUi.stopLoading());
     });
   }

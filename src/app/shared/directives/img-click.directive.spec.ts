@@ -29,7 +29,7 @@ describe('ImgClickDirective', () => {
         NoopAnimationsModule,
       ],
       providers:[
-        AnimationBuilder,
+
         Renderer2,
         ImgClickDirective,
       ]

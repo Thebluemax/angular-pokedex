@@ -11,13 +11,11 @@ export class HighlightDirective {
     if (element != null) {
       this.renderer.addClass(this.el.nativeElement.querySelector(element), 'highlighted');
     }
-    //console.log(id);
   }
   @HostListener('mouseout', ['$event.target.id']) outElement(id: any) {
     let element = (id !== "") ? "#" + id : null;;
     if (element != null) {
       this.renderer.removeClass(this.el.nativeElement.querySelector(element), 'highlighted');
     }
-    // console.log(this.el.nativeElement.querySelector('#'+id));
   }
 }

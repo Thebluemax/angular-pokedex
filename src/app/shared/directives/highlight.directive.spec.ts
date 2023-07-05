@@ -25,7 +25,7 @@ describe('HighlightDirective', () => {
   });
 
   it('instance created', () => {
-    expect(fixture).toBeTruthy;
+    expect(fixture).toBeTruthy();
   })
 
   it('in out mouse highlight', () => {

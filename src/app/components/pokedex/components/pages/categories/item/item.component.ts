@@ -22,7 +22,6 @@ export class ItemComponent  {
 
   constructor() {
     //this.item = null;
-    console.log(this.item);
    }
 
 
