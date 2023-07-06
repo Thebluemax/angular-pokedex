@@ -7,13 +7,10 @@ import { MesurePipe } from './mesure.pipe';
     FormatNamePipe,
     MesurePipe
     ],
-    imports: [
-      
-    ],
     exports: [
      FormatNamePipe,
      MesurePipe
     ],
-   
+
   })
   export class PipeCustomModule { }

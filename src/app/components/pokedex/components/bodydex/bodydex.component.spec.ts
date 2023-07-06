@@ -27,7 +27,9 @@ describe('BodydexComponent', () => {
       ],
       imports: [RouterTestingModule,
       HttpClientModule],
-      providers: [{provide:PokebaseService, useClass: PokemonServiceStub},provideMockStore({initialState})]
+      providers: [{provide:PokebaseService,
+         useClass: PokemonServiceStub},
+         provideMockStore({initialState})]
     })
     .compileComponents();
   }));
@@ -58,6 +60,7 @@ describe('BodydexComponent', () => {
     expect(component.page).toBe(1);
     expect(spy).toHaveBeenCalledWith(component.page);
   });
+
   it('next page when no more pages', () => {
     const spy = spyOn(component, 'buildList');
     component.page = 1;

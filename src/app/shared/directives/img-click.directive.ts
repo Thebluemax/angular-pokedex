@@ -1,6 +1,11 @@
 import { Directive, Renderer2, ElementRef, HostListener } from '@angular/core';
-import { AnimationPlayer, AnimationMetadata, AnimationBuilder , animate,
-  style} from '@angular/animations';
+import {
+  AnimationPlayer,
+   AnimationMetadata,
+   AnimationBuilder ,
+   animate,
+  style
+} from '@angular/animations';
 
 @Directive({
   selector: '[appImgClick]'

@@ -9,10 +9,8 @@ import { RouterModule, Router } from '@angular/router';
   templateUrl: './info-dialog-component.component.html',
   styleUrls: ['./info-dialog-component.component.scss']
 })
-export class InfoDialogComponent implements OnInit{
+export class InfoDialogComponent {
 
- //s @Input() data:any;
- // url: string;
   dataItem:any[] = [];
   name:string;
   typeName: string;
@@ -24,9 +22,6 @@ export class InfoDialogComponent implements OnInit{
     public router:Router
     ) { }
 
-ngOnInit(){
-  //this.getinfo();
-}
   setType(typeName: string){
     this.typeName = typeName;
   }
@@ -37,6 +32,7 @@ ngOnInit(){
       this.name = data.name;
     });
   }
+
   goToPage(name){
     const route = `/berries/${name}`;
     this.router.navigate([route]);
@@ -49,11 +45,3 @@ ngOnInit(){
 
 }
 
-@NgModule({
-  declarations: [InfoDialogComponent],
-  imports: [
-    CommonModule,
-    RouterModule
-  ]
-})
-export class InfoDialogModule { }

@@ -7,6 +7,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
+
 export class NavBarComponent implements OnInit {
   openInput: boolean;
   term$: string;
@@ -15,10 +16,8 @@ export class NavBarComponent implements OnInit {
   @Output() searchTerm : EventEmitter<string> = new EventEmitter();
   @Output() next : EventEmitter<boolean> = new EventEmitter();
   @Output() back : EventEmitter<boolean> = new EventEmitter();
-  constructor() { }
 
   ngOnInit(): void {
-
     this.subject.pipe(
       debounceTime(300),
       distinctUntilChanged(),

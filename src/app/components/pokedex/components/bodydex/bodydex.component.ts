@@ -50,12 +50,10 @@ export class BodydexComponent implements OnInit {
 
   getItems(offset: number, limit: number) {
     this.store.dispatch(actionsUi.isLoading());
-    //this.isLoading = true;
     this.pkService.getItems(this.api, offset, limit).subscribe(data => {
       this.itemCount = data.count;
       this.list = data.results;
       this.listSort();
-      // this.isLoading = false;
       this.buildList(offset);
       this.store.dispatch(actionsUi.stopLoading());
     });
@@ -68,7 +66,6 @@ export class BodydexComponent implements OnInit {
       if (a.name < b.name) {
         return -1;
       }
-      // a must be equal to b
       return 0;
     });
   }

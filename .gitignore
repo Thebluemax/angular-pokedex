@@ -32,8 +32,8 @@ speed-measure-plugin*.json
 .history/*
 poke.code*
 
-browserlist*
-editorconfig*
+.browserslist*
+.editorconfig*
 # misc
 /.angular/cache
 /.sass-cache

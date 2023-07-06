@@ -14,7 +14,6 @@ describe('MenuPrincipalComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ MenuPrincipalComponent ],
       schemas: [ NO_ERRORS_SCHEMA ],
-      providers: [ ],
       imports:[
         RouterTestingModule
       ]

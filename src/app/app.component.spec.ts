@@ -12,7 +12,7 @@ describe('AppComponent', () => {
         RouterTestingModule,
         NoopAnimationsModule
       ],
-      schemas: [ NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA],
+      schemas: [ NO_ERRORS_SCHEMA ],
       declarations: [
         AppComponent,
       ],
