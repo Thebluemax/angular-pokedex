@@ -1,7 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
 import { Store } from '@ngrx/store';
 import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import * as actions from "../../control-footer/redux/screen.actions";
@@ -26,8 +24,6 @@ export class CategoryComponent implements OnInit {
 
   constructor(private pokeBase:PokebaseService,
                private route:ActivatedRoute,
-               private sScreen:SecondaryScreenService,
-               private  _location:Location,
                private router: Router,
                private store: Store) {
     this.item = null;

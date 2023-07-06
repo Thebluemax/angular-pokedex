@@ -11,13 +11,12 @@ export class LoadingScreenComponent implements OnInit {
 
   loadMsj:string = '';
   timeOut: any;
-
   loading:boolean;
+
 constructor(
   private store: Store<AppState>
-){
+){}
 
-}
   ngOnInit() {
     const subs$ = this.store.select('ui')
     .subscribe( ({isLoading})=> {

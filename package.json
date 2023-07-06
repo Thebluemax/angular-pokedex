@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build --configuration production --aot",
     "test": "ng test",
+    "test:prod": "ng test --browsers=ChromeHeadless --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compodoc": "npx compodoc -p tsconfig.app.json"

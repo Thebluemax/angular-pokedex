@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PokedexComponent } from './pokedex.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
@@ -11,7 +10,6 @@ describe('PokedexComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ PokedexComponent ],
       schemas: [NO_ERRORS_SCHEMA],
-
     })
     .compileComponents();
   });

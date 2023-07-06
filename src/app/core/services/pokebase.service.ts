@@ -15,9 +15,7 @@ export class PokebaseService implements ItemsService{
  * Servicio para la conexión a la api de pokeApi
  * @param {HttpClient} Cliente http
  */
-  constructor( private http: HttpClient) {
-
-  }
+  constructor( private http: HttpClient) {}
 /**
  *
  * @param url url del recurso

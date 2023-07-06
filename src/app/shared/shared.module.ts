@@ -23,7 +23,6 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     PipeCustomModule,
     LoadingScreenComponent,
     NavBarComponent,
-
     HighlightDirective,
     ImgClickDirective
   ]

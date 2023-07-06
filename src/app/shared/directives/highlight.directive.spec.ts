@@ -1,6 +1,6 @@
 import { HighlightDirective } from './highlight.directive';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA, Component, DebugElement } from '@angular/core';
+import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
 @Component({
@@ -16,12 +16,12 @@ describe('HighlightDirective', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [  TestHoverFocusComponent, HighlightDirective ],
+      declarations: [TestHoverFocusComponent, HighlightDirective],
     });
     fixture = TestBed.createComponent(TestHoverFocusComponent);
     component = fixture.componentInstance;
     inputEL = fixture.debugElement;
-    fixture.detectChanges(); // initial binding
+    fixture.detectChanges();
   });
 
   it('instance created', () => {
@@ -29,18 +29,17 @@ describe('HighlightDirective', () => {
   })
 
   it('in out mouse highlight', () => {
-    //const directive = new HighlightDirective();
-    inputEL.triggerEventHandler('mouseover',null);
+    inputEL.triggerEventHandler('mouseover', null);
     fixture.detectChanges();
     expect(inputEL.query(By.css('li')).nativeElement.className).toBe('higtlight');
 
-  inputEL.triggerEventHandler('mouseout', null);
-  fixture.detectChanges();
-  expect(inputEL.nativeElement.style.backgroundColor).toBe('');
+    inputEL.triggerEventHandler('mouseout', null);
+    fixture.detectChanges();
+    expect(inputEL.nativeElement.style.backgroundColor).toBe('');
 
-  inputEL.triggerEventHandler('mouseover',null);
-  fixture.detectChanges();
-  expect(inputEL.query(By.css('li')).nativeElement.className).toBe('higtlight');
+    inputEL.triggerEventHandler('mouseover', null);
+    fixture.detectChanges();
+    expect(inputEL.query(By.css('li')).nativeElement.className).toBe('higtlight');
 
   });
 });
