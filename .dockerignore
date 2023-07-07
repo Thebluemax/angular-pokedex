@@ -3,3 +3,6 @@ dist
 .angular
 Dockerfile
 *.md
+.git
+nginx_conf
+.github
