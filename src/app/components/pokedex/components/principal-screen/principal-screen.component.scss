@@ -1,78 +1,77 @@
 @import '../../../../../sass/variables.scss';
 
 #primary-screen {
-    background-color: ivory;
-    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
-    border-radius: 20px 20px 20px 65px;
-    height: auto;
-    padding: 7px 7px;
-    margin: 10px auto;
-  }
-  #pilot-holder {
-    width: 100px;
-  }
-  .screen-led{
-    height: 10px;
-    width: 10px;
-    background-color:red;
-    border: 3px solid black;
-    margin-left: 20px;
-    display: inline-block;
-  }
-  #screen {
-    background-color: green;
-    border-radius: 10px;
-    box-shadow: 0px 0px 6px 7px rgb(72, 209, 102) inset;
-    font-family: $fontfamily;
-    height: 45vh;
-    color: chartreuse;
-    clear: both;
-    position: relative;
-    overflow: hidden;
-  }
-  #screen-footer {
-    padding: 10px 32px;
-  }
-  #screen-control {
-    width: 100px;
-    margin-bottom: 5px;
-  }
-  .screen-pilot{
-    height: 20px;
-    width: 20px;
-    background-color:red;
-    border: 3px solid black;
-    margin-left: 20px;
-    display: inline-block;
-  }
-  .black-strip {
-    background-color: #000;
-    height: 5px;
-    border-radius: 2.5px;
-    width: 100px;
-    margin-top: 5px;
-  }
-  /* ----------- Wearables ----------- */
-  /* ----------- Moto 360 Watch ----------- */
-@media (max-device-width: 218px)
-and (max-device-height: 281px) {
+  background-color: ivory;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+  border-radius: 20px 20px 20px 65px;
+  height: auto;
+  padding: 7px 7px;
+  margin: 10px auto;
 }
-  /* ----------- Labtops ----------- */
+
+#pilot-holder {
+  width: 100px;
+}
+
+.screen-led {
+  height: 10px;
+  width: 10px;
+  background-color: red;
+  border: 3px solid black;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+#screen {
+  background-color: green;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px 7px rgb(72, 209, 102) inset;
+  font-family: $fontfamily;
+  height: 35vh;
+  color: chartreuse;
+  clear: both;
+  position: relative;
+  overflow: hidden;
+}
+
+#screen-footer {
+  padding: 10px 32px;
+}
+
+#screen-control {
+  width: 100px;
+  margin-bottom: 5px;
+}
+
+.screen-pilot {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border: 3px solid black;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.black-strip {
+  background-color: #000;
+  height: 5px;
+  border-radius: 2.5px;
+  width: 100px;
+  margin-top: 5px;
+}
+
+/* ----------- Wearables ----------- */
+/* ----------- Moto 360 Watch ----------- */
+@media (max-device-width: 218px) and (max-device-height: 281px) {}
+
+/* ----------- Labtops ----------- */
 
 /* ----------- Non-Retina Screens ----------- */
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
 
 /* ----------- Retina Screens ----------- */
-@media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) {
-}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
+
 /*
 
 Hardboiled CSS3 Media Queries by Andy Clarke:
@@ -81,67 +80,53 @@ License: Creative Commons CC Zero Declaration. No Rights Reserved.
 */
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles */
 }
 
 /* Smartphones (landscape) ----------- */
-@media only screen
-  and (min-width: 321px) {
+@media only screen and (min-width: 321px) {
   /* Styles */
 }
 
 /* Smartphones (portrait) ----------- */
-@media only screen
-  and (max-width: 320px) {
+@media only screen and (max-width: 320px) {
   /* Styles */
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px) {
-
-}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
 /* iPads (landscape) ----------- */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: landscape) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   /* Styles */
 }
 
 /* iPads (portrait) ----------- */
-@media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
-  and (orientation: portrait) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
   /* Styles */
 }
 
 /* Desktops and laptops ----------- */
-@media only screen
-  and (min-width: 1224px) {
+@media only screen and (min-width: 1224px) {
   /* Styles */
 }
 
 /* Large screens ----------- */
-@media only screen
-  and (min-width: 1824px) {
+@media only screen and (min-width: 1824px) {
   /* Styles */
 }
 
 /* High pixel ratio devices ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-  only screen and (min-device-pixel-ratio: 1.5) {
+only screen and (min-device-pixel-ratio: 1.5) {
+
   /* Styles */
   #screen {
     font-size: .8em;
-    }
-    h6 {
-      font-size: 0.7em;
-    }
+  }
+
+  h6 {
+    font-size: 0.7em;
+  }
 }
