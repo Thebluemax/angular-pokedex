@@ -10,8 +10,8 @@ on:
       - release/**
 
 env:
-  IMAGE_NAME: angular-pokedex 
 
+  IMAGE_NAME: angular-pokedex 
 
 jobs:
   push:
