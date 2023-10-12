@@ -4,11 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --aot",
     "test": "ng test",
+    "test:coverage": "ng test --code-coverage",
+    "test:dev": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "build:prod": "ng build --aot --configuration production",
     "compodoc": "npx compodoc -p tsconfig.app.json"
   },
   "private": true,
@@ -32,6 +34,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^13.2.2",
+    "@angular-eslint/schematics": "^13.5.0",
     "@angular/cli": "^13.2.2",
     "@angular/compiler-cli": "^13.2.1",
     "@angular/language-service": "^13.2.1",
