@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --aot --configuration production",
-    "compodoc": "npx compodoc -p tsconfig.app.json"
+    "compodoc": "npx compodoc -p tsconfig.app.json",
+    "get_version": "echo $npm_package_version"
   },
   "private": true,
   "dependencies": {
