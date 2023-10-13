@@ -1,38 +1,28 @@
 <div class="row">
-    <div class="col-7">
-      <div class="pt-3">
-        <a  id="btn1" class="rounded-circle ml-1" (click)="goScan()"></a>
-        <a routerLink="/"
-            id="btn2"
-            class="mb-3 rounded-pill ml-3"></a>
-        <a  id="btn3" class="rounded-pill ml-1 mb-3"></a>
+  <div class="col-7">
+    <div class="pt-3">
+      <a id="btn1" class="rounded-circle" (click)="goScan()"></a>
+      <a routerLink="/" id="btn2" class="rounded-pill"></a>
+      <a id="btn3" class="rounded-pill"></a>
+    </div>
+    <div class="ml-1 pt-2">
+      <p id="id-screen" class="rounded-lg" [innerHtml]="screenSecondary">
+      </p>
+    </div>
+  </div>
+  <!-- Pad direcciones -->
+  <div class="col-5">
+    <div class="control-holder mt-3">
+      <div>
+        <a class="control-btn m-auto" id="btnup"></a>
       </div>
-      <div class="ml-1 pt-2">
-        <p  id="id-screen"
-            class="rounded-lg"
-            [innerHtml]="screenSecondary">
-        </p>
+      <div>
+        <a class="control-btn" id="btnleft" (click)="goBack()"></a>
+        <a class="control-btn" id="btnright" (click)="goForward()"></a>
+      </div>
+      <div>
+        <a class="control-btn m-auto align-top" id="btndown"></a>
       </div>
     </div>
-    <!-- Pad direcciones -->
-    <div class="col-5">
-      <div  class="control-holder mt-3">
-        <div>
-          <a class="control-btn m-auto"
-          id="btnup"></a>
-        </div>
-        <div>
-          <a class="control-btn"
-          id="btnleft"
-          (click)="goBack()"></a>
-          <a class="control-btn"
-          id="btnright"
-          (click)="goForward()"></a>
-        </div>
-        <div>
-          <a class="control-btn m-auto align-top"
-          id="btndown"></a>
-        </div>
-      </div>
-    </div>
-   </div>
+  </div>
+</div>

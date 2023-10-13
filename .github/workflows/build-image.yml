@@ -2,9 +2,7 @@ name: Build Image and Push
 on:
   push:
     branches:
-      - develop
-    tags:
-      - v*
+      - main
   pull_request:
     branches:
       - release/**

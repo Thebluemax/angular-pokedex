@@ -31,6 +31,7 @@
 #btn1,#btn2,#btn3 {
     box-shadow: 2px 2px 3px grey;
     display:inline-block;
+    vertical-align: middle;
   }
   #btn2{
     background-color: lime;
@@ -91,6 +92,26 @@
     and (min-device-width: 320px)
     and (max-device-width: 480px) {
     /* Styles */
+    #id-screen {
+      font-size: .8em;
+      margin-bottom: 1rem;
+      min-height: 65px;
+      padding: 2px;
+    }
+    #screen {
+      }
+      #btn1{
+        height: 35px;
+        width: 35px;
+      }
+      #btn2, #btn3 {
+        height: 7px;
+        width: 30px;
+
+      }
+      #btn1,#btn2,#btn3 {
+        margin-left: 2px;
+      }
   }
 
   /* Smartphones (landscape) ----------- */
@@ -144,16 +165,5 @@
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
     /* Styles */
-    #screen {
-      font-size: .8em;
-      }
-      #btn1{
-        height: 45px;
-        width: 45px;
-      }
-      #btn2, #btn3 {
-        height: 10px;
-        width: 40px;
-
-      }
+   
   }
