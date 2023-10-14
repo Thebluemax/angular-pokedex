@@ -29,6 +29,8 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: create key
+      run: touch ~/.ssh/id_rsa
+    - name: copy private
       run: echo "${{ secrets.PRIV_KEY_F35 }}" > ~/.ssh/id_rsa
     - name: pull image
       run: ssh -i ~/.ssh/id_rsa  duser@51.210.108.192 docker compose -f prod02-stack/prod02-stack.yml pull pokedex
