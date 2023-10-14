@@ -4,5 +4,5 @@ dist
 Dockerfile
 *.md
 .git
-nginx_conf
+#nginx_conf
 .github
