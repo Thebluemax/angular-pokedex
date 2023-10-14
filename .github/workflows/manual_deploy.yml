@@ -21,17 +21,20 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
-  greet:
+  deploy_prod:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: create key
-      run: touch ~/.ssh/id_rsa
-    - name: copy private
-      run: echo "${{ secrets.PRIV_KEY_F35 }}" > ~/.ssh/id_rsa
+    - name: install ssh keys
+      # check this thread to understand why its needed:
+      # https://stackoverflow.com/a/70447517
+      run: |
+        install -m 600 -D /dev/null ~/.ssh/id_rsa
+        echo "${{ secrets.PRIV_KEY_F35 }}" > ~/.ssh/id_rsa
+        ssh-keyscan -H 51.210.108.192 > ~/.ssh/known_hosts
     - name: pull image
       run: ssh -i ~/.ssh/id_rsa  duser@51.210.108.192 docker compose -f prod02-stack/prod02-stack.yml pull pokedex
     - name: update service
