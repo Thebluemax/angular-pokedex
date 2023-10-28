@@ -1,8 +1,5 @@
 <!-- Principal screen-->
-<div>
-  <h6>/{{pageName | formatName: 'P' | formatName: 'T'}}</h6>
-</div>
-
+<pkd-toolbar [name]="pageName"></pkd-toolbar>
 <loading-screen></loading-screen>
 <div id="scroll-screen">
   <ul appHighlight>
@@ -18,7 +15,6 @@
   </ul>
 </div>
 <pkd-nav-bar
-[pagination]="true"
 (searchTerm)="filter($event)"
 (next)="nextPage()"
 (back)="previousPage()"></pkd-nav-bar>

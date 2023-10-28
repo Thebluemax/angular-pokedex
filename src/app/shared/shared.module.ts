@@ -26,7 +26,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     LoadingScreenComponent,
     NavBarComponent,
     HighlightDirective,
-    ImgClickDirective
+    ImgClickDirective,
+    ToolbarComponent
   ]
 })
 export class SharedModule { }
