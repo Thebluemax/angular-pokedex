@@ -5,7 +5,7 @@ import { PipeCustomModule } from '../../pipes/pipe-custom.module';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('ToolbarComponent', () => {
+describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
   let fixture: ComponentFixture<ToolbarComponent>;
 
@@ -81,5 +81,14 @@ fdescribe('ToolbarComponent', () => {
       input.triggerEventHandler('keyup',{target: input.nativeElement});
       fixture.detectChanges();
       expect(component.searchTerm.emit).toHaveBeenCalledWith('test');
+  });
+  
+  it('search button is hidden', () => {
+    const button = fixture.nativeElement.querySelector('a#search-btn');
+    expect(button).toBeTruthy();
+    component.showSearchBtn = false;
+    fixture.detectChanges();
+    const buttonShow = fixture.nativeElement.querySelector('a#search-btn');
+    expect(buttonShow).toBeFalsy();
   });
 });

@@ -10,6 +10,7 @@ export class ToolbarComponent implements OnInit {
   pageName: string = 'Page Name';
   openInput: boolean = false;
   @Input() set name(name: string) {this.pageName = name;}
+  @Input() showSearchBtn: boolean = true;
   @Output() searchTerm:EventEmitter<string> = new EventEmitter<string>();
   constructor() { }
 

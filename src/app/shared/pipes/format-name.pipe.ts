@@ -6,17 +6,22 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class FormatNamePipe implements PipeTransform {
 
   transform(value: any, operation: string): string {
+    let stringValue: string = '';
     switch (operation) {
       case 'T':
-        return value.replace('-', ' ').toUpperCase();
+        stringValue = value.replace('-', ' ').toUpperCase();
         break;
       case 'I':
-        return this.capitalizeWord(value);
+        stringValue = this.capitalizeWord(value);
+        break;
       case 'P':
-        return this.toPlural(value);
+        stringValue = this.toPlural(value);
+        break;
       default:
-        return value;
+        stringValue = value;
+        break;
     }
+    return stringValue;
 
   }
 
