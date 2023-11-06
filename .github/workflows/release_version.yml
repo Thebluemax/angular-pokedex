@@ -24,14 +24,15 @@ jobs:
     steps:
     - name: Get version
       run: export VERSION=$(npm run version:app)
-
+      
+    - uses: actions/checkout@v4
+      with:
+        ref: develop
+    
     - name: update version
       # check this thread to understand why its needed:
       # https://stackoverflow.com/a/70447517
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git checkout develop
         git checkout -b release/${VERSION}
         npm version ${{ github.event.inputs.name }}
 
