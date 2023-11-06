@@ -1,0 +1,38 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual version update
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Version to release'
+        # Default value if no value is explicitly provided
+        default: 'patch'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
+jobs:
+  version_release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get version
+      run: export VERSION=$(npm run version:app)
+
+    - name: update version
+      # check this thread to understand why its needed:
+      # https://stackoverflow.com/a/70447517
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout develop
+        git checkout -b release/${VERSION}
+        npm version ${{ github.event.inputs.name }}
+
+        git push --follow-tags
