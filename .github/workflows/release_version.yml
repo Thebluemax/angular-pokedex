@@ -33,7 +33,7 @@ jobs:
       run: ls
         
     - name: Get version
-      run: export VERSION=$(npm run version:app)
+      run: npm run version:app
       
     - name: update version
       # check this thread to understand why its needed:
