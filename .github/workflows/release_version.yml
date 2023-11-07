@@ -22,9 +22,13 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+    
     - name: Get version
       run: export VERSION=$(npm run version:app)
-    
+          
+    - uses: actions/checkout@v4
+      with:
+        ref: develop
     - uses: actions/checkout@v4
       with:
         ref: develop
