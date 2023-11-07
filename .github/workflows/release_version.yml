@@ -22,11 +22,19 @@ jobs:
   version_release:
     runs-on: ubuntu-latest
     steps:
-    - name: Get version
-      run: export VERSION=$(npm run version:app)
+
     - uses: actions/checkout@v4
       with:
         ref: develop
+
+    - name: dependecies
+      run: npm ci
+    - name: jj
+      run: cat package.json
+        
+    - name: Get version
+      run: npm run version:app
+      
     - name: update version
       # check this thread to understand why its needed:
       # https://stackoverflow.com/a/70447517
