@@ -1,4 +1,4 @@
-# This is a basic workflow that is manually triggered
+N# This is a basic workflow that is manually triggered
 
 name: Manual version update
 
@@ -29,17 +29,27 @@ jobs:
 
     - name: dependecies
       run: npm ci
-    - name: jj
-      run: cat package.json
         
-    - name: Get version
-      run: npm run version:app
-      
+    - name: Get old version
+      run: |
+        version_value=$(npm run version:app)
+        echo "OLD_VERSION_APP=$version_value" >> $GITHUB_ENV
+    -  name: update version number
+      # check this thread to understand why its needed:
+      # https://stackoverflow.com/a/70447517
+      run: |
+        npm version ${{ github.event.inputs.name }}
+    - name: Get new version
+      run: |
+        version_value=$(npm run version:app)
+        echo "NEW_VERSION_APP=$version_value" >> $GITHUB_EN
     - name: update version
       # check this thread to understand why its needed:
       # https://stackoverflow.com/a/70447517
       run: |
-        git checkout -b release/${VERSION}
+        git add .
+        git commit -m "from ${OLD_VERSION_APP} => ${NEW_VERSION_APP}
+        git checkout -b release/${NEW_VERSION_APP}
         npm version ${{ github.event.inputs.name }}
 
-        git push --follow-tags
+        git push 
