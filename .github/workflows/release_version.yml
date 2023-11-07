@@ -30,7 +30,7 @@ jobs:
     - name: dependecies
       run: npm ci
     - name: jj
-      run: ls
+      run: cat package.json
         
     - name: Get version
       run: npm run version:app
