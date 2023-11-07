@@ -37,7 +37,7 @@ jobs:
     -  name: update version number
       # check this thread to understand why its needed:
       # https://stackoverflow.com/a/70447517
-      run: |
+       run: |
         npm version ${{ github.event.inputs.name }}
     - name: Get new version
       run: |
