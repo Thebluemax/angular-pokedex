@@ -1,21 +1,12 @@
-# This is a basic workflow that is manually triggered
+name: Create release
 
-name: Manual version update
-
-# Controls when the action will run. Workflow runs when manually triggered using the UI
-# or API.
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
     inputs:
       name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Version to release'
-        # Default value if no value is explicitly provided
+        description: 'Type of version to release'
         default: 'patch'
-        # Input has to be provided for the workflow to run
         required: true
-        # The data type of the input
         type: string
 
 jobs:
@@ -35,8 +26,6 @@ jobs:
         version_value=$(npm run version:app)
         echo "OLD_VERSION_APP=$version_value" >> $GITHUB_ENV
     -  name: update version number
-      # check this thread to understand why its needed:
-      # https://stackoverflow.com/a/70447517
        run: |
         npm version ${{ github.event.inputs.name }}
     - name: Get new version
@@ -44,12 +33,13 @@ jobs:
         version_value=$(npm run version:app)
         echo "NEW_VERSION_APP=$version_value" >> $GITHUB_EN
     - name: update version
-      # check this thread to understand why its needed:
-      # https://stackoverflow.com/a/70447517
       run: |
-        git add .
-        git commit -m "from ${OLD_VERSION_APP} => ${NEW_VERSION_APP}
-        git checkout -b release/${NEW_VERSION_APP}
         npm version ${{ github.event.inputs.name }}
-
+        git add .
+        git checkout -b release/${NEW_VERSION_APP}
+        git commit -m "${OLD_VERSION_APP} => ${NEW_VERSION_APP}"
         git push 
+    - name: Create and push tag
+      run: |
+          git tag -a ${NEW_VERSION_APP} -m "Release ${NEW_VERSION_APP}"
+          git push origin ${NEW_VERSION_APP}
