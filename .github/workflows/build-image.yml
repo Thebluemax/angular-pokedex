@@ -28,6 +28,11 @@ jobs:
           registry: ${{env.REGISTRY}}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Checkout
+        uses: ./
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Get version number
         id: version
