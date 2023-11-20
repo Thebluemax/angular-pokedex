@@ -115,10 +115,12 @@
                 "./src/sass"
               ]
             },
-            "fileReplacements": [{
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.test.ts"
-            }]
+            "fileReplacements": [
+              {
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.test.ts"
+              }
+            ]
           }
         },
         "e2e": {
@@ -132,12 +134,22 @@
               "devServerTarget": "poke:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "defaultProject": "poke",
   "cli": {
-    "analytics": false
+    "analytics": false,
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }

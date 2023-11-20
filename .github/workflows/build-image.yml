@@ -32,17 +32,17 @@ jobs:
       - name: Get version number
         id: version
         run: |
-          export APP_VERSION=$(npm run version:app)
-          echo "APP_VERSION=${APP_VERSION}" >> $GITHUB_ENV
+          app_version=$(npm run version:app)
+          echo "APP_VERSION=${app_version}" >> $GITHUB_ENV
 
       - name: Determine Tag
         id: tag
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             echo "RELEASE_TAG=stable" >> $GITHUB_ENV
-            echo "MAIN_TAG=v${{ steps.version.outputs.APP_VERSION }}" >> $GITHUB_ENV
+            echo "MAIN_TAG=v${APP_VERSION }" >> $GITHUB_ENV
           elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
-            echo "RELEASE_TAG=release_${{ steps.version.outputs.APP_VERSION }}" >> $GITHUB_ENV
+            echo "RELEASE_TAG=release_${APP_VERSION}" >> $GITHUB_ENV
           else
             echo "RELEASE_TAG=unknown" >> $GITHUB_ENV
           fi

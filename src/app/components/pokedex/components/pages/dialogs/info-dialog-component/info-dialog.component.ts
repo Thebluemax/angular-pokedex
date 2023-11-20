@@ -24,9 +24,6 @@ export class InfoDialogComponent implements OnInit{
     public router:Router
     ) { }
 
-ngOnInit(){
-  //this.getinfo();
-}
   setType(typeName: string){
     this.typeName = typeName;
   }

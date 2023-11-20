@@ -15,14 +15,11 @@ import { Observable, Subscription } from 'rxjs';
  * Componente Pokemon, gestion la pantalla del
  * pokemon
  */
-export class PokemonComponent implements OnInit {
+export class PokemonComponent  {
 
   @Input() pokemon: Pokemon;
   private idObservable: Subscription;
   constructor() {
-  }
-
-  ngOnInit() {
   }
 
 }

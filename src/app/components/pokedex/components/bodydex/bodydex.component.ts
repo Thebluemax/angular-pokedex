@@ -86,6 +86,7 @@ export class BodydexComponent implements OnInit {
   previousPage() {
     this.page = this.page > 0 ? this.page - 1 : 0;
     this.buildList(this.page);
+  
   }
 
   paginateText() {
