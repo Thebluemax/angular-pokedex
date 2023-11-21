@@ -29,22 +29,23 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
       
-      - uses: actions/checkout@v3
+      -  name: Prepare repository
+         uses: actions/checkout@v3
 
       - name: Get version number
         id: version
         run: |
           app_version=$(npm run version:app)
-          echo "APP_VERSION=${app_version}" >> $GITHUB_ENV
+          echo "APP_VERSION=$app_version" >> $GITHUB_ENV
 
       - name: Determine Tag
         id: tag
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             echo "RELEASE_TAG=stable" >> $GITHUB_ENV
-            echo "MAIN_TAG=v${APP_VERSION }" >> $GITHUB_ENV
+            echo "MAIN_TAG=v$APP_VERSION" >> $GITHUB_ENV
           elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
-            echo "RELEASE_TAG=release_${APP_VERSION}" >> $GITHUB_ENV
+            echo "RELEASE_TAG=release_$APP_VERSION" >> $GITHUB_ENV
           else
             echo "RELEASE_TAG=unknown" >> $GITHUB_ENV
           fi
