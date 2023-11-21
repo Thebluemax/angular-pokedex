@@ -13,7 +13,8 @@
     "build:prod": "ng build --aot --configuration production",
     "compodoc": "npx compodoc -p tsconfig.app.json",
     "get_version": "npm pkg get version --raw --silent",
-    "version:app": "awk -F'\"' '/\"version\": \".+\"/{ print $4; exit; }' package.json",
+    "version:app": "echo ${npm_package_version}",
+    "version:app:bad": "awk -F'\"' '/\"version\": \".+\"/{ print $4; exit; }' package.json",
     "ng:memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng"
   },
   "private": true,
