@@ -35,6 +35,8 @@ jobs:
       - name: Get version number
         id: version
         run: |
+          ls -la
+          npm --help
           app_version=$(npm run version:app)
           echo "APP_VERSION=$app_version" >> $GITHUB_ENV
 
