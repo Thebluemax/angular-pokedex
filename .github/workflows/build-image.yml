@@ -43,23 +43,23 @@ jobs:
         run: |
           if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
             echo "RELEASE_TAG=stable" >> $GITHUB_ENV
-            echo "MAIN_TAG=v$APP_VERSION" >> $GITHUB_ENV
+            echo "MAIN_TAG=$APP_VERSION" >> $GITHUB_ENV
           elif [[ "${{ github.ref }}" == refs/heads/release/* ]]; then
             echo "RELEASE_TAG=release_$APP_VERSION" >> $GITHUB_ENV
           else
-            echo "RELEASE_TAG=unknown" >> $GITHUB_ENV
+            echo "RELEASE_TAG=0.0.0" >> $GITHUB_ENV
           fi
 
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ steps.tag.outputs.RELEASE_TAG }}, ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:latest
+          tags: ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{env.RELEASE_TAG}}, ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:latest
 
       - name: Tag for Main
         if: startsWith(github.ref, 'refs/heads/main')
-        run: docker tag ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ steps.tag.outputs.RELEASE_TAG }} ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ steps.tag.outputs.MAIN_TAG }}
+        run: docker tag ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }}
       
       - name: Push Main tags
         if: startsWith(github.ref, 'refs/heads/main')
-        run: docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ steps.tag.outputs.RELEASE_TAG }} && docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ steps.tag.outputs.MAIN_TAG }} && docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:stable
+        run: docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} && docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }} && docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:stable
