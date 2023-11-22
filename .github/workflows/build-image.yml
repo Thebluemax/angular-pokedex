@@ -50,16 +50,15 @@ jobs:
             echo "RELEASE_TAG=0.0.0" >> $GITHUB_ENV
           fi
 
-      - name: Build and push
+      - name: Build and push Main
         uses: docker/build-push-action@v2
+        if: startsWith(github.ref, 'refs/heads/main')
         with:
-          push: true
-          tags: ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{env.RELEASE_TAG}}, ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:latest
-
-      - name: Tag for Main
+          tags: docker tag ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }}  ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:stable
+        
+      - name: Build and push Release
+        uses: docker/build-push-action@v2
         if: startsWith(github.ref, 'refs/heads/main')
-        run: docker tag ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }}
-      
-      - name: Push Main tags
-        if: startsWith(github.ref, 'refs/heads/main')
-        run: docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} && docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }} && docker push ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:stable
+        with:
+          tags: ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }}
+        
