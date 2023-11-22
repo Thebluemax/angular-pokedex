@@ -54,7 +54,7 @@ jobs:
         uses: docker/build-push-action@v2
         if: startsWith(github.ref, 'refs/heads/main')
         with:
-          tags: docker tag ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }} 
+          tags: ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.RELEASE_TAG }} ${{env.REGISTRY}}/thebluemax/${{env.IMAGE_NAME}}:${{ env.MAIN_TAG }} 
         
       - name: Build and push Release
         uses: docker/build-push-action@v2
