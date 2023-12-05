@@ -6,7 +6,7 @@ import * as actions from "../../control-footer/redux/screen.actions";
 import * as actionsUi from "../../../../../shared/ui.actions";
 
 @Component({
-  selector: 'app-category',
+  selector: 'pkd-category-section',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })

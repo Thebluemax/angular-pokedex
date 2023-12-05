@@ -5,11 +5,11 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 
 @Component({
-  selector: 'app-region',
+  selector: 'pkd-region-screen',
   templateUrl: './region.component.html',
   styleUrls: ['./region.component.scss']
 })
-export class RegionComponent implements OnInit {
+export class RegionComponent {
   loading: boolean;
   region: Region;
   title: string;
@@ -38,7 +38,7 @@ export class RegionComponent implements OnInit {
     this.region = null;
 
   }
-  ngOnInit() {}
+ 
  /* init() {
     this.store.dispatch(actionsScreen
       .write({message: `${this.region.id}#${this.region.name}`}));
