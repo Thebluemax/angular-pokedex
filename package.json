@@ -8,14 +8,15 @@
     "test:coverage": "ng test --code-coverage",
     "test:dev": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
     "test:prod": "ng test --browsers=ChromeHeadless --watch=false",
-    "lint": "ng lint",
+    "lint:default": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --aot --configuration production",
     "compodoc": "npx compodoc -p tsconfig.app.json",
     "get_version": "npm pkg get version --raw --silent",
     "version:app": "echo ${npm_package_version}",
     "version:app:bad": "awk -F'\"' '/\"version\": \".+\"/{ print $4; exit; }' package.json",
-    "lint:memory": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng lint"
+    "lint:local": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng lint",
+    "lint": "node ./node_modules/@angular/cli/bin/ng lint"
   },
   "private": true,
   "dependencies": {
