@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokebaseService } from "../../../../core/services/pokebase.service";
 import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
@@ -12,7 +12,7 @@ import * as actionsUi from "../../../../shared/ui.actions";
   templateUrl: './bodydex.component.html',
   styleUrls: ['./bodydex.component.scss'],
 })
-export class BodydexComponent implements OnInit {
+export class BodydexComponent implements OnInit, OnDestroy {
 
   public isLoading = false;
   public itemCount: number;

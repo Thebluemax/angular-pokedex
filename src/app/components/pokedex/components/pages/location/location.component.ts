@@ -8,14 +8,11 @@ import { Location as LocationRegion } from '../../../../../core/models/region';
   templateUrl: './location.component.html',
   styleUrls: ['./location.component.scss']
 })
-export class LocationComponent implements OnInit {
+export class LocationComponent {
 
   loading:boolean;
   title:string;
 
   @Input() location:LocationRegion;
-  constructor() { }
-    ngOnInit() {
 
-    }
 }

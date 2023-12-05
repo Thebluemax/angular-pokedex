@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pk-principal-screen',
+  selector: 'pkd-principal-screen',
   templateUrl: './principal-screen.component.html',
   styleUrls: ['./principal-screen.component.scss']
 })
