@@ -7,7 +7,7 @@ import * as actions from "./redux/screen.actions";
 import { AppState } from 'src/app/app.reducer';
 
 @Component({
-  selector: 'pk-control-footer',
+  selector: 'pkd-control-footer',
   templateUrl: './control-footer.component.html',
   styleUrls: ['./control-footer.component.scss']
 })

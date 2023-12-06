@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pk-pokedex',
+  selector: 'pkd-pokedex',
   templateUrl: './pokedex.component.html',
   styleUrls: ['./pokedex.component.scss']
 })

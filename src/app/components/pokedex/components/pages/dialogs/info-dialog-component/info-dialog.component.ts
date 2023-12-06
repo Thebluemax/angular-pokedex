@@ -9,7 +9,7 @@ import { RouterModule, Router } from '@angular/router';
   templateUrl: './info-dialog-component.component.html',
   styleUrls: ['./info-dialog-component.component.scss']
 })
-export class InfoDialogComponent implements OnInit{
+export class InfoDialogComponent {
 
  //s @Input() data:any;
  // url: string;
@@ -24,9 +24,6 @@ export class InfoDialogComponent implements OnInit{
     public router:Router
     ) { }
 
-ngOnInit(){
-  //this.getinfo();
-}
   setType(typeName: string){
     this.typeName = typeName;
   }
