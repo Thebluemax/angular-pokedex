@@ -5,18 +5,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent  {
 
   pageName: string = 'Page Name';
   openInput: boolean = false;
   @Input() set name(name: string) {this.pageName = name;}
   @Input() showSearchBtn: boolean = true;
   @Output() searchTerm:EventEmitter<string> = new EventEmitter<string>();
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
   searchTermAction($event) {
     this.searchTerm.emit($event.target.value);
   }
