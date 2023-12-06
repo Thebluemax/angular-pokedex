@@ -12,7 +12,8 @@
     "e2e": "ng e2e",
     "build:prod": "ng build --aot --configuration production",
     "compodoc": "npx compodoc -p tsconfig.app.json",
-    "get_version": "echo $npm_package_version"
+    "get_version": "npm pkg get version --raw --silent",
+    "version:app": "awk -F'\"' '/\"version\": \".+\"/{ print $4; exit; }' package.json"
   },
   "private": true,
   "dependencies": {
