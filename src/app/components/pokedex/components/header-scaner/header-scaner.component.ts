@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header-scaner',
+  selector: 'pkd-header-scaner',
   templateUrl: './header-scaner.component.html',
   styleUrls: ['./header-scaner.component.scss'],
   animations: [
@@ -23,14 +23,11 @@ import { Router } from '@angular/router';
     ])
   ],
 })
-export class HeaderScanerComponent implements OnInit {
+export class HeaderScanerComponent  {
 
   @Input() scannerState;
 
   constructor( private route:Router ) { }
-
-  ngOnInit() {
-  }
 
   goScan(){
     this.scannerState = true;
