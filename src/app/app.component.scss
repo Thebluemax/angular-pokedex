@@ -20,7 +20,9 @@ h6{
 }
 
 .canvas{
-  background-color: $base-color;
+  margin: 10% auto;
+  width: min-content;
+  /*background-color: $base-color;*/
 }
 
 #sidebar {
@@ -41,6 +43,10 @@ h6{
 and (min-device-width : 320px)
 and (max-device-width : 480px) {
 /* Styles */
+.canvas{
+  height: 100vh;
+  margin:0;
+  width : 100%;}
 }
 
 /* Smartphones (landscape) ----------- */
@@ -62,8 +68,6 @@ and (max-device-width : 650px) {
 .canvas{
   box-shadow: 0px 0px 15px #000;
   margin: 2% auto;
-  width : 70%;
-
 }
 }
 
@@ -74,8 +78,6 @@ and (max-device-width : 1024px) {
 /* Styles */
 .canvas{
   margin: 10% auto;
-  width : 40%;
-
 }
 }
 
@@ -86,7 +88,7 @@ and (max-device-width : 1024px)
 and (orientation : landscape) {
 /* Styles */
 .canvas{
-  margin: 20%;
+  margin: 20% auto;
 }
 }
 
@@ -102,17 +104,26 @@ and (orientation : portrait) {
 @media only screen
 and (min-width : 1224px) {
 /* Styles */
+.canvas{
+  margin: 10% auto;
+}
+}
+
+/* Desktops and laptops upper to 1200 px----------- */
+@media only screen
+and (min-width : 1225px)
+and (max-width : 1400px) 
+and (max-height : 700px) {
+/* Styles */
+.canvas{
+  margin: 2% auto;
+}
+}
+
 
 /*
  * Author: http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
  */
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-/* Styles */
-}
 
 /* Smartphones (landscape) ----------- */
 @media only screen
@@ -126,58 +137,12 @@ and (max-width : 320px) {
 /* Styles */
 }
 
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-/* Styles */
-.canvas{
-  margin: 20%;
-}
-}
-
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-/* Styles */
-.canvas{
-  margin: 20%;
-}
-}
-
 /* iPads (portrait) ----------- */
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
 /* Styles */
-}
-
-/* Desktops and laptops ----------- */
-@media only screen
-and (min-width : 1224px) {
-/* Styles */
-.canvas{
-  margin: 10% auto;
-  width: 30%;
-}
-}
-
-/* Large screens ----------- */
-@media only screen
-and (min-width : 1824px) {
-/* Styles */
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
-}
-
 }
 
 /* Large screens ----------- */
