@@ -1,7 +1,7 @@
 <div class="screen-canvas">
   <pkd-loading-screen></pkd-loading-screen>
   <div *ngIf="item">
-    <pkd-toolbar [name]="title+'/'+titleId"></pkd-toolbar>
+    <h6>{{title | formatName: 'P' | formatName : 'T'}}/{{titleId | formatName : 'T'}}</h6>
     <div class="scroll-panel">
       <div class="scrollable-item" [ngSwitch]="category">
         <div *ngSwitchCase="'item'">

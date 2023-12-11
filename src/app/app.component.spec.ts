@@ -30,4 +30,13 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('poke');
   });
+
+  it('should render title', (done) => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges()
+    const compiled = fixture.debugElement.nativeElement;
+    let element = compiled.querySelector('#main');
+    expect(element.getAttribute('id')).toMatch(/main/);
+    done()
+  });
 });

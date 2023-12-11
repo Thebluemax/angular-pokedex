@@ -22,10 +22,7 @@ let httpMock: HttpTestingController;
 describe("PokebaseService", () => {
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule], 
-      providers: [PokebaseService]
-    });
+    TestBed.configureTestingModule({imports: [HttpClientTestingModule], providers: [PokebaseService]});
     service = TestBed.inject(PokebaseService);
     httpMock = TestBed.inject(HttpTestingController);
   });

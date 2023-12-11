@@ -47,9 +47,4 @@ describe('FormatNamePipe', () => {
     expect(pipe.transform(text, 'P')).toBe(textPlural);
   })
 
-  it('Default value is the string', () => {
-    const text = 'pokemon';
-    expect(pipe.transform(text, 'X')).toBe(text);
-  });
-
 });

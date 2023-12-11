@@ -2,8 +2,6 @@
 #pokedex-header {
     height: 100px;
     background-color: $base-color;
-    padding: 2% 5%;
-    height: min-content;
 
   }
   .scanner-ring {
@@ -23,9 +21,9 @@
       width: 68px;
     }
   }
-  .pilot-light {
+  .pilot-ligh {
     display: inline-block;
-    margin-left: 10%;
+    margin-left: 20px;
     vertical-align: top;
   }
   .pilot-led {
