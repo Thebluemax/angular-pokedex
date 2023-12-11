@@ -1,0 +1,30 @@
+@import '../../../../sass/mixins';
+
+.searchInput {
+  display: block;
+  margin-bottom: 15px;
+  input{
+    border: solid 2px green;
+    background-color: chartreuse;
+    color: green;
+    width: 100%;
+  }
+}
+
+#header {
+  @include base-high;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  h6 {
+    font-size: .7rem;
+    padding-top: .7rem;
+  }
+   a{
+    border-left: 1px solid green;
+     color: green;
+     font-size: .8rem;
+     padding:.8rem;
+     width: 30px;
+   }
+}

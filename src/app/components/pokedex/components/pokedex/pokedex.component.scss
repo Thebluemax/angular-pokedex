@@ -1,3 +1,11 @@
+@import '../../../../../sass/variables';
+  
+  #main-body {
+    background-color: $base-color;
+    height: 710px;
+    width: 400px;
+  }
+  
   /* ----------- Wearables ----------- */
   /* ----------- Moto 360 Watch ----------- */
   @media (max-device-width: 218px)
@@ -31,6 +39,12 @@
     and (min-device-width: 320px)
     and (max-device-width: 480px) {
     /* Styles */
+    section {
+      &#main-body {
+        height: 100vh;
+        width: 100vw;
+       }
+    }
   }
 
   /* Smartphones (landscape) ----------- */
@@ -78,13 +92,17 @@
   @media only screen
     and (min-width: 1824px) {
     /* Styles */
+    section {
+      &#main-body {
+        width: 480px;
+        height: 790px;
+       }
+    }
   }
 
   /* High pixel ratio devices ----------- */
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
     only screen and (min-device-pixel-ratio: 1.5) {
     /* Styles */
-   #main {
-    height: 100vh;
-   }
+
   }

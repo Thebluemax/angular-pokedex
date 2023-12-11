@@ -73,7 +73,7 @@ export class BodydexComponent implements OnInit, OnDestroy {
   buildList(page: number) {
     this.previous = page * this.rows;
     this.next = this.previous + this.rows;
-    this.viewList = this.list.slice(this.previous, this.next);
+    this.viewList = this.list;//.slice(this.previous, this.next);
     this.pagination = this.paginateText();
     this.store.dispatch(actions.write({ message: this.pagination }))
   }
