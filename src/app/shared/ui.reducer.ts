@@ -23,4 +23,3 @@ export const getIsLoading = createSelector(
   (state: AppState) => state.ui,
   (ui) => ui.isLoading
 );
-
