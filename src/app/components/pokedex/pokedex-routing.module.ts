@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '', component: PokedexComponent, children: [
       {
-        path: '', redirectTo: '/pokedex/menu', pathMatch: 'full'
+        path: '', redirectTo: '/pokedex/menu', pathMatch: 'full' as const
       },
       {
         path: 'menu', component: MenuPrincipalComponent
