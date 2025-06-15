@@ -2,7 +2,6 @@ import {
     ComponentFactoryResolver,
     Injectable,
     Inject,
-    ReflectiveInjector,
   } from '@angular/core';
 
   import { InfoDialogComponent } from '../../shared/components/dialogs/info-dialog-component/info-dialog.component'

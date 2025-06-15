@@ -33,7 +33,7 @@ export class BodydexComponent implements OnInit, OnDestroy {
   constructor(private pkService: PokebaseService,
     private router: Router,
     private sScree: SecondaryScreenService,
-    private store: Store<AppState>
+    private store: Store<{ ui: AppState }> ,
 
   ) { }
 
@@ -59,6 +59,11 @@ export class BodydexComponent implements OnInit, OnDestroy {
     });
   }
   listSort() {
+    if (!this.list || !Array.isArray(this.list)) {
+    console.warn('List is undefined or not an array');
+    this.list = [];
+    return;
+  }
     this.list.sort((a, b) => {
       if (a.name > b.name) {
         return 1;

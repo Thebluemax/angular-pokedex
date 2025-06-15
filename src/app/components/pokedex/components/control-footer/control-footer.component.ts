@@ -18,7 +18,7 @@ export class ControlFooterComponent
   screenSecondary: string = '-- --';
   constructor(private _location: Location,
     //private screenservice: SecondaryScreenService
-    private store: Store<AppState>
+    private store: Store<{ ui, screen }>,
   ) {
     this.location = _location;
   }

@@ -14,8 +14,8 @@ export class LoadingScreenComponent implements OnInit {
   loading:boolean;
 
 constructor(
-  private store: Store<AppState>
-){}
+  private store: Store<{ ui, screen }>
+) { }
 
   ngOnInit() {
     const subs$ = this.store.select('ui')

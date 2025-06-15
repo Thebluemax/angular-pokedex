@@ -15,7 +15,8 @@ import { PokemonServiceStub } from 'src/app/stubs/pk-service.stub';
 describe('BodydexComponent', () => {
   let component: BodydexComponent;
   let fixture: ComponentFixture<BodydexComponent>;
-  let store;
+  let store: MockStore;
+  let pokeServiceSpy: jasmine.SpyObj<PokebaseService>;
    const initialState = {screen:{ message: 'test' },
                          ui:{ isLoading: false }};
   beforeEach(waitForAsync(() => {
@@ -32,6 +33,8 @@ describe('BodydexComponent', () => {
          provideMockStore({initialState})]
     })
     .compileComponents();
+    store = TestBed.inject(MockStore);
+    spyOn(store, 'dispatch').and.callThrough();
   }));
 
   beforeEach(() => {
@@ -39,7 +42,7 @@ describe('BodydexComponent', () => {
 
     component = fixture.componentInstance;
     component.pageName = 'text';
-    store = TestBed.inject(MockStore);
+    component.api = 'pokemon';
     fixture.detectChanges();
   });
 
@@ -52,9 +55,11 @@ describe('BodydexComponent', () => {
     component.listSort()
     expect(component.list[0].name).toBe('b');
   });
+  
 
   it('previous page', () => {
     const spy = spyOn(component, 'buildList');
+    console.log(component.list);
     component.page = 2;
     component.previousPage();
     expect(component.page).toBe(1);
