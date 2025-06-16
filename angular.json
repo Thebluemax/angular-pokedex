@@ -141,7 +141,8 @@
             "lintFilePatterns": [
               "src/**/*.ts",
               "src/**/*.html"
-            ]
+            ],
+            "eslintConfig": ".eslintrc.json"
           }
         }
       }
