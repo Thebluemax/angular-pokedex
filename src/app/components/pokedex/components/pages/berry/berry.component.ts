@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, Injector, Inject, Input } from '@angular/core';
-import { PokebaseService } from '../../../../../core/services/pokebase.service';
+import { PokebaseService } from '@core/services/pokebase.service';
 import { SecondaryScreenService } from '../../../services/secondary-screen.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Berry } from '../../../../../core/models/berry';
+import { Berry } from '@core/models/berry';
 import { InfoDialogComponent } from '../dialogs/info-dialog-component/info-dialog.component';
-import { DinamicComponentService } from '../../../../../core/services/dinamic-component.service';
+import { DinamicComponentService } from '@core/services/dinamic-component.service';
 
 @Component({
   selector: 'pkd-berry-detaill',

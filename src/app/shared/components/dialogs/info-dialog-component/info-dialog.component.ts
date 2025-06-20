@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, NgModule, Output, EventEmitter } from '@angular/core';
-import { PokebaseService } from '../../../../core/services/pokebase.service';
+import { PokebaseService } from '@core/services/pokebase.service';
 import { RouterModule, Router } from '@angular/router';
 
 

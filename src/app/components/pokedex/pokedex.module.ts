@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
-import { SharedModule } from "../../shared/shared.module";
+import { SharedModule } from "@shared/shared.module";
 import { SecondaryScreenService } from "./services/secondary-screen.service";
 import { PokebaseService } from "src/app/core/services/pokebase.service";
 import { PrincipalScreenComponent } from "./components/principal-screen/principal-screen.component";

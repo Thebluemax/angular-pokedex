@@ -1,12 +1,12 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokebaseService } from "../../../../core/services/pokebase.service";
-import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
+import { PokebaseService } from "@core/services/pokebase.service";
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import * as actions from "../../components/control-footer/redux/screen.actions";
-import * as actionsUi from "../../../../shared/ui.actions";
-import { Pokemon } from '@app/core/models/pokemon'
+import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
+import * as actionsUi from "@shared/ui.actions";
+import { Pokemon } from '@core/models/pokemon'; // Adjust the import path as necessary
 
 @Component({
   selector: 'pkd-bodylist',

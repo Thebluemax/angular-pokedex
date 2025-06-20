@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Region } from "../../../../../core/models/region";
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { Region } from "@core/models/region";
 import { AppState } from 'src/app/app.reducer';
 
 @Component({

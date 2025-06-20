@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Location as LocationRegion } from '../../../../../core/models/region';
+import { Location as LocationRegion } from '@core/models/region';
 
 @Component({
   selector: 'pkd-region-location',

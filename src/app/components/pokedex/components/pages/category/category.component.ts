@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import * as actions from "../../control-footer/redux/screen.actions";
-import * as actionsUi from "../../../../../shared/ui.actions";
+import * as actionsUi from "@shared/ui.actions";
 
 @Component({
   selector: 'pkd-category-section',
