@@ -18,7 +18,7 @@ export class CategoryListComponent implements OnInit {
 
   ngOnInit() {
     let nameId = this.route.snapshot.paramMap.get("category");
-    this.pageName = nameId;
-    this.apiUrl = nameId;
+    this.pageName = nameId ? nameId : '';
+    this.apiUrl = nameId ? nameId : '';
   }
 }

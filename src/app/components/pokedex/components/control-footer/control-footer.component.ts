@@ -14,11 +14,11 @@ import { AppState } from 'src/app/app.reducer';
 export class ControlFooterComponent
   implements OnInit {
   location: Location;
-  screenMessage$: Subscription;
+  screenMessage: Subscription = new Subscription();
   screenSecondary: string = '-- --';
   constructor(private _location: Location,
     //private screenservice: SecondaryScreenService
-    private store: Store<{ ui, screen }>,
+    private store: Store<{ ui:any, screen:any }>,
   ) {
     this.location = _location;
   }

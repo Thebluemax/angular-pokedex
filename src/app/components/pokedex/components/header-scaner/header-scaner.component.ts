@@ -25,7 +25,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderScanerComponent  {
 
-  @Input() scannerState;
+  @Input() scannerState: any;
 
   constructor( private route:Router ) { }
 
@@ -35,7 +35,7 @@ export class HeaderScanerComponent  {
     this.route.navigate(['/pokemon', pokemon]);
   }
 
-  animEnd($event){
+  animEnd($event: any){
     this.scannerState = false;
   }
 }

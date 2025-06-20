@@ -9,10 +9,10 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 })
 
 export class NavBarComponent implements OnInit {
-  openInput: boolean;
-  term$: string;
+  openInput: boolean = false;
+  //term$:string = '';
   subject: Subject<string> = new Subject();
-  @Input() pagination: boolean;
+  @Input() pagination: boolean = true;
   @Output() searchTerm : EventEmitter<string> = new EventEmitter();
   @Output() next : EventEmitter<boolean> = new EventEmitter();
   @Output() back : EventEmitter<boolean> = new EventEmitter();
@@ -37,7 +37,7 @@ export class NavBarComponent implements OnInit {
     this.subject.next('');
   }
  }
- searchTermAction(event){
+ searchTermAction(event: any){
    this.subject.next(event.target.value);
  }
 }

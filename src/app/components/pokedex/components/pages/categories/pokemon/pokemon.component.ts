@@ -17,8 +17,11 @@ import { Observable, Subscription } from 'rxjs';
  */
 export class PokemonComponent  {
 
-  @Input() pokemon: Pokemon;
-  private idObservable: Subscription;
+  @Input() pokemon: Pokemon | null = null;
+  private idObservable: Subscription | null = null;
+  public list: Pokemon[] = [];
+  public viewList: Pokemon[] = [];
+
   constructor() {
   }
 

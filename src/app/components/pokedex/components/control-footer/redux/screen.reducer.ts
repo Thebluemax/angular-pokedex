@@ -17,7 +17,7 @@ export const initialState: State = {
   )
 );
 
-export function screenReducer(state, action) {
+export function screenReducer(state: any, action: any) {
   return _screenReducer(state, action);
 }
 

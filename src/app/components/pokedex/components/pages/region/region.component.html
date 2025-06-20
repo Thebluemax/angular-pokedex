@@ -13,7 +13,7 @@
 
         <h5 class="p-1">Locations</h5>
         <ul appHighlight>
-            <li *ngFor="let reg of region.locations, let idx = index" id="item-{{idx}}"class="higtlight m-2" (click)="detailLocation(reg.name)">
+            <li *ngFor="let reg of region?.locations, let idx = index" id="item-{{idx}}"class="higtlight m-2" (click)="detailLocation(reg.name)">
                 {{reg.name | formatName:'I'}}
             </li>
         </ul>

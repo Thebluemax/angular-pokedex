@@ -10,9 +10,9 @@ import { Location as LocationRegion } from '../../../../../core/models/region';
 })
 export class LocationComponent {
 
-  loading:boolean;
-  title:string;
+  loading:boolean = false;
+  title:string = '';
 
-  @Input() location:LocationRegion;
+  @Input() location:LocationRegion | null = null;
 
 }

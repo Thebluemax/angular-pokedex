@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import * as actions from "../../components/control-footer/redux/screen.actions";
 import * as actionsUi from "../../../../shared/ui.actions";
+import { Pokemon } from '@app/core/models/pokemon'
 
 @Component({
   selector: 'pkd-bodylist',
@@ -15,20 +16,20 @@ import * as actionsUi from "../../../../shared/ui.actions";
 export class BodydexComponent implements OnInit, OnDestroy {
 
   public isLoading = false;
-  public itemCount: number;
-  public previous: number;
-  public next: number;
-  public limit: number;
-  public list: any;
-  public viewList: any;
-  public title: string;
+  public itemCount: number = 0;
+  public previous: number = 0;
+  public next: number = 0;
+  public limit: number = 0;
+    public list: Pokemon[] = []; // or appropriate interface
+  public viewList: Pokemon[] = []; // or appropriate interface any;
+  public title:string = '';
   public href: string = "";
-  public pagination: string;
+  public pagination:string = '';
   public page: number = 0;
   public rows: number = 500;
 
-  @Input() pageName: string;
-  @Input() api: string
+  @Input() pageName:string = '';
+  @Input() api: string = ''
 
   constructor(private pkService: PokebaseService,
     private router: Router,
@@ -50,6 +51,7 @@ export class BodydexComponent implements OnInit, OnDestroy {
 
   getItems(offset: number, limit: number) {
     this.store.dispatch(actionsUi.isLoading());
+    console.log('getItems', this.api, offset, limit);
     this.pkService.getItems(this.api, offset, limit).subscribe(data => {
       this.itemCount = data.count;
       this.list = data.results;
@@ -98,7 +100,7 @@ export class BodydexComponent implements OnInit, OnDestroy {
     return `Items List: <br> ${this.previous + 1}-${this.next}/${this.itemCount}`;
   }
   paginateTextAndSearch() {
-    return `Items List: <br> ${this.previous + 1}-${this.next}/${this.viewList.lenght}(${this.itemCount})`;
+    return `Items List: <br> ${this.previous + 1}-${this.next}/${this.viewList.length}(${this.itemCount})`;
   }
 
   itemDetall(id: string) {
@@ -108,8 +110,8 @@ export class BodydexComponent implements OnInit, OnDestroy {
     this.router.navigate([url]);
   }
 
-  filter(event) {
-    this.viewList = this.list.filter( term => {
+  filter(event: string) {
+    this.viewList = this.list.filter( (term: any) => {
       return term.name.toLowerCase().includes(event);
     });
     this.pagination = this.paginateTextAndSearch();

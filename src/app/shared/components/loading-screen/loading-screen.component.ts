@@ -11,10 +11,10 @@ export class LoadingScreenComponent implements OnInit {
 
   loadMsj:string = '';
   timeOut: any;
-  loading:boolean;
+  loading:boolean = false;
 
 constructor(
-  private store: Store<{ ui, screen }>
+  private store: Store<{ ui:any, screen:any }>
 ) { }
 
   ngOnInit() {

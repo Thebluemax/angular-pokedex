@@ -12,8 +12,8 @@ import { RouterModule, Router } from '@angular/router';
 export class InfoDialogComponent {
 
   dataItem:any[] = [];
-  name:string;
-  typeName: string;
+  name:string = '';
+  typeName: string = '';
 
   @Output() public emitValue:EventEmitter<boolean> = new EventEmitter();
 
@@ -26,14 +26,14 @@ export class InfoDialogComponent {
     this.typeName = typeName;
   }
 
-  getInfo(url) {
+  getInfo(url: string) {
     this.pokeService.getInfoItem(url).subscribe((data:any) => {
       this.dataItem = data.berries;
       this.name = data.name;
     });
   }
 
-  goToPage(name){
+  goToPage(name:string){
     const route = `/berries/${name}`;
     this.router.navigate([route]);
     this.close();

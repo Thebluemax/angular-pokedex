@@ -2,29 +2,29 @@
 <div id="pokemon-detall" >
     <div class="pokemon-header">
         <div class="title title-media" appImgClick><img
-                [attr.src]="(pokemon.sprites?.other.dream_world.front_default)?pokemon.sprites.other.dream_world.front_default:'/assets/img/loader_img.gif'"
+                [attr.src]="pokemon?.sprites?.other?.dream_world?.front_default ?? '/assets/img/loader_img.gif'"
                 alt=""></div>
         <div class="title id-pokemon">
           <!-- <h4>{{pokemon.name | formatName: 'T'}}</h4> --> 
             <p>
-                <span>Height: {{pokemon.height | mesure:'m'}}</span>
-                <span>Weight: {{pokemon.weight | mesure:'k'}}</span>
-                <span>HP: {{pokemon.base_experience}}</span>
+                <span>Height: {{pokemon?.height | mesure:'m'}}</span>
+                <span>Weight: {{pokemon?.weight | mesure:'k'}}</span>
+                <span>HP: {{pokemon?.base_experience}}</span>
                 <span></span>
             </p>
         </div>
         <h5>Type</h5>
         <p>
-            <span *ngFor="let type of pokemon.types" class="m-2 badge badge-retro">
+            <span *ngFor="let type of pokemon?.types" class="m-2 badge badge-retro">
                 {{type.type.name | formatName:'T'}}
             </span>
         </p>
         <h5>Abilities</h5>
-        <span *ngFor="let ability of pokemon.abilities" class="badge m-1 badge-retro">
+        <span *ngFor="let ability of pokemon?.abilities" class="badge m-1 badge-retro">
             {{ability.ability.name | formatName:'T'}}
         </span>
         <h5>Moves</h5>
-        <span *ngFor="let move of pokemon.moves" class="badge badge-retro">
+        <span *ngFor="let move of pokemon?.moves" class="badge badge-retro">
             {{move.move.name | formatName:'T'}}
         </span>
     </div>

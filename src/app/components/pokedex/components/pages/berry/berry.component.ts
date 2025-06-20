@@ -17,15 +17,15 @@ import { DinamicComponentService } from '../../../../../core/services/dinamic-co
 })
 export class BerryComponent {
 
-  public title: string;
-  public sprite: string;
+  public title:string = '';
+  public sprite: string = '';
 
-  service;
-  view;
+  service: any = null;
+  view: any = null;
 
-  private idObservable: Subscription;
-  @Input() berry: Berry;
-   @ViewChild('appadd', {read: ViewContainerRef}) modalEntry;
+  private idObservable: Subscription = new Subscription();
+  @Input() berry: Berry = new Berry();
+   @ViewChild('appadd', {read: ViewContainerRef}) modalEntry: any;
 
   /**
    * Componente pokemon
@@ -60,7 +60,7 @@ console.log(url, typeName);
 
   }
 */
-openModal( value, url){
+openModal( value: any, url: string){
 
 }
 }

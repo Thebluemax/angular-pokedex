@@ -11,26 +11,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ItemComponent  {
 
-  title:string;
-  titleId:string;
+  title:string = '';
+  titleId:string = '';
   @Input() item: any;
-  name: string;
-  category: string;
-  sprite: string;
+  name:string = '';
+  category:string = '';
+  sprite:string = '';
   isLoading: boolean=false;
-  seeMore: boolean;
-
-  constructor() {
-    //this.item = null;
-   }
-
+  seeMore: boolean = false;
 
   showMore(){
     this.seeMore = !this.seeMore;
   }
 
   getTranslation(code: string){
-    const text = this.item.flavor_text_entries.find(text => text.language.name === code);
+    const text = this.item.flavor_text_entries.find((text: any) => text.language.name === code);
 
     return text ? text.text : '--';
   }

@@ -11,8 +11,9 @@ import {
   selector: '[appImgClick]'
 })
 export class ImgClickDirective {
-  big: boolean;
-  player: AnimationPlayer;
+  big: boolean = false;
+  
+  player: AnimationPlayer | undefined;
 
   constructor(
     private builder: AnimationBuilder,
@@ -20,7 +21,7 @@ export class ImgClickDirective {
     private element : ElementRef
   ) { }
 
-  @HostListener('click',['$event.target']) onClick(img) {
+  @HostListener('click',['$event.target']) onClick(img: any) {
     if (this.player) {
       this.player.destroy();
     }
@@ -31,9 +32,9 @@ export class ImgClickDirective {
       this.render.addClass(this.element.nativeElement, 'img-open')
     }
     const factory = this.builder.build(metadata);
-    const player = factory.create(this.element.nativeElement);
+    this.player = factory.create(this.element.nativeElement);
 
-    player.play();
+    this.player.play();
     this.big = !this.big;
   }
 

@@ -12,15 +12,15 @@ import * as actionsUi from "../../../../../shared/ui.actions";
 })
 export class CategoryComponent implements OnInit {
 
-  title:string;
-  titleId:string;
+  title:string  = '';
+  titleId:string  = '';
   item: any;
-  name: string;
-  category: string;
-  id: string;
-  sprite: string;
+  name:string = '';
+  category:string | null = '';
+  id:string | null  = '';
+  sprite:string = '';
   isLoading: boolean=false;
-  seeMore: boolean;
+  seeMore: boolean = false;
 
   constructor(private pokeBase:PokebaseService,
                private route:ActivatedRoute,
@@ -38,9 +38,13 @@ export class CategoryComponent implements OnInit {
   }
 
   getDetail(){
+    if(!this.category || !this.id) {
+      return;
+    }
     this.pokeBase.getDetallItems(this.category,this.id).subscribe(data => {
-      this.title = this.category;
-      this.titleId = this.id;
+      console.log(data);
+      this.title = this.category ? this.category : '';
+      this.titleId = this.id  ? this.id : '';
       this.item = data;
       this.init();
       this.store.dispatch(actionsUi.stopLoading());
@@ -58,7 +62,7 @@ export class CategoryComponent implements OnInit {
   }
 
   getTranslation(code: string){
-    const text = this.item.flavor_text_entries.find(text => text.language.name === code);
+    const text = this.item.flavor_text_entries.find((text:any) => text.language.name === code);
 
     return text ? text.text : '--';
   }

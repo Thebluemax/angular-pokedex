@@ -9,14 +9,14 @@ import {
   @Injectable()
   export class DinamicComponentService {
     factoryResolver;
-    rootViewContainer;
+    rootViewContainer: any;
 
-    constructor(@Inject(ComponentFactoryResolver) factoryResolver) {
+    constructor(@Inject(ComponentFactoryResolver) factoryResolver:any) {
 
       this.factoryResolver = factoryResolver
     }
 
-    setRootViewContainerRef(viewContainerRef) {
+    setRootViewContainerRef(viewContainerRef: any) {
       this.rootViewContainer = viewContainerRef
     }
 

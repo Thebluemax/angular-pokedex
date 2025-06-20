@@ -10,9 +10,9 @@ import { AppState } from 'src/app/app.reducer';
   styleUrls: ['./region.component.scss']
 })
 export class RegionComponent {
-  loading: boolean;
-  region: Region;
-  title: string;
+  loading: boolean = false;
+  region: Region| null;
+  title: string = '';
 
   maps = [
     { name: 'johto',
@@ -30,7 +30,7 @@ export class RegionComponent {
     { name: 'alola',
      map: 'https://cdn.bulbagarden.net/upload/6/6c/Alola.png' }];
 
-    mapImg: string;
+    mapImg: string = '';
   constructor(
     private router: Router,
     private store:Store<AppState>
@@ -62,9 +62,9 @@ export class RegionComponent {
 }*/
 getMap(region: string) {
   let mapImg = this.maps.find(r => r.name === region);
-  return mapImg.map;
+  return mapImg ? mapImg.map : 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Map_Pok%C3%A9mon_Red_%26_Blue_FR.png';
 }
-  detailLocation(location) {
+  detailLocation(location: string) {
     this.router.navigate([`location/${ location }`]);
   }
 }
