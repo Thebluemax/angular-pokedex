@@ -15,7 +15,8 @@ import { PokemonServiceStub } from 'src/app/stubs/pk-service.stub';
 describe('BodydexComponent', () => {
   let component: BodydexComponent;
   let fixture: ComponentFixture<BodydexComponent>;
-  let store;
+  let store: MockStore;
+  let pokeServiceSpy: jasmine.SpyObj<PokebaseService>;
    const initialState = {screen:{ message: 'test' },
                          ui:{ isLoading: false }};
   beforeEach(waitForAsync(() => {
@@ -32,6 +33,8 @@ describe('BodydexComponent', () => {
          provideMockStore({initialState})]
     })
     .compileComponents();
+    store = TestBed.inject(MockStore);
+    spyOn(store, 'dispatch').and.callThrough();
   }));
 
   beforeEach(() => {
@@ -39,7 +42,7 @@ describe('BodydexComponent', () => {
 
     component = fixture.componentInstance;
     component.pageName = 'text';
-    store = TestBed.inject(MockStore);
+    component.api = 'pokemon';
     fixture.detectChanges();
   });
 
@@ -48,10 +51,125 @@ describe('BodydexComponent', () => {
   });
 
   it('should order list', () => {
-    component.list= [{name:'r'},{name:'b'}, {name:'h'}]
+    component.list= [{
+      name: 'r',
+      abilities: [],
+      base_experience: 0,
+      forms: [],
+      game_indices: [],
+      height: 0,
+      held_items: [],
+      id: 0,
+      is_default: false,
+      location_area_encounters: '',
+      moves: [],
+      order: 0,
+      past_types: [],
+      species: { name: '', url: '' },
+      sprites: {
+        front_default: '',
+        back_default: '',
+        front_shiny: '',
+        back_shiny: '',
+        other: {
+          dream_world: { front_default: '', front_female: null },
+          home: {
+            front_default: '', front_female: null,
+            front_shiny: '',
+            front_shiny_female: null
+          },
+          officialArtwork: { front_default: '' }
+        },
+        versions: {},
+        back_female: null,
+        back_shiny_female: null,
+        front_female: null,
+        front_shiny_female: null
+      },
+      stats: [],
+      types: [],
+      weight: 0
+    },{
+      name: 'b',
+      abilities: [],
+      base_experience: 0,
+      forms: [],
+      game_indices: [],
+      height: 0,
+      held_items: [],
+      id: 0,
+      is_default: false,
+      location_area_encounters: '',
+      moves: [],
+      order: 0,
+      past_types: [],
+      species: { name: '', url: '' },
+      sprites: {
+        front_default: '',
+        back_default: '',
+        front_shiny: '',
+        back_shiny: '',
+        other: {
+          dream_world: { front_default: '', front_female: null },
+          home: {
+            front_default: '', front_female: null,
+            front_shiny: '',
+            front_shiny_female: null
+          },
+          officialArtwork: { front_default: '' }
+        },
+        versions: {},
+        back_female: null,
+        back_shiny_female: null,
+        front_female: null,
+        front_shiny_female: null
+      },
+      stats: [],
+      types: [],
+      weight: 0
+    }, {
+      name: 'h',
+      abilities: [],
+      base_experience: 0,
+      forms: [],
+      game_indices: [],
+      height: 0,
+      held_items: [],
+      id: 0,
+      is_default: false,
+      location_area_encounters: '',
+      moves: [],
+      order: 0,
+      past_types: [],
+      species: { name: '', url: '' },
+      sprites: {
+        front_default: '',
+        back_default: '',
+        front_shiny: '',
+        back_shiny: '',
+        other: {
+          dream_world: { front_default: '', front_female: null },
+          home: {
+            front_default: '', front_female: null,
+            front_shiny: '',
+            front_shiny_female: null
+          },
+          officialArtwork: { front_default: '' }
+        },
+        versions: {},
+        back_female: null,
+        back_shiny_female: null,
+        front_female: null,
+        front_shiny_female: null
+      },
+      stats: [],
+      types: [],
+      weight: 0
+    }]
     component.listSort()
     expect(component.list[0].name).toBe('b');
   });
+  
 
   it('previous page', () => {
     const spy = spyOn(component, 'buildList');

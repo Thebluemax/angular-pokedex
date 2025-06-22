@@ -1,7 +1,7 @@
 import { of } from 'rxjs';
 
 export class BaseServiceStub {
-  getDetallItemse(category,id) {
+  getDetallItemse(category:string,id: number) {
     return of({
       data: [
         { id: 1, first_name: 'George', last_name: 'Bluth', avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg' },

@@ -10,7 +10,7 @@ import * as fromUiActions from 'src/app/shared/ui.actions';
 describe('LoadingScreenComponent', () => {
   let component: LoadingScreenComponent;
   let fixture: ComponentFixture<LoadingScreenComponent>;
-let store: Store<AppState>;
+let store: MockStore; //Store<{ ui, screen }>;
  // let mockStateSelector: MemoizedSelector<AppState, boolean>;
   const initialState = {ui:{ isLoading: false },
                         screen:{}};
@@ -18,7 +18,7 @@ let store: Store<AppState>;
     TestBed.configureTestingModule({
       declarations: [LoadingScreenComponent],
       providers:[
-        provideMockStore(),
+        provideMockStore({initialState}),
       ]
     })
       .compileComponents();
@@ -28,7 +28,7 @@ let store: Store<AppState>;
   beforeEach(() => {
     fixture = TestBed.createComponent(LoadingScreenComponent);
     component = fixture.componentInstance;
-    store = TestBed.inject(Store);
+    store = TestBed.inject(MockStore);
     fixture.detectChanges();
   });
 

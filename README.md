@@ -1,6 +1,34 @@
-# Poke
+# Pokedex App
+A web application that simulates a Pokédex device, built with Angular. All visual components are crafted using pure CSS, creating a authentic look and feel of the classic Pokédex. The application fetches Pokémon data, items, and other information from the PokeAPI (poke.io).
 
+> **Note**: This project was initially created with Angular 8.3.24 and has been maintained through updates to the current Angular 17.
+
+### Features
+- Responsive Pokédex interface built with CSS
+- Real-time Pokémon data from PokeAPI
+- Detailed Pokémon information and statistics
+- Item database integration
+- Search and filter capabilities
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.24.
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v20 or higher)
+- npm (11 or higher)
+- Angular CLI (17 or higher)
+
+### Installation
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/angular-pokedex.git
+cd angular-pokedex
+```
+
+2. Install dependencies
+```bash
+npm install
+```
 
 ## Development server
 
@@ -22,6 +50,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

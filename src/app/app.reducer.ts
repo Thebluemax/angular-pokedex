@@ -8,8 +8,8 @@ export interface AppState {
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
-   ui: ui.uiReducer,
-   screen: screenReducer.screenReducer,
+   ui: ui.uiReducer as ActionReducerMap<AppState>['ui'],
+   screen: screenReducer.screenReducer as ActionReducerMap<AppState>['screen'],
 }
 
 

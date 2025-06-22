@@ -12,9 +12,9 @@ export abstract class ItemsService {
 
 abstract  getItems(url:string ,offset:number, limit:number): Observable<any> ;
 abstract  getDetallItems(category:string,id: string): Observable<any> ;
-abstract  getDetallRegion(id): Observable<any> ;
-abstract  getDetallpokemon(id): Observable<any> ;
-abstract  getDetallLocation(id): Observable<any> ;
-abstract  getDetallBerry(id): Observable<any> ;
-abstract  getInfoItem( url ) ;
+abstract  getDetallRegion(id: any): Observable<any> ;
+abstract  getDetallpokemon(id: any): Observable<any> ;
+abstract  getDetallLocation(id: any): Observable<any> ;
+abstract  getDetallBerry(id: any): Observable<any> ;
+abstract  getInfoItem( url: string ) : Observable<any> ;
 }
