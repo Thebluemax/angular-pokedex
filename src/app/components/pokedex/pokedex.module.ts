@@ -3,7 +3,7 @@ import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { SharedModule } from "@shared/shared.module";
-import { SecondaryScreenService } from "./services/secondary-screen.service";
+import { SecondaryScreenService } from "../../core/services/secondary-screen.service";
 import { PokebaseService } from "src/app/core/services/pokebase.service";
 import { PrincipalScreenComponent } from "./components/principal-screen/principal-screen.component";
 import { ControlFooterComponent } from "./components/control-footer/control-footer.component";
@@ -44,7 +44,6 @@ import { CategoryComponent } from './components/pages/category/category.componen
     RouterModule,
   ],
   providers: [
-    SecondaryScreenService,
     PokebaseService,
   ],
 })

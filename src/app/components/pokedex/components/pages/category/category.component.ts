@@ -5,11 +5,39 @@ import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import * as actions from "../../control-footer/redux/screen.actions";
 import * as actionsUi from "@shared/ui.actions";
 
+/**
+ * @component
+ * @author Maximiliano Fernández <thebluemax13@gmail.com>
+ * @fileoverview Main base catgory component for displaying detailed information about a specific category item in the Pokédex Api.
+ * @since 2025-06-21
+ * 
+ * @description
+ * This component is responsible for fetching and displaying detailed information about a specific category item in the Pokédex API.
+ * It uses the PokebaseService to retrieve data based on the category and ID provided in the route parameters.
+ * The component initializes with a loading state and updates the UI with the fetched data, including the item's name, sprite, and flavor text.
+ * It also provides a method to navigate back to the previous category view.
+/**
+ * 
+ * @class CategoryComponent
+ * @implements {OnInit}
+ * 
+ * @example
+ * <pkd-category-section></pkd-category-section>
+ * 
+ * ### Dependencies
+ * @dependencies
+ * - @angular/core
+ * - @angular/router
+ * - @ngrx/store
+ * - src/app/core/services/pokebase.service
+ * - src/app/shared/ui.actions 
+ */
 @Component({
   selector: 'pkd-category-section',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.scss']
 })
+
 export class CategoryComponent implements OnInit {
 
   title:string  = '';

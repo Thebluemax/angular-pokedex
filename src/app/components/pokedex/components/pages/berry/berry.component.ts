@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ComponentFactoryResolver, ViewContainerRef, Injector, Inject, Input } from '@angular/core';
 import { PokebaseService } from '@core/services/pokebase.service';
-import { SecondaryScreenService } from '../../../services/secondary-screen.service';
+import { SecondaryScreenService } from '../../../../../core/services/secondary-screen.service';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Berry } from '@core/models/berry';

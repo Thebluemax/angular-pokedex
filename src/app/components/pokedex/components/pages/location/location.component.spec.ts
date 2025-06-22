@@ -5,7 +5,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { PokebaseService } from 'src/app/core/services/pokebase.service';
 import { FormatNamePipe } from 'src/app/shared/pipes/format-name.pipe';
-import { SecondaryScreenService } from '../../../services/secondary-screen.service';
+import { SecondaryScreenService } from '../../../../../core/services/secondary-screen.service';
 import { BodydexComponent } from '@components/pokedex/components/bodydex/bodydex.component';
 import { LocationComponent } from './location.component';
 import { LoadingScreenComponent } from 'src/app/shared/components/loading-screen/loading-screen.component';

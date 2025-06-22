@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs';
-import { SecondaryScreenService } from '../../services/secondary-screen.service';
 import { State, Store } from '@ngrx/store';
+
 import * as actions from "./redux/screen.actions";
+import { SecondaryScreenService } from '@core/services/secondary-screen.service';
 import { AppState } from 'src/app/app.reducer';
 
 @Component({

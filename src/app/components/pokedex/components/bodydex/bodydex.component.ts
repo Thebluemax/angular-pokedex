@@ -4,15 +4,59 @@ import { PokebaseService } from "@core/services/pokebase.service";
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import * as actions from "../../components/control-footer/redux/screen.actions";
-import { SecondaryScreenService } from '@components/pokedex/services/secondary-screen.service';
+import { SecondaryScreenService } from '@core/services/secondary-screen.service';
 import * as actionsUi from "@shared/ui.actions";
 import { Pokemon } from '@core/models/pokemon'; // Adjust the import path as necessary
 
+/**
+ *
+ * @component
+ * @author Your Name
+ * @version 1.0
+ * @since 2023-10-01
+ * 
+ * This component is responsible for displaying a list of Pokémon items.
+ * It fetches data from the PokebaseService and manages pagination.
+ * It also handles filtering and navigation through the list. 
+ * 
+ * 
+ * 
+ * @description
+ * The BodydexComponent is designed to display a list of Pokémon items fetched from the PokebaseService.
+ * It supports pagination, filtering, and navigation to detailed views of individual Pokémon.
+ * The component uses Angular's dependency injection to access services and manage state.
+ * It also integrates with NgRx for state management, allowing for a reactive approach to data handling.      
+ * 
+ * @example
+ * <pkd-bodylist [pageName]="'pokedex'" [api]="'pokemon'"></pkd-bodylist>
+ * 
+ * @ngrx
+ * @ngrx/store
+ * @ngrx/effects
+ * @ngrx/entity 
+ * @ngrx/router-store
+ * @ngrx/component-store
+ * 
+ * ### Dependencies
+ * @dependencies
+ * - @angular/core
+ * - @angular/router
+ * - @ngrx/store
+ * - @core/services/pokebase.service
+ * - @components/pokedex/services/secondary-screen.service
+ * - @shared/ui.actions
+ * - @core/models/pokemon
+ * @core/models/app-state
+ * 
+
+ *       
+ */
 @Component({
   selector: 'pkd-bodylist',
   templateUrl: './bodydex.component.html',
   styleUrls: ['./bodydex.component.scss'],
 })
+
 export class BodydexComponent implements OnInit, OnDestroy {
 
   public isLoading = false;
@@ -49,6 +93,10 @@ export class BodydexComponent implements OnInit, OnDestroy {
     this.store.dispatch(actions.write({ message: '-- -- --' }))
   }
 
+  /**
+   * @param number offset 
+   * @param number limit 
+   */
   getItems(offset: number, limit: number) {
     this.store.dispatch(actionsUi.isLoading());
     console.log('getItems', this.api, offset, limit);

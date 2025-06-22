@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, fakeAsync, waitForAsync } from '@angular/core/testing';
 
 import { ControlFooterComponent } from './control-footer.component';
-import { SecondaryScreenService } from 'src/app/components/pokedex/services/secondary-screen.service';
+import { SecondaryScreenService } from '@core/services/secondary-screen.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
