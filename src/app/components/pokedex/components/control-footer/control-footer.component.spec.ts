@@ -11,7 +11,7 @@ describe('ControlFooterComponent', () => {
 
   let component: ControlFooterComponent;
   let fixture: ComponentFixture<ControlFooterComponent>;
-  let store;
+  let store: MockStore<any>;
   const initialState = {
                           screen:{ message: 'test' },
                           ui:{ isLoading: false }

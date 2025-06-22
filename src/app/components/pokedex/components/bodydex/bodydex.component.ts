@@ -99,7 +99,6 @@ export class BodydexComponent implements OnInit, OnDestroy {
    */
   getItems(offset: number, limit: number) {
     this.store.dispatch(actionsUi.isLoading());
-    console.log('getItems', this.api, offset, limit);
     this.pkService.getItems(this.api, offset, limit).subscribe(data => {
       this.itemCount = data.count;
       this.list = data.results;
@@ -110,7 +109,6 @@ export class BodydexComponent implements OnInit, OnDestroy {
   }
   listSort() {
     if (!this.list || !Array.isArray(this.list)) {
-    console.warn('List is undefined or not an array');
     this.list = [];
     return;
   }

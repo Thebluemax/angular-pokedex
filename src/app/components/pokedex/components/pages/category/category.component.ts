@@ -70,7 +70,6 @@ export class CategoryComponent implements OnInit {
       return;
     }
     this.pokeBase.getDetallItems(this.category,this.id).subscribe(data => {
-      console.log(data);
       this.title = this.category ? this.category : '';
       this.titleId = this.id  ? this.id : '';
       this.item = data;
