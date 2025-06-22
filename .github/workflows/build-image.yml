@@ -35,7 +35,7 @@ jobs:
       - name: Get version number
         id: version
         run: |
-          app_version=$(npm run version)
+          app_version=$(npm run version --silent)
           echo "APP_VERSION=$app_version" >> $GITHUB_ENV
 
       - name: Determine Tag
