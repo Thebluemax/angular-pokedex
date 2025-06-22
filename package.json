@@ -13,8 +13,8 @@
     "lint:prod": "node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng lint",
     "docs:serve": "npx compodoc -p tsconfig.app.json -d docs --serve",
     "e2e": "ng e2e",
-    "version": "npm pkg get version",
-    "version:node": "echo ${npm_package_version}",
+    "version": "node -e \"console.log(require('./package.json').version)\"",
+    "version:node": "npm pkg get version",
     "version:bash": "awk -F'\"' '/\"version\": \".+\"/{ print $4; exit; }' package.json",
     "build": "ng build --progress ",
     "build:prod": "ng build --aot --configuration production --build-optimizer"
