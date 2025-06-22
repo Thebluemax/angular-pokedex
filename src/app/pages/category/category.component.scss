@@ -1,0 +1,20 @@
+.screen-canvas {
+  height: 100%;
+  width: 100%;
+
+  .scroll-panel{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100% - 60px);
+    &>.scrollable-item {
+      width: inherit;
+      height: max-content;
+    }
+  }
+  .screen-nav {
+    bottom: 0px;
+    height: 30px;
+    position: absolute;
+    width: 95%;
+  }
+}
