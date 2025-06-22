@@ -2,22 +2,21 @@ import {
     ComponentFactoryResolver,
     Injectable,
     Inject,
-    ReflectiveInjector,
   } from '@angular/core';
 
-  import { InfoDialogComponent } from '../../shared/components/dialogs/info-dialog-component/info-dialog.component'
+  import { InfoDialogComponent } from '@shared/components/dialogs/info-dialog-component/info-dialog.component'
 
   @Injectable()
   export class DinamicComponentService {
     factoryResolver;
-    rootViewContainer;
+    rootViewContainer: any;
 
-    constructor(@Inject(ComponentFactoryResolver) factoryResolver) {
+    constructor(@Inject(ComponentFactoryResolver) factoryResolver:any) {
 
       this.factoryResolver = factoryResolver
     }
 
-    setRootViewContainerRef(viewContainerRef) {
+    setRootViewContainerRef(viewContainerRef: any) {
       this.rootViewContainer = viewContainerRef
     }
 

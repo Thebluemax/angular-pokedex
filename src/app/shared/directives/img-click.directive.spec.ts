@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
   template: '<div><img appImgClick class="" src="scr/assets/img/test.png" ></div>'
 })
 class TestClickComponent {
-  open: boolean;
+  open: boolean = false;
 }
 
 describe('ImgClickDirective', () => {

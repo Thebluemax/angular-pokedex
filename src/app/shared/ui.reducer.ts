@@ -15,7 +15,7 @@ const _uiReducer = createReducer(
     on(actions.stopLoading, state => ({ ...state, isLoading: false})),
 );
 
-export function uiReducer(state, action) {
+export function uiReducer(state: State, action: any): State {
     return _uiReducer(state, action);
 }
 

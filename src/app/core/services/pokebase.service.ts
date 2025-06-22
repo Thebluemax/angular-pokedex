@@ -9,8 +9,8 @@ import { ItemsService } from '../interfaces/items-service'
 })
 export class PokebaseService implements ItemsService{
 
-  private endpointUrl:string;
-  private urlApi:string;
+  private endpointUrl:string = '';
+  private urlApi:string  = '';
 /**
  * Servicio para la conexión a la api de pokeApi
  * @param {HttpClient} Cliente http
@@ -28,34 +28,34 @@ export class PokebaseService implements ItemsService{
     return this.http.get(this.urlApi);
   }
 
-  getDetallItems(category,id): Observable<any> {
+  getDetallItems(category: string,id:any): Observable<any> {
     this.endpointUrl = `${category}/${id}`;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
 
-  getDetallRegion(id): Observable<any> {
+  getDetallRegion(id:any): Observable<any> {
     this.endpointUrl = 'region/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
-  getDetallpokemon(id): Observable<any> {
+  getDetallpokemon(id:any): Observable<any> {
     this.endpointUrl = 'pokemon/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
-  getDetallLocation(id): Observable<any> {
+  getDetallLocation(id:any): Observable<any> {
     this.endpointUrl = 'location/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
-  getDetallBerry(id): Observable<any> {
+  getDetallBerry(id:any): Observable<any> {
     this.endpointUrl = 'berry/'+id;
     this.urlApi = environment.apiUrl+this.endpointUrl;
     return this.http.get(this.urlApi);
   }
 
-  getInfoItem( url ) {
+  getInfoItem( url:string ) {
     return this.http.get(url);
   }
 }

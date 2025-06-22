@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/eslint"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "e2e/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".angular"
+  ]
+}

@@ -12,7 +12,8 @@ export class ToolbarComponent  {
   @Input() set name(name: string) {this.pageName = name;}
   @Input() showSearchBtn: boolean = true;
   @Output() searchTerm:EventEmitter<string> = new EventEmitter<string>();
-  searchTermAction($event) {
+  searchTermAction(event: KeyboardEvent) {
+    const $event = event as any;
     this.searchTerm.emit($event.target.value);
   }
 
