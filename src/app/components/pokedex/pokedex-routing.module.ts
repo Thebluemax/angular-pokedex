@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MenuPrincipalComponent } from './components/pages/menu-principal/menu-principal.component';
+import { MenuPrincipalComponent } from '../../pages/menu-principal/menu-principal.component';
 import { PokedexComponent } from './components/pokedex/pokedex.component';
-import { CategoryListComponent } from './components/pages/category-list/category-list.component';
-import { CategoryComponent } from './components/pages/category/category.component';
+import { CategoryListComponent } from '../../pages/category-list/category-list.component';
+import { CategoryComponent } from '../../pages/category/category.component';
 
 const routes: Routes = [
   {

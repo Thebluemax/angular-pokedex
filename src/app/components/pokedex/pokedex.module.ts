@@ -10,15 +10,15 @@ import { ControlFooterComponent } from "./components/control-footer/control-foot
 import { HeaderScanerComponent } from "./components/header-scaner/header-scaner.component";
 import { BodydexComponent } from "./components/bodydex/bodydex.component";
 import { PokedexRoutingModule } from "./pokedex-routing.module";
-import { BerryComponent } from "./components/pages/berry/berry.component";
-import { ItemComponent } from "./components/pages/categories/item/item.component";
-import { LocationComponent } from "./components/pages/location/location.component";
-import { PokemonComponent } from "./components/pages/categories/pokemon/pokemon.component";
-import { RegionComponent } from "./components/pages/region/region.component";
-import { MenuPrincipalComponent } from "./components/pages/menu-principal/menu-principal.component";
+import { BerryComponent } from "../../pages/berry/berry.component";
+import { ItemComponent } from "../../pages/categories/item/item.component";
+import { LocationComponent } from "../../pages/location/location.component";
+import { PokemonComponent } from "../../pages/categories/pokemon/pokemon.component";
+import { RegionComponent } from "../../pages/region/region.component";
+import { MenuPrincipalComponent } from "../../pages/menu-principal/menu-principal.component";
 import { PokedexComponent } from "./components/pokedex/pokedex.component";
-import { CategoryListComponent } from './components/pages/category-list/category-list.component';
-import { CategoryComponent } from './components/pages/category/category.component';
+import { CategoryComponent } from '../../pages/category/category.component';
+import { CategoryListComponent } from 'src/app/pages/category-list/category-list.component'
 
 @NgModule({
   declarations: [
@@ -33,8 +33,8 @@ import { CategoryComponent } from './components/pages/category/category.componen
     PokemonComponent,
     PrincipalScreenComponent,
     RegionComponent,
-    CategoryListComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoryListComponent
   ],
   imports: [
     CommonModule,
