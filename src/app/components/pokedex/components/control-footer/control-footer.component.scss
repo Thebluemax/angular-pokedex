@@ -1,9 +1,57 @@
 @import '../../../../../sass/variables';
 
-.control-holder{
+#main-controller {
+  display: flex;
+
+  .first-controller {
+    width: 55%;
+
+    .btns-controller {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: 7px;
+      margin-bottom: 10px;
+      justify-content: space-around;
+    }
+
+    .screen-controller {
+      width: 90%;
+      border-radius: 10px;
+      margin: 0 auto;
+
+      #id-screen {
+        background-color: yellow;
+        border-radius: 10px;
+        display: block;
+        font-family: $fontfamily;
+        font-size: .8em;
+        margin-bottom: 2rem;
+        min-height: 80px;
+        padding: 5px;
+        text-align: center;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+    }
+  }
+
+  .pad-controller {
+    width: 45%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.control-holder {
   box-sizing: border-box;
   height: 90px;
   width: 90px;
+  margin: 20px auto;
   &>div {
     height: 30px;
   }
@@ -17,153 +65,137 @@
 
 }
 
-#btn1{
-    height: 50px;
-    width: 50px;
-    background-color: lightblue;
-  }
-  #btn2, #btn3 {
-    height: 10px;
-    width: 50px;
+#btn1 {
+  height: 50px;
+  width: 50px;
+  background-color: lightblue;
+}
 
-  }
+#btn2,
+#btn3 {
+  height: 10px;
+  width: 50px;
 
-#btn1,#btn2,#btn3 {
-    box-shadow: 2px 2px 3px grey;
-    display:inline-block;
-    vertical-align: middle;
-  }
-  #btn2{
-    background-color: lime;
-  }
-  #btn3{
-    background-color:orange;
-  }
-  #id-screen {
-    background-color: yellow;
-    display: block;
-    font-family: $fontfamily;
-    font-size: .8em;
-    margin-bottom: 2rem;
-    min-height: 80px;
-    padding: 5px;
-    text-align: center;
-  }
+}
+
+#btn1,
+#btn2,
+#btn3 {
+  box-shadow: 2px 2px 3px grey;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#btn2 {
+  background-color: lime;
+}
+
+#btn3 {
+  background-color: orange;
+}
 
 
 
-  #btnup, #btndown {
-    width: 30px;
-  }
-  #btnleft, #btnright{
-    width: 45px;
-    display: inline-block;
-  }
-  /* ----------- Wearables ----------- */
-  /* ----------- Moto 360 Watch ----------- */
-  @media (max-device-width: 218px)
-  and (max-device-height: 281px) {
-  }
-    /* ----------- Labtops ----------- */
 
-  /* ----------- Non-Retina Screens ----------- */
-  @media screen
-    and (min-device-width: 1200px)
-    and (max-device-width: 1600px)
-    and (-webkit-min-device-pixel-ratio: 1) {
-  }
+#btnup,
+#btndown {
+  width: 30px;
+  margin: auto;
+}
 
-  /* ----------- Retina Screens ----------- */
-  @media screen
-    and (min-device-width: 1200px)
-    and (max-device-width: 1600px)
-    and (-webkit-min-device-pixel-ratio: 2)
-    and (min-resolution: 192dpi) {
-  }
-  /*
+#btnleft,
+#btnright {
+  width: 45px;
+  display: inline-block;
+}
+
+/* ----------- Wearables ----------- */
+/* ----------- Moto 360 Watch ----------- */
+@media (max-device-width: 218px) and (max-device-height: 281px) {}
+
+/* ----------- Labtops ----------- */
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {}
+
+/* ----------- Retina Screens ----------- */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {}
+
+/*
 
   Hardboiled CSS3 Media Queries by Andy Clarke:
   License: Creative Commons CC Zero Declaration. No Rights Reserved.
 
   */
 
-  /* Smartphones (portrait and landscape) ----------- */
-  @media only screen
-    and (min-device-width: 320px)
-    and (max-device-width: 480px) {
-    /* Styles */
-    #id-screen {
-      font-size: .8em;
-      margin-bottom: 1rem;
-      min-height: 65px;
-      padding: 2px;
-    }
-    #screen {
-      }
-      #btn1{
-        height: 35px;
-        width: 35px;
-      }
-      #btn2, #btn3 {
-        height: 7px;
-        width: 30px;
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 
-      }
-      #btn1,#btn2,#btn3 {
-        margin-left: 2px;
-      }
+  /* Styles */
+  #id-screen {
+    font-size: .8em;
+    margin-bottom: 1rem;
+    min-height: 65px;
+    padding: 2px;
   }
 
-  /* Smartphones (landscape) ----------- */
-  @media only screen
-    and (min-width: 321px) {
-    /* Styles */
+  #screen {}
+
+  #btn1 {
+    height: 35px;
+    width: 35px;
   }
 
-  /* Smartphones (portrait) ----------- */
-  @media only screen
-    and (max-width: 320px) {
-    /* Styles */
-  }
-
-  /* iPads (portrait and landscape) ----------- */
-  @media only screen
-    and (min-device-width: 768px)
-    and (max-device-width: 1024px) {
+  #btn2,
+  #btn3 {
+    height: 7px;
+    width: 30px;
 
   }
 
-  /* iPads (landscape) ----------- */
-  @media only screen
-    and (min-device-width: 768px)
-    and (max-device-width: 1024px)
-    and (orientation: landscape) {
-    /* Styles */
+  #btn1,
+  #btn2,
+  #btn3 {
+    margin-left: 2px;
   }
+}
 
-  /* iPads (portrait) ----------- */
-  @media only screen
-    and (min-device-width: 768px)
-    and (max-device-width: 1024px)
-    and (orientation: portrait) {
-    /* Styles */
-  }
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
 
-  /* Desktops and laptops ----------- */
-  @media only screen
-    and (min-width: 1224px) {
-    /* Styles */
-  }
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
 
-  /* Large screens ----------- */
-  @media only screen
-    and (min-width: 1824px) {
-    /* Styles */
-  }
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {}
 
-  /* High pixel ratio devices ----------- */
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-    only screen and (min-device-pixel-ratio: 1.5) {
-    /* Styles */
-   
-  }
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  /* Styles */
+}
+
+/* High pixel ratio devices ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+
+}

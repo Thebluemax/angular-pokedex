@@ -8,7 +8,6 @@ import { PokebaseService } from "src/app/core/services/pokebase.service";
 import { PrincipalScreenComponent } from "./components/principal-screen/principal-screen.component";
 import { ControlFooterComponent } from "./components/control-footer/control-footer.component";
 import { HeaderScanerComponent } from "./components/header-scaner/header-scaner.component";
-import { BodydexComponent } from "./components/bodydex/bodydex.component";
 import { PokedexRoutingModule } from "./pokedex-routing.module";
 import { BerryComponent } from "../../pages/berry/berry.component";
 import { ItemComponent } from "../../pages/categories/item/item.component";
@@ -23,7 +22,6 @@ import { CategoryListComponent } from 'src/app/pages/category-list/category-list
 @NgModule({
   declarations: [
     BerryComponent,
-    BodydexComponent,
     ControlFooterComponent,
     HeaderScanerComponent,
     ItemComponent,
