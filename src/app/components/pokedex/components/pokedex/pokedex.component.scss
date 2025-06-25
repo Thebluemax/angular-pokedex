@@ -4,6 +4,10 @@
     background-color: $base-color;
     height: 710px;
     width: 400px;
+    .inner-box{
+      width: 85%;
+      margin: 10px auto;
+    }
   }
   
   /* ----------- Wearables ----------- */

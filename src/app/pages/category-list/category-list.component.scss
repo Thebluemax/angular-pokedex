@@ -1,0 +1,25 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+#scroll-screen {
+  height: calc(100% - 25px);
+  list-style-type: none;
+  overflow: hidden scroll; 
+  ul {
+    width: 100%;
+    padding: 5px;
+  }
+  li {
+    padding: 0px 3px 10px 3px;
+  }
+}
+  h6 {
+    font-size: 1rem;
+    color: green;
+    background-color: chartreuse;
+    padding: 5px;;
+  }
+  #scroll-screen {
+  }
+  .highlighted{
+    @include highlight;
+  }
