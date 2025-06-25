@@ -1,3 +1,21 @@
-<pkd-bodylist
+<!--<pkd-bodylist
 [api]="apiUrl"
-[pageName]="pageName"></pkd-bodylist>
+[pageName]="pageName"></pkd-bodylist>-->
+<!-- Principal screen-->
+<pkd-toolbar [name]="pageName"></pkd-toolbar>
+<pkd-loading-screen></pkd-loading-screen>
+<div id="scroll-screen">
+  <ul appHighlight>
+    <li
+    *ngFor="let item of viewList;let idx = index"
+    class="higtlight"
+    id="item-{{idx}}"
+    (click)="itemDetall(item.name)">
+      {{item.name | formatName : 'I'}}
+    </li>
+
+  </ul>
+</div>
+
+
+<!--End Principal screen-->

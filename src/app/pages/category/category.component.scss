@@ -1,14 +1,22 @@
 .screen-canvas {
   height: 100%;
   width: 100%;
-
+  & >div{
+    height: inherit;
+  }
+  .scroll-holder{
+    height: calc(100% - 60px);
+    width: inherit;
+    position: relative;
+  }
+  
   .scroll-panel{
+    height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: calc(100% - 60px);
+    width: 100%;
     &>.scrollable-item {
       width: inherit;
-      height: max-content;
     }
   }
   .screen-nav {

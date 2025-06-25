@@ -1,28 +1,25 @@
 <div class="screen-canvas">
+  <pkd-toolbar [name]="title+'/'+titleId"></pkd-toolbar>
   <pkd-loading-screen></pkd-loading-screen>
   <div *ngIf="item">
-    <pkd-toolbar [name]="title+'/'+titleId"></pkd-toolbar>
-    <div class="scroll-panel">
-      <div class="scrollable-item" [ngSwitch]="category">
-        <div *ngSwitchCase="'item'">
-          <pkd-item-page [item]="item"></pkd-item-page>
+    <div class="scroll-holder">
+      <div class="scroll-panel">
+        <div class="scrollable-item" [ngSwitch]="category">
+          <div *ngSwitchCase="'item'">
+            <pkd-item-page [item]="item"></pkd-item-page>
+          </div>
+          <div *ngSwitchCase="'pokemon'">
+            <pkd-pokemon [pokemon]="item"></pkd-pokemon>
+          </div>
+          <div *ngSwitchCase="'region'">
+            <pkd-region-location [location]="item"></pkd-region-location>
+          </div>
+          <div *ngSwitchCase="'berry'">
+            <pkd-berry-detaill [berry]="item"></pkd-berry-detaill>
+          </div>
+          <span *ngSwitchDefault>(No eligió operación)</span>
         </div>
-        <div *ngSwitchCase="'pokemon'">
-          <pkd-pokemon [pokemon]="item"></pkd-pokemon>
-        </div>
-        <div *ngSwitchCase="'region'">
-          <pkd-region-location [location]="item"></pkd-region-location>
-        </div>
-        <div *ngSwitchCase="'berry'">
-          <pkd-berry-detaill [berry]="item"></pkd-berry-detaill>
-        </div>
-        <span *ngSwitchDefault>(No eligió operación)</span>
       </div>
     </div>
-  </div>
-  <div class="screen-nav">
-    <pkd-nav-bar class="w-100"
-    [pagination]="false"
-    (back)="goBack()"></pkd-nav-bar>
   </div>
 </div>
