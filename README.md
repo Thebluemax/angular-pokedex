@@ -40,13 +40,54 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Development Build
+```bash
+npm run build
+# or
+ng build
+```
+Creates a development build with source maps and debugging information enabled. Build artifacts are stored in the `dist/` directory.
 
-## Running unit tests
+### Production Build
+```bash
+npm run build:prod
+# or
+ng build --aot --configuration production --build-optimizer
+```
+Creates an optimized production build with:
+- Ahead-of-Time (AOT) compilation
+- Build optimizer enabled
+- Minification and tree-shaking
+- Production environment configuration
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Build artifacts will be stored in the `dist/poke/` directory and are ready for deployment.
 
-## Running end-to-end tests
+## Testing
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Unit Tests
+```bash
+# Run tests in watch mode (default)
+npm test
+# or
+ng test
+
+# Run tests once in headless Chrome
+npm run test:headless
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Explicit watch mode
+npm run test:watch
+```
+
+Unit tests are executed via [Karma](https://karma-runner.github.io) test runner with Jasmine framework. Tests run in Chrome by default, or Chrome Headless for CI environments.
+
+#### Coverage Reports
+When running `npm run test:coverage`, coverage reports are generated in the `coverage/` directory. Open `coverage/index.html` in your browser to view detailed coverage information.
+
+### Test Configuration
+- Test files follow the `*.spec.ts` naming convention
+- Test configuration is in `karma.conf.js`
+- TypeScript configuration for tests is in `tsconfig.spec.json`
 
