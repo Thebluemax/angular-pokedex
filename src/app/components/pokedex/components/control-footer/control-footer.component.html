@@ -14,14 +14,14 @@
   <div class="pad-controller">
     <div class="control-holder ">
       <div>
-        <a class="control-btn " id="btnup"></a>
+        <a class="control-btn " id="btnup" (click)="navigate('up')"></a>
       </div>
       <div>
         <a class="control-btn" id="btnleft" (click)="goBack()"></a>
         <a class="control-btn" id="btnright" (click)="goForward()"></a>
       </div>
       <div>
-        <a class="control-btn" id="btndown"></a>
+        <a class="control-btn" id="btndown" (click)="navigate('down')"></a>
       </div>
     </div>
   </div>
