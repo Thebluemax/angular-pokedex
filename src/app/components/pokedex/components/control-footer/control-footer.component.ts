@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Location } from '@angular/common';
 import { Observable, Subscription } from 'rxjs';
 import { State, Store } from '@ngrx/store';
@@ -34,6 +34,21 @@ export class ControlFooterComponent
 
   goScan() { }
 
+  navigate(direction: 'up' | 'down') {
+    const event = new CustomEvent('pokedex-navigate', { detail: { direction } });
+    window.dispatchEvent(event);
+  }
+
+  @HostListener('window:keydown', ['$event'])
+  handleKey(event: KeyboardEvent) {
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      this.navigate('up');
+    } else if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      this.navigate('down');
+    }
+  }
 
   goBack() {
     this.location.back();
