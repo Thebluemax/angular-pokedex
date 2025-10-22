@@ -11,13 +11,7 @@ export class HighlightDirective implements OnInit, OnDestroy {
   constructor(private renderer: Renderer2, private el: ElementRef) { }
 
   ngOnInit(): void {
-    const nodeList = this.el.nativeElement.querySelectorAll('.higtlight, li');
-    this.items = Array.from(nodeList) as HTMLElement[];
-    this.items.forEach((it, idx) => {
-      if (!it.id) {
-        it.id = `item-${idx}`;
-      }
-    });
+    this.refreshItems();
     window.addEventListener('pokedex-navigate', this.navigationHandler as EventListener);
   }
 
@@ -26,6 +20,7 @@ export class HighlightDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('mouseover', ['$event.target']) overElement(target: HTMLElement) {
+    this.refreshItemsIfNeeded();
     const el = this.findItemFromTarget(target);
     if (el) {
       this.clearCurrentHighlight();
@@ -35,6 +30,7 @@ export class HighlightDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('mouseout', ['$event.target']) outElement(target: HTMLElement) {
+    this.refreshItemsIfNeeded();
     const el = this.findItemFromTarget(target);
     if (el) {
       this.renderer.removeClass(el, 'highlighted');
@@ -42,6 +38,22 @@ export class HighlightDirective implements OnInit, OnDestroy {
         this.currentIndex = -1;
       }
     }
+  }
+
+  private refreshItemsIfNeeded() {
+    if (!this.items || this.items.length === 0) {
+      this.refreshItems();
+    }
+  }
+
+  private refreshItems() {
+    const nodeList = this.el.nativeElement.querySelectorAll('.higtlight, li');
+    this.items = Array.from(nodeList) as HTMLElement[];
+    this.items.forEach((it, idx) => {
+      if (!it.id) {
+        it.id = `item-${idx}`;
+      }
+    });
   }
 
   private findItemFromTarget(target: HTMLElement): HTMLElement | null {
@@ -63,7 +75,9 @@ export class HighlightDirective implements OnInit, OnDestroy {
 
   private onNavigate(event: any) {
     const direction = event && event.detail && event.detail.direction;
-    if (!direction || this.items.length === 0) return;
+    if (!direction) return;
+    this.refreshItems();
+    if (this.items.length === 0) return;
     if (this.currentIndex === -1) {
       this.currentIndex = 0;
       this.renderer.addClass(this.items[this.currentIndex], 'highlighted');
